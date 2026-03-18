@@ -1,0 +1,371 @@
+/* Dynamic Incident Response - Site Styles */
+/* Color palette from the book */
+:root {
+  --navy: #1B365D;
+  --blue: #09456D;
+  --cyan: #0076BE;
+  --light-bg: #F7F9FB;
+  --text: #2C2C2C;
+  --text-light: #5A6A7A;
+  --white: #FFFFFF;
+  --teal: #3A8C8C;
+}
+
+/* Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Lora', Georgia, serif;
+  color: var(--text);
+  line-height: 1.7;
+  background: var(--white);
+}
+
+/* Typography */
+h1, h2, h3, h4 {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: var(--navy);
+  line-height: 1.2;
+}
+
+h1 { font-size: 2.5rem; font-weight: 700; }
+h2 { font-size: 1.75rem; font-weight: 600; margin-bottom: 1rem; }
+h3 { font-size: 1.25rem; font-weight: 600; margin-bottom: 0.75rem; }
+
+a {
+  color: var(--cyan);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: var(--blue);
+  text-decoration: underline;
+}
+
+/* Layout */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Header / Nav */
+.site-header {
+  background: var(--navy);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.site-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-title {
+  color: var(--white);
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.site-title:hover {
+  color: var(--white);
+  text-decoration: none;
+  opacity: 0.9;
+}
+
+.site-nav a {
+  color: rgba(255, 255, 255, 0.85);
+  margin-left: 1.5rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.site-nav a:hover {
+  color: var(--white);
+  text-decoration: none;
+}
+
+/* Hero */
+.hero {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
+  color: var(--white);
+  padding: 4rem 0;
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.hero-cover {
+  width: 100%;
+  max-width: 280px;
+  border-radius: 4px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.hero-text h1 {
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+
+.hero-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.15rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 1.5rem;
+  font-weight: 400;
+}
+
+.hero-description {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2rem;
+}
+
+/* Buttons */
+.btn-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--cyan);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  background: #0068A8;
+  color: var(--white);
+  text-decoration: none;
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--white);
+  border: 2px solid rgba(255, 255, 255, 0.6);
+}
+
+.btn-outline:hover {
+  border-color: var(--white);
+  color: var(--white);
+  text-decoration: none;
+}
+
+/* Sections */
+.section {
+  padding: 3.5rem 0;
+}
+
+.section-alt {
+  background: var(--light-bg);
+}
+
+.section h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Resource cards */
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.resource-card {
+  background: var(--white);
+  border: 1px solid #E2E8F0;
+  border-radius: 6px;
+  padding: 1.5rem;
+  transition: box-shadow 0.2s;
+}
+
+.resource-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.resource-card h3 {
+  color: var(--blue);
+}
+
+.resource-card p {
+  color: var(--text-light);
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.resource-card .btn {
+  font-size: 0.85rem;
+  padding: 0.5rem 1rem;
+}
+
+/* About section */
+.about-content {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-content p {
+  font-size: 1.05rem;
+  color: var(--text-light);
+  margin-bottom: 1rem;
+}
+
+/* Footer */
+.site-footer {
+  background: var(--navy);
+  color: rgba(255, 255, 255, 0.7);
+  padding: 2rem 0;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+}
+
+.site-footer a {
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0 0.75rem;
+}
+
+.site-footer a:hover {
+  color: var(--white);
+}
+
+.footer-links {
+  margin-bottom: 0.75rem;
+}
+
+/* Subpage styles */
+.page-header {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
+  color: var(--white);
+  padding: 2.5rem 0;
+}
+
+.page-header h1 {
+  color: var(--white);
+  font-size: 2rem;
+}
+
+.page-content {
+  padding: 3rem 0;
+}
+
+.page-content h2 {
+  text-align: left;
+}
+
+.page-content p {
+  margin-bottom: 1rem;
+  max-width: 720px;
+}
+
+.errata-empty {
+  text-align: center;
+  padding: 3rem 0;
+  color: var(--text-light);
+  font-style: italic;
+}
+
+/* Resource list on resources page */
+.resource-list {
+  list-style: none;
+  padding: 0;
+}
+
+.resource-list li {
+  padding: 1rem 0;
+  border-bottom: 1px solid #E2E8F0;
+}
+
+.resource-list li:last-child {
+  border-bottom: none;
+}
+
+.resource-list .resource-title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  color: var(--blue);
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.resource-list .resource-desc {
+  font-size: 0.95rem;
+  color: var(--text-light);
+}
+
+.resource-list .resource-links {
+  margin-top: 0.5rem;
+}
+
+.resource-list .resource-links a {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  margin-right: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  h1 { font-size: 1.75rem; }
+  h2 { font-size: 1.4rem; }
+
+  .hero { padding: 2.5rem 0; }
+
+  .hero-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-cover {
+    max-width: 200px;
+    margin: 0 auto;
+  }
+
+  .btn-group {
+    justify-content: center;
+  }
+
+  .site-header .container {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .site-nav a {
+    margin-left: 0;
+    margin-right: 1rem;
+  }
+}
