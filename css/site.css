@@ -383,6 +383,39 @@ a:hover {
   margin-right: 1rem;
 }
 
+/* FAQ */
+.faq-list {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.faq-list dt {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  color: var(--blue);
+  font-size: 1.05rem;
+  margin-top: 1.5rem;
+}
+
+.faq-list dt:first-child {
+  margin-top: 0;
+}
+
+.faq-list dd {
+  margin: 0.5rem 0 0 0;
+  color: var(--text-light);
+  line-height: 1.7;
+}
+
+/* Author headshot */
+.author-headshot {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
 /* Responsive */
 @media (max-width: 700px) {
   h1 { font-size: 1.75rem; }

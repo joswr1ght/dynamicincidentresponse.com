@@ -1,0 +1,54 @@
+# Dynamic Incident Response
+
+> Dynamic Incident Response: A Framework for Security Teams is a free online book by Joshua Wright, a senior instructor at the SANS Institute.
+
+The book introduces the Dynamic Approach to Incident Response (DAIR), a framework for managing the full incident response lifecycle. DAIR treats incident response as an adaptive, iterative process rather than a rigid sequential checklist.
+
+## The DAIR Framework
+
+DAIR organizes incident response into these activities:
+
+- Prepare: Build organizational readiness, train the IR team, develop playbooks
+- Detect: Establish detection sources, implement threat hunting, deploy Sigma rules
+- Verify and Triage: Validate incidents, assess risk, determine response priorities
+- Scope: Determine the full extent of compromise across the environment
+- Response Actions Loop: Iterate through containment, eradication, and recovery
+- Contain: Stop attacker activity, preserve evidence, prevent further harm
+- Eradicate: Remove persistence mechanisms, conduct root cause analysis
+- Recover: Validate systems, coordinate production restoration, enhance monitoring
+- Debrief: Document the incident, capture lessons learned, drive improvement
+
+## Topics Covered
+
+- Incident response framework and lifecycle (DAIR)
+- OODA loop applied to incident response decision-making
+- Ransomware response, negotiation, and recovery
+- Cloud incident response for AWS, Azure, and GCP
+- OT/ICS incident response and the Purdue model
+- Digital forensics: memory analysis, disk forensics, log investigation
+- Threat intelligence integration (MITRE ATT&CK, Pyramid of Pain, kill chain)
+- Detection engineering with Sigma rules and SIEM platforms
+- AI applications in incident response (log analysis, playbook generation, agentic workflows)
+- NIST CSF 2.0 integration and compliance mapping
+- Incident response team structure and communication
+- Post-incident debrief and organizational improvement
+
+## Tools Referenced
+
+Sigma, Hayabusa, Volatility, MemProcFS, RITA, Ghidra, PE-bear, pestudio, Nuclei, Nmap, Atomic Red Team, WinPmem, LiME, RECmd, Sysinternals
+
+## Case Studies
+
+NotPetya/Maersk, Scattered Spider/MGM, Oldsmar water treatment, RIBridges, CircleCI, Midnight Blizzard/Microsoft, LockBit, Conti/HSE Ireland, Stryker, Salesloft/Drift
+
+## Author
+
+Joshua Wright is a senior instructor and author at the SANS Institute, teaching courses on incident response, threat hunting, and penetration testing. He is a senior technical director at Counter Hack.
+
+## Links
+
+- Website: https://dynamicincidentresponse.com
+- Read online: https://dynamicir.s3.amazonaws.com/book/dynamicir.html
+- Download PDF: https://dynamicir.s3.amazonaws.com/dynamicir.pdf
+- Step-by-step checklists: https://dynamicincidentresponse.com/resources.html
+- Errata: https://dynamicincidentresponse.com/errata.html
