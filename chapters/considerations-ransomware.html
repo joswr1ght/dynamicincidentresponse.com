@@ -5,6 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.26">
+<meta name="keywords" content="incident response, cybersecurity, digital forensics, threat detection, ransomware">
 <meta name="author" content="Joshua Wright">
 <title>Incident Response for Ransomware — Dynamic Incident Response</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
@@ -1107,7 +1108,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <p>
 Ransomware represents one of the most disruptive and financially damaging incident types that organizations face today.
 
-This chapter addresses ransomware-specific considerations within the broader DAIR model established in <a href="preface.html#_part_2_a_dynamic_approach_to_incident_response">[_part_2_a_dynamic_approach_to_incident_response]</a>.
+This chapter addresses ransomware-specific considerations within the broader DAIR model established in <a href="preface.html#_part_2_a_dynamic_approach_to_incident_response">Part 2: A Dynamic Approach to Incident Response</a>.
 Organizations responding to ransomware should reference the relevant sections in <a href="preface.html#_part_2_a_dynamic_approach_to_incident_response">Part 2</a> for comprehensive guidance on each response activity, using this chapter to supplement that foundation with ransomware-specific considerations.</p>
 </div>
 <div class="sect3">
@@ -1444,7 +1445,7 @@ Investing the time and resources to prepare thoroughly before an incident occurs
 </table>
 </div>
 <div class="paragraph">
-<p>General incident response preparation is covered in <a href="prepare.html#_prepare_activity">[_prepare_activity]</a>.
+<p>General incident response preparation is covered in <a href="prepare.html#_prepare_activity">Prepare Activity</a>.
 This section addresses ransomware-specific preparation considerations that supplement baseline incident response readiness.</p>
 </div>
 <div class="sect3">
@@ -1932,7 +1933,7 @@ Defense-in-depth, early detection, and effective response remain essential even 
 <h3 id="_verifytriage">Verify/Triage</h3>
 <div class="paragraph">
 <p>
-General guidance on verification and triage activities is covered in <a href="verifytriage.html#_verify_and_triage_activities">[_verify_and_triage_activities]</a>.
+General guidance on verification and triage activities is covered in <a href="verifytriage.html#_verify_and_triage_activities">Verify and Triage Activities</a>.
 This section addresses ransomware-specific considerations for the verification and triage activity.</p>
 </div>
 <div class="sect3">
@@ -2719,7 +2720,7 @@ Unlike shorter incidents where a single status update may be all that is needed,
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-In <a href="responseactionsloop.html#_stakeholder_communication">[_stakeholder_communication]</a> we covered broad stakeholder communication guidance.
+In <a href="responseactionsloop.html#_stakeholder_communication">Stakeholder Communication</a> we covered broad stakeholder communication guidance.
 This section addresses ransomware-specific communication considerations.
 </td>
 </tr>
@@ -2792,13 +2793,13 @@ Organizations that treat ransomware as a one-time crisis rather than a learning 
 </div>
 <div class="paragraph">
 <p>
-General debrief guidance including facilitating After-Action Review (AAR) sessions, documentation requirements, and implementation tracking is covered in <a href="debrief.html#_debrief_activity">[_debrief_activity]</a>.
+General debrief guidance including facilitating After-Action Review (AAR) sessions, documentation requirements, and implementation tracking is covered in <a href="debrief.html#_debrief_activity">Debrief Activity</a>.
 This section focuses on ransomware-specific debrief considerations.</p>
 </div>
 <div class="sect3">
 <h4 id="_ransomware_specific_debrief_questions">Ransomware-Specific Debrief Questions</h4>
 <div class="paragraph">
-<p>Beyond the standard AAR questions covered in <a href="debrief.html#_conducting_the_after_action_review">[_conducting_the_after_action_review]</a>, ransomware debriefs should address considerations unique to this incident type:</p>
+<p>Beyond the standard AAR questions covered in <a href="debrief.html#_conducting_the_after_action_review">Conducting the After-Action Review</a>, ransomware debriefs should address considerations unique to this incident type:</p>
 </div>
 <div class="paragraph">
 <p><strong>Backup and recovery assessment</strong>: Did backups survive the attack?
@@ -2844,7 +2845,7 @@ Aggregated data on dwell times, TTPs, backup survival rates, and recovery method
 Organizations that contribute to this shared knowledge base help improve ransomware resilience across their industry and beyond.</p>
 </div>
 <div class="paragraph">
-<p>In addition to standard incident metrics examined in <a href="gettingstarted.html#_getting_started">[_getting_started]</a> (including Mean Time To Detect and Mean Time To Respond), ransomware incidents warrant tracking several measurements unique to this attack type.
+<p>In addition to standard incident metrics examined in <a href="gettingstarted.html#_getting_started">Getting Started</a> (including Mean Time To Detect and Mean Time To Respond), ransomware incidents warrant tracking several measurements unique to this attack type.
 <a href="#_ransomware_metrics_table">Table 5</a> lists several ransomware-specific metrics that organizations should consider tracking across incidents to evaluate their preparedness and response effectiveness.</p>
 </div>
 <div class="admonitionblock note">
@@ -3027,7 +3028,7 @@ With AI coding agents, minimally-competent threat actors can access instant oper
 <div class="paragraph">
 <p>Threat actors are integrating AI throughout ransomware and extortion operations, not just for social engineering assets, but across the full attack chain.
 AI coding agents are actively executing attack phases rather than simply advising a human operator.
-Documented cases show AI conducting network scanning, credential harvesting, lateral movement, and data exfiltration with minimal human oversight (see also <a href="considerations-ai.html#_autonomous_adversaries">[_autonomous_adversaries]</a>). <sup class="footnote">[<a id="_footnoteref_17" class="footnote" href="#_footnotedef_17" title="View footnote.">17</a>]</sup></p>
+Documented cases show AI conducting network scanning, credential harvesting, lateral movement, and data exfiltration with minimal human oversight (see also <a href="considerations-ai.html#_autonomous_adversaries">Autonomous Adversaries</a>). <sup class="footnote">[<a id="_footnoteref_17" class="footnote" href="#_footnotedef_17" title="View footnote.">17</a>]</sup></p>
 </div>
 <div class="paragraph">
 <p>The Anthropic November 2025 threat intelligence report documented a campaign where AI performed an estimated 80 to 90 percent of operations, with human decision-making required only four to six times per engagement. <sup class="footnote">[<a id="_footnoteref_18" class="footnote" href="#_footnotedef_18" title="View footnote.">18</a>]</sup>
@@ -3093,7 +3094,7 @@ Attribution is always challenging in ransomware, but AI-generated code adds new 
 <h5 id="_ai_for_defenders">AI for Defenders</h5>
 <div class="paragraph">
 <p>The same AI capabilities that accelerate attackers can also accelerate the actions of defenders.
-As we saw in <a href="considerations-ai.html#_accelerating_incident_response_with_ai">[_accelerating_incident_response_with_ai]</a>, AI can assist with preparation activities, accelerate detection of IOCs, containment evidence collection and eradication evidence analysis, and the generation of recovery actions.
+As we saw in <a href="considerations-ai.html#_accelerating_incident_response_with_ai">Accelerating Incident Response with AI</a>, AI can assist with preparation activities, accelerate detection of IOCs, containment evidence collection and eradication evidence analysis, and the generation of recovery actions.
 AI tools grounded in organizational context through playbooks supplied as skills or through Retrieval Augmented Generation (RAG) can assist analysts with response guidance tailored to the organization&#8217;s specific practices, procedures, and infrastructure elements.</p>
 </div>
 <div class="paragraph">
@@ -3360,7 +3361,7 @@ The response capabilities described in this chapter are valuable, but they repre
 <div id="footer">
 <div id="footer-text">
 Version 1.0<br>
-Last updated 2026-03-18 13:00:25 UTC
+Last updated 2026-03-18 13:18:48 UTC
 </div>
 </div>
 <script type="text/x-mathjax-config">
