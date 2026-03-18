@@ -259,13 +259,28 @@ a:hover {
 .resource-card .btn {
   font-size: 0.85rem;
   padding: 0.5rem 1rem;
+  align-self: center;
+  text-align: center;
+  margin-top: auto;
+  width: 10rem;
 }
 
 /* About section */
 .about-content {
   max-width: 720px;
   margin: 0 auto;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  text-align: left;
+}
+
+.author-headshot {
+  width: 150px;
+  height: 150px;
+  border-radius: 6px;
+  object-fit: cover;
+  flex-shrink: 0;
 }
 
 .about-content p {
