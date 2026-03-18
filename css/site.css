@@ -118,6 +118,7 @@ a:hover {
 .hero-cover {
   width: 100%;
   max-width: 280px;
+  height: auto;
   border-radius: 4px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
@@ -267,10 +268,9 @@ a:hover {
 
 /* About section */
 .about-content {
-  max-width: 720px;
   margin: 0 auto;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 2rem;
   text-align: left;
 }
@@ -284,6 +284,7 @@ a:hover {
 }
 
 .about-content p {
+  flex: 1 1 0;
   font-size: 1.05rem;
   color: var(--text-light);
   margin-bottom: 1rem;
