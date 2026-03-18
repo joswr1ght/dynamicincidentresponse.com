@@ -45,10 +45,44 @@ NotPetya/Maersk, Scattered Spider/MGM, Oldsmar water treatment, RIBridges, Circl
 
 Joshua Wright is a senior instructor and author at the SANS Institute, teaching courses on incident response, threat hunting, and penetration testing. He is a senior technical director at Counter Hack.
 
+## Chapters
+
+### Front Matter
+- Foreword by John Strand: https://dynamicincidentresponse.com/chapters/foreword.html
+- Preface: https://dynamicincidentresponse.com/chapters/preface.html
+
+### Part 1: Elements of Incident Response
+- Case Study: Supply Chain Calamity: https://dynamicincidentresponse.com/chapters/supplychaincalamity.html
+- Introduction: https://dynamicincidentresponse.com/chapters/introduction.html
+- Getting Started: https://dynamicincidentresponse.com/chapters/gettingstarted.html
+- Existing Incident Response Models: https://dynamicincidentresponse.com/chapters/existingmodels.html
+- Shortcomings in Incident Response Models: https://dynamicincidentresponse.com/chapters/shortcomings.html
+
+### Part 2: A Dynamic Approach to Incident Response
+- A Dynamic Approach to Incident Response: https://dynamicincidentresponse.com/chapters/dynamicapproach.html
+- Prepare: https://dynamicincidentresponse.com/chapters/prepare.html
+- Detect: https://dynamicincidentresponse.com/chapters/detect.html
+- Verify and Triage: https://dynamicincidentresponse.com/chapters/verifytriage.html
+- Response Actions Loop: https://dynamicincidentresponse.com/chapters/responseactionsloop.html
+- Scope: https://dynamicincidentresponse.com/chapters/scope.html
+- Contain: https://dynamicincidentresponse.com/chapters/contain.html
+- Eradicate: https://dynamicincidentresponse.com/chapters/eradicate.html
+- Recover: https://dynamicincidentresponse.com/chapters/recover.html
+- Debrief: https://dynamicincidentresponse.com/chapters/debrief.html
+
+### Part 3: Special Considerations
+- Accelerating Incident Response with AI: https://dynamicincidentresponse.com/chapters/considerations-ai.html
+- Incident Response for Ransomware: https://dynamicincidentresponse.com/chapters/considerations-ransomware.html
+- Incident Response for Cloud Systems: https://dynamicincidentresponse.com/chapters/considerations-cloud.html
+- Incident Response for Operational Technology: https://dynamicincidentresponse.com/chapters/considerations-ot.html
+- Integrating DAIR with NIST CSF 2.0: https://dynamicincidentresponse.com/chapters/integration.html
+- Afterword: https://dynamicincidentresponse.com/chapters/afterward.html
+
 ## Links
 
 - Website: https://dynamicincidentresponse.com
-- Read online: https://dynamicir.s3.amazonaws.com/book/dynamicir.html
+- Chapter listing: https://dynamicincidentresponse.com/chapters.html
+- Read complete book: https://dynamicir.s3.amazonaws.com/book/dynamicir.html
 - Download PDF: https://dynamicir.s3.amazonaws.com/dynamicir.pdf
 - Step-by-step checklists: https://dynamicincidentresponse.com/resources.html
 - Errata: https://dynamicincidentresponse.com/errata.html

@@ -1,7 +1,13 @@
 IRSBS_DIR = ../irsbs
 S3_BUCKET = s3://dynamicir
 
-.PHONY: deploy-html deploy-pdf deploy-checklists deploy-all
+.PHONY: all build serve chapters deploy-html deploy-pdf deploy-checklists deploy-all
+
+all: build
+
+build: chapters
+	cd $(IRSBS_DIR) && make html
+	cd $(IRSBS_DIR) && make pdf
 
 serve:
 	python3 -m http.server 8080
@@ -18,5 +24,8 @@ deploy-pdf:
 
 deploy-checklists:
 	aws s3 sync checklists/ $(S3_BUCKET)/resources/
+
+chapters:
+	cd $(IRSBS_DIR) && make webchapters
 
 deploy-all: deploy-html deploy-pdf deploy-checklists
