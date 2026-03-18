@@ -3,8 +3,68 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dynamic Incident Response: A Framework for Security Teams</title>
-  <meta name="description" content="A practical framework for building and running incident response programs. Free online book by Joshua Wright.">
+  <title>Dynamic Incident Response: A Framework for Security Teams | Free Book by Joshua Wright</title>
+  <meta name="description" content="Free online book covering the full incident response lifecycle: preparation, detection, containment, eradication, recovery, and debrief. Includes ransomware response, cloud IR, OT/ICS security, digital forensics, threat intelligence, and incident response playbooks. By SANS instructor Joshua Wright.">
+  <meta name="keywords" content="dynamic incident response, DAIR, incident response framework, incident response playbooks, ransomware response, cloud incident response, digital forensics, DFIR, threat hunting, MITRE ATT&CK, incident response book, SANS, Joshua Wright, OT ICS security, incident response checklist, breach response, cyber threat intelligence">
+  <meta name="author" content="Joshua Wright">
+  <meta name="theme-color" content="#1B365D">
+  <link rel="canonical" href="https://dynamicincidentresponse.com/">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Dynamic Incident Response: A Framework for Security Teams">
+  <meta property="og:description" content="Free online book on incident response covering preparation, detection, containment, eradication, recovery, ransomware response, cloud IR, and digital forensics. By SANS instructor Joshua Wright.">
+  <meta property="og:type" content="book">
+  <meta property="og:url" content="https://dynamicincidentresponse.com/">
+  <meta property="og:image" content="https://dynamicincidentresponse.com/img/og-cover.jpg">
+  <meta property="og:site_name" content="Dynamic Incident Response">
+  <meta property="og:locale" content="en_US">
+  <meta property="book:author" content="Joshua Wright">
+  <meta property="book:release_date" content="2026">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Dynamic Incident Response: A Framework for Security Teams">
+  <meta name="twitter:description" content="Free online book covering the full incident response lifecycle. Ransomware, cloud IR, digital forensics, threat intelligence, and playbooks. By Joshua Wright.">
+  <meta name="twitter:image" content="https://dynamicincidentresponse.com/img/og-cover.jpg">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Book",
+    "name": "Dynamic Incident Response: A Framework for Security Teams",
+    "author": {
+      "@type": "Person",
+      "name": "Joshua Wright",
+      "jobTitle": "Senior Instructor",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "SANS Institute"
+      }
+    },
+    "description": "A practical guide to building and running incident response programs. Covers preparation, detection, containment, eradication, recovery, ransomware response, cloud incident response, OT/ICS security, digital forensics, and threat intelligence.",
+    "url": "https://dynamicincidentresponse.com/",
+    "image": "https://dynamicincidentresponse.com/img/og-cover.jpg",
+    "inLanguage": "en",
+    "genre": "Cybersecurity",
+    "about": [
+      "Incident Response",
+      "Digital Forensics",
+      "Ransomware Response",
+      "Cloud Security",
+      "Threat Intelligence"
+    ],
+    "publisher": {
+      "@type": "Person",
+      "name": "Joshua Wright"
+    },
+    "isAccessibleForFree": true,
+    "datePublished": "2026-01-01"
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
@@ -22,19 +82,25 @@
   </div>
 </header>
 
+<main>
+
 <section class="hero">
   <div class="container">
     <div class="hero-content">
-      <img src="img/cover.png" alt="Dynamic Incident Response book cover" class="hero-cover">
+      <picture>
+        <source srcset="img/cover.webp" type="image/webp">
+        <img src="img/cover-560.png" alt="Dynamic Incident Response: A Framework for Security Teams — book cover showing the title over a mountain landscape" class="hero-cover" width="280" height="350">
+      </picture>
       <div class="hero-text">
         <h1>Dynamic Incident Response</h1>
         <p class="hero-subtitle">A Framework for Security Teams</p>
         <p class="hero-description">
           A practical guide to building and running incident response programs that adapt to modern threats.
-          From preparation through recovery, this book provides the framework security teams need to detect, contain, and eradicate threats effectively.
+          From preparation through recovery, this book gives security teams, SOC analysts, and DFIR practitioners the framework they need to detect, contain, and eradicate threats effectively.
+          Read the complete book online for free.
         </p>
         <div class="btn-group">
-          <a href="https://dynamicir.s3.amazonaws.com/book/dynamicir.html" class="btn btn-primary">Read Online</a>
+          <a href="https://dynamicir.s3.amazonaws.com/book/dynamicir.html" rel="noopener" class="btn btn-primary">Read Online</a>
           <a href="#download" class="btn btn-outline">Download PDF</a>
         </div>
       </div>
@@ -52,34 +118,77 @@
         and organizational dimensions of security events.
       </p>
       <p>
-        <em>Dynamic Incident Response</em> covers the full incident response lifecycle:
-        preparation, detection and identification, containment, eradication, recovery,
-        and post-incident activity. Each chapter pairs foundational concepts with
+        <em>Dynamic Incident Response</em> introduces the Dynamic Approach to Incident Response (DAIR),
+        a framework that covers the full incident response lifecycle:
+        preparation, detection and identification, verification and triage, scoping,
+        containment, eradication, recovery, and post-incident debrief.
+        Each chapter pairs foundational concepts with
         practical techniques drawn from real-world incidents, giving analysts and
         response teams the tools to act decisively under pressure.
       </p>
       <p>
-        Topics include ransomware response, cloud and OT/ICS incident handling,
-        threat intelligence integration, digital forensics, and the emerging role
-        of AI in security operations. A foreword by John Strand.
+        Topics include ransomware response and recovery, cloud incident response for AWS and Azure,
+        OT/ICS incident handling, cyber threat intelligence integration, digital forensics and memory analysis,
+        incident response playbook development, and the emerging role of AI in security operations.
+        Foreword by John Strand.
       </p>
     </div>
   </div>
 </section>
 
-<section class="section" id="resources">
+<section class="section" id="topics">
   <div class="container">
-    <h2>Resources</h2>
+    <h2>What's Inside</h2>
+    <div class="resource-grid">
+      <div class="resource-card">
+        <h3>Incident Response Framework</h3>
+        <p>The Dynamic Approach to Incident Response (DAIR) provides a structured yet adaptive model that moves beyond rigid, linear processes. Built on the OODA loop and aligned with NIST CSF 2.0.</p>
+      </div>
+      <div class="resource-card">
+        <h3>Detection and Threat Hunting</h3>
+        <p>Signature-based, behavioral, and AI-driven detection methods. Sigma rules, SIEM correlation, endpoint detection and response (EDR), and network traffic analysis for identifying threats early.</p>
+      </div>
+      <div class="resource-card">
+        <h3>Incident Response Playbooks</h3>
+        <p>Step-by-step checklists for every phase of the incident response lifecycle, from initial detection through recovery. Designed as practical references for active incidents.</p>
+      </div>
+      <div class="resource-card">
+        <h3>Ransomware Response</h3>
+        <p>Comprehensive guidance for ransomware incidents: containment strategies, negotiation considerations, recovery planning, decryption options, and lessons from real-world attacks including NotPetya, LockBit, and Scattered Spider.</p>
+      </div>
+      <div class="resource-card">
+        <h3>Cloud Incident Response</h3>
+        <p>Cloud-specific IR techniques for AWS, Azure, and GCP. Evidence preservation with EBS snapshots, CloudTrail and Azure Monitor log analysis, IAM investigation, and Kubernetes security events.</p>
+      </div>
+      <div class="resource-card">
+        <h3>Digital Forensics and Investigation</h3>
+        <p>Memory forensics with Volatility and MemProcFS, Windows event log analysis with Hayabusa, disk forensics, malware analysis, lateral movement detection, and root cause analysis techniques.</p>
+      </div>
+      <div class="resource-card">
+        <h3>OT/ICS Security</h3>
+        <p>Incident response for operational technology and industrial control systems. Purdue model segmentation, safety instrumented systems, and bridging the IT-OT gap during incidents.</p>
+      </div>
+      <div class="resource-card">
+        <h3>AI in Incident Response</h3>
+        <p>Practical applications of AI for log analysis, threat detection, playbook generation, report writing, and agentic investigation workflows using large language models.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="resources">
+  <div class="container">
+    <h2>Free Incident Response Resources</h2>
     <div class="resource-grid">
       <div class="resource-card">
         <h3>Step-by-Step Checklists</h3>
-        <p>Standalone checklists for each phase of the incident response lifecycle, extracted from the book.</p>
+        <p>Standalone incident response checklists for each phase of the lifecycle, available in PDF and Markdown. Print them for your IR go-bag or war room.</p>
         <a href="resources.html" class="btn btn-primary">View Checklists</a>
       </div>
       <div class="resource-card">
         <h3>Read Online</h3>
-        <p>Read the complete book in your browser, with full-resolution figures and diagrams.</p>
-        <a href="https://dynamicir.s3.amazonaws.com/book/dynamicir.html" class="btn btn-primary">Open Book</a>
+        <p>Read the complete incident response book in your browser, with full-resolution figures and diagrams.</p>
+        <a href="https://dynamicir.s3.amazonaws.com/book/dynamicir.html" rel="noopener" class="btn btn-primary">Open Book</a>
       </div>
       <div class="resource-card">
         <h3>Download PDF</h3>
@@ -90,7 +199,7 @@
   </div>
 </section>
 
-<section class="section section-alt" id="author">
+<section class="section" id="author">
   <div class="container">
     <h2>About the Author</h2>
     <div class="about-content">
@@ -104,9 +213,12 @@
   </div>
 </section>
 
+</main>
+
 <footer class="site-footer">
   <div class="container">
     <div class="footer-links">
+      <a href="/">Home</a>
       <a href="resources.html">Resources</a>
       <a href="errata.html">Errata</a>
     </div>

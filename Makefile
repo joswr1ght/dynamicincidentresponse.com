@@ -3,6 +3,9 @@ S3_BUCKET = s3://dynamicir
 
 .PHONY: deploy-html deploy-pdf deploy-checklists deploy-all
 
+serve:
+	python3 -m http.server 8080
+
 deploy-html:
 	cd $(IRSBS_DIR) && make html
 	aws s3 sync $(IRSBS_DIR)/images/ $(S3_BUCKET)/book/images/ \

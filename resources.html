@@ -3,7 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Resources - Dynamic Incident Response</title>
+  <title>Incident Response Checklists and Resources | Dynamic Incident Response</title>
+  <meta name="description" content="Free incident response step-by-step checklists covering preparation, detection, triage, scoping, containment, eradication, recovery, and debrief. Download in PDF and Markdown formats.">
+  <meta name="keywords" content="incident response checklist, incident response playbook, IR checklist PDF, DFIR resources, incident response steps, containment checklist, eradication checklist, recovery checklist, incident response guide, dynamic incident response">
+  <meta name="author" content="Joshua Wright">
+  <meta name="theme-color" content="#1B365D">
+  <link rel="canonical" href="https://dynamicincidentresponse.com/resources.html">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Incident Response Checklists and Resources">
+  <meta property="og:description" content="Free step-by-step incident response checklists for every phase of the IR lifecycle. Download in PDF and Markdown.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dynamicincidentresponse.com/resources.html">
+  <meta property="og:image" content="https://dynamicincidentresponse.com/img/og-cover.jpg">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Incident Response Checklists and Resources">
+  <meta name="twitter:description" content="Free step-by-step incident response checklists for every phase of the IR lifecycle. Download in PDF and Markdown.">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
@@ -23,109 +44,109 @@
 
 <div class="page-header">
   <div class="container">
-    <h1>Resources</h1>
+    <h1>Incident Response Checklists and Resources</h1>
   </div>
 </div>
 
-<div class="page-content">
+<main class="page-content">
   <div class="container">
-    <h2>Step-by-Step Checklists</h2>
-    <p>These checklists distill each phase of the incident response lifecycle into actionable steps. Available in PDF and Markdown formats.</p>
+    <h2>Step-by-Step Incident Response Checklists</h2>
+    <p>These checklists distill each phase of the incident response lifecycle into actionable steps, based on the Dynamic Approach to Incident Response (DAIR) framework. Available in PDF and Markdown formats for use during active incidents, tabletop exercises, or team training.</p>
 
-    <ul class="resource-list">
-      <li>
-        <span class="resource-title">Prepare</span>
-        <span class="resource-desc">Building IR capabilities, team structure, communication plans, and tooling before an incident occurs.</span>
+    <div class="resource-grid">
+      <div class="resource-card">
+        <h3>Prepare</h3>
+        <p>Building IR capabilities, team structure, communication plans, and tooling before an incident occurs.</p>
         <div class="resource-links">
           <a href="https://dynamicir.s3.amazonaws.com/resources/step-by-step-prepare.pdf">PDF</a>
           <a href="https://dynamicir.s3.amazonaws.com/resources/step-by-step-prepare.md">Markdown</a>
         </div>
-      </li>
-      <li>
-        <span class="resource-title">Detect</span>
-        <span class="resource-desc">Establishing detection sources, hunting for threats, and refining detection capabilities.</span>
+      </div>
+      <div class="resource-card">
+        <h3>Detect</h3>
+        <p>Establishing detection sources, threat hunting, Sigma rules, SIEM correlation, and refining detection capabilities.</p>
         <div class="resource-links">
           <a href="https://dynamicir.s3.amazonaws.com/resources/step-by-step-detect.pdf">PDF</a>
           <a href="https://dynamicir.s3.amazonaws.com/resources/step-by-step-detect.md">Markdown</a>
         </div>
-      </li>
-      <li>
-        <span class="resource-title">Verify and Triage</span>
-        <span class="resource-desc">Validating a potential incident, assessing risk, and determining response priorities.</span>
+      </div>
+      <div class="resource-card">
+        <h3>Verify and Triage</h3>
+        <p>Validating a potential incident, assessing risk, and determining response priorities.</p>
         <div class="resource-links">
           <a href="https://dynamicir.s3.amazonaws.com/resources/step-by-step-verify-triage.pdf">PDF</a>
           <a href="https://dynamicir.s3.amazonaws.com/resources/step-by-step-verify-triage.md">Markdown</a>
         </div>
-      </li>
-      <li>
-        <span class="resource-title">Response Actions Loop</span>
-        <span class="resource-desc">Managing the iterative cycle of scoping, containment, eradication, and recovery.</span>
+      </div>
+      <div class="resource-card">
+        <h3>Response Actions Loop</h3>
+        <p>Managing the iterative cycle of scoping, containment, eradication, and recovery.</p>
         <div class="resource-links">
           <a href="https://dynamicir.s3.amazonaws.com/resources/step-by-step-response-actions-loop.pdf">PDF</a>
           <a href="https://dynamicir.s3.amazonaws.com/resources/step-by-step-response-actions-loop.md">Markdown</a>
         </div>
-      </li>
-      <li>
-        <span class="resource-title">Scope</span>
-        <span class="resource-desc">Determining the full extent of compromise across the environment.</span>
+      </div>
+      <div class="resource-card">
+        <h3>Scope</h3>
+        <p>Determining the full extent of compromise through IOC hunting, lateral movement analysis, and enterprise-wide investigation.</p>
         <div class="resource-links">
           <a href="https://dynamicir.s3.amazonaws.com/resources/step-by-step-scope.pdf">PDF</a>
           <a href="https://dynamicir.s3.amazonaws.com/resources/step-by-step-scope.md">Markdown</a>
         </div>
-      </li>
-      <li>
-        <span class="resource-title">Contain</span>
-        <span class="resource-desc">Stopping attacker activity, preserving evidence, and preventing further harm.</span>
+      </div>
+      <div class="resource-card">
+        <h3>Contain</h3>
+        <p>Stopping attacker activity through network isolation, host containment, credential revocation, and evidence preservation.</p>
         <div class="resource-links">
           <a href="https://dynamicir.s3.amazonaws.com/resources/step-by-step-contain.pdf">PDF</a>
           <a href="https://dynamicir.s3.amazonaws.com/resources/step-by-step-contain.md">Markdown</a>
         </div>
-      </li>
-      <li>
-        <span class="resource-title">Eradicate</span>
-        <span class="resource-desc">Investigating attacker presence, removing persistence mechanisms, and remediating root causes.</span>
+      </div>
+      <div class="resource-card">
+        <h3>Eradicate</h3>
+        <p>Investigating attacker presence, removing persistence mechanisms, conducting root cause analysis, and remediating vulnerabilities.</p>
         <div class="resource-links">
           <a href="https://dynamicir.s3.amazonaws.com/resources/step-by-step-eradicate.pdf">PDF</a>
           <a href="https://dynamicir.s3.amazonaws.com/resources/step-by-step-eradicate.md">Markdown</a>
         </div>
-      </li>
-      <li>
-        <span class="resource-title">Recovery</span>
-        <span class="resource-desc">Validating, testing, and coordinating the return of systems to production.</span>
+      </div>
+      <div class="resource-card">
+        <h3>Recovery</h3>
+        <p>Pre-restoration verification, system validation, coordinated production restoration, and enhanced post-incident monitoring.</p>
         <div class="resource-links">
           <a href="https://dynamicir.s3.amazonaws.com/resources/step-by-step-recover.pdf">PDF</a>
           <a href="https://dynamicir.s3.amazonaws.com/resources/step-by-step-recover.md">Markdown</a>
         </div>
-      </li>
-      <li>
-        <span class="resource-title">Debrief</span>
-        <span class="resource-desc">Documenting the incident, capturing lessons learned, and driving organizational improvement.</span>
+      </div>
+      <div class="resource-card">
+        <h3>Debrief</h3>
+        <p>Documenting the incident, capturing lessons learned, conducting root cause analysis, and driving organizational improvement.</p>
         <div class="resource-links">
           <a href="https://dynamicir.s3.amazonaws.com/resources/step-by-step-debrief.pdf">PDF</a>
           <a href="https://dynamicir.s3.amazonaws.com/resources/step-by-step-debrief.md">Markdown</a>
         </div>
-      </li>
-    </ul>
+      </div>
+    </div>
 
     <h2>Book Downloads</h2>
-    <ul class="resource-list">
-      <li>
-        <span class="resource-title">Read Online (HTML)</span>
-        <span class="resource-desc">Read the complete book in your browser with full-resolution figures.</span>
+    <div class="resource-grid">
+      <div class="resource-card">
+        <h3>Read Online (HTML)</h3>
+        <p>Read the complete incident response book in your browser with full-resolution figures.</p>
         <div class="resource-links">
-          <a href="https://dynamicir.s3.amazonaws.com/book/dynamicir.html">Open Book</a>
+          <a href="https://dynamicir.s3.amazonaws.com/book/dynamicir.html" rel="noopener">Open Book</a>
         </div>
-      </li>
-      <li>
-        <span class="resource-title">Download PDF</span>
-        <span class="resource-desc">Download for offline reading or printing.</span>
+      </div>
+      <div class="resource-card">
+        <h3>Download PDF</h3>
+        <p>Download for offline reading or printing.</p>
         <div class="resource-links">
           <a href="#">Download</a>
         </div>
-      </li>
-    </ul>
+      </div>
+    </div>
   </div>
-</div>
+</main>
 
 <footer class="site-footer">
   <div class="container">
