@@ -438,7 +438,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Lora:ital,wght@0,400;0,700;1,400;1,700&family=Rokkitt:wght@800&display=swap" rel="stylesheet">
 
 <style>
 /* Hamburger menu button - fixed top-left */
@@ -615,7 +615,7 @@ table.tableblock > .title,
     font-style: normal;
 }
 
-/* Quote/blockquote styling - matching PDF theme */
+/* Quote/blockquote styling - matching PDF theme with decorative quotation mark */
 blockquote,
 .quoteblock blockquote,
 .quoteblock blockquote p {
@@ -625,9 +625,9 @@ blockquote,
 }
 
 .quoteblock {
-    border-left: 4px solid #09456D;
-    margin: 1.5em 0 !important;
-    padding: 1em 1.5em 1em 1em !important;
+    border-left: 4px solid #09456D !important;
+    margin: 1.25em 0 !important;
+    padding: 0.3em 1.5em 0.3em 1.25em !important;
 }
 
 .quoteblock blockquote {
@@ -635,25 +635,40 @@ blockquote,
     padding: 0 !important;
 }
 
-.quoteblock blockquote p {
+.quoteblock blockquote::before {
+    content: '\201C' !important;
+    display: block !important;
+    float: none !important;
+    font-family: 'Rokkitt', serif !important;
+    font-weight: 800 !important;
+    font-size: 3em !important;
+    line-height: 0.8 !important;
+    color: #09456D !important;
+    margin-left: 0 !important;
+    margin-bottom: 0 !important;
+    text-shadow: none !important;
+}
+
+.quoteblock blockquote p,
+.quoteblock blockquote .paragraph p {
     margin: 0 !important;
+    margin-bottom: 0 !important;
     padding: 0 !important;
     line-height: 1.6;
 }
 
-/* Remove the decorative open-quote icon */
-.quoteblock blockquote::before {
-    content: none !important;
+.quoteblock blockquote .paragraph {
+    margin-bottom: 0 !important;
 }
 
 .quoteblock blockquote {
-    padding-left: 0.5em !important;
+    padding-left: 0 !important;
 }
 
 /* Blockquotes inside sidebars need spacing */
 .sidebarblock .quoteblock {
     margin: 1.5em 0 !important;
-    padding: 0.5em 0 0.5em 1em !important;
+    padding: 0.25em 0 0.5em 1em !important;
     background-color: transparent !important;
 }
 
@@ -718,12 +733,28 @@ blockquote,
     color: #1B365D;
 }
 
-.admonitionblock td.icon i {
-    color: #1B365D;
+/* Custom admonition icons - replace Font Awesome with artist SVGs */
+.admonitionblock td.icon i.fa {
+    font-size: 0 !important;
+    width: 32px;
+    height: 32px;
+    display: block;
+    margin: 0 auto;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
-.admonitionblock td.icon [class^="fa icon-"] {
-    color: #1B365D;
+.admonitionblock.note td.icon i.fa {
+    background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAyOS4wOCAyNy45Ij4KICA8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMzAuMi4xLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogMi4xLjEgQnVpbGQgMSkgIC0tPgogIDxkZWZzPgogICAgPHN0eWxlPgogICAgICAuc3QwIHsKICAgICAgICBmaWxsOiAjMjMxZjIwOwogICAgICB9CgogICAgICAuc3QxIHsKICAgICAgICBmaWxsOiAjZmZmOwogICAgICB9CgogICAgICAuc3QyIHsKICAgICAgICBmaWxsOiBub25lOwogICAgICAgIHN0cm9rZTogIzIzMWYyMDsKICAgICAgICBzdHJva2UtbGluZWNhcDogcm91bmQ7CiAgICAgICAgc3Ryb2tlLWxpbmVqb2luOiByb3VuZDsKICAgICAgICBzdHJva2Utd2lkdGg6IDEuNXB4OwogICAgICB9CiAgICA8L3N0eWxlPgogIDwvZGVmcz4KICA8cGF0aCBjbGFzcz0ic3QxIiBkPSJNMjIuMzUuNzVINi43M0MzLjQzLjc1Ljc1LDMuNDMuNzUsNi43M3Y4Ljc2YzAsMy4zLDIuNjgsNS45OCw1Ljk4LDUuOThoNC4xNGMuNDIuNTUsMi4zLDMuODQsMy4xOSw1LjQxLjIxLjM3Ljc0LjM3Ljk1LDAsLjg5LTEuNTcsMi43OC00Ljg2LDMuMTktNS40MWg0LjE0YzMuMywwLDUuOTgtMi42OCw1Ljk4LTUuOThWNi43M2MwLTMuMy0yLjY4LTUuOTgtNS45OC01Ljk4WiIvPgogIDxwYXRoIGNsYXNzPSJzdDIiIGQ9Ik0yMi4zNS43NUg2LjczQzMuNDMuNzUuNzUsMy40My43NSw2LjczdjguNzZjMCwzLjMsMi42OCw1Ljk4LDUuOTgsNS45OGg0LjE0Yy40Mi41NSwyLjMsMy44NCwzLjE5LDUuNDEuMjEuMzcuNzQuMzcuOTUsMCwuODktMS41NywyLjc4LTQuODYsMy4xOS01LjQxaDQuMTRjMy4zLDAsNS45OC0yLjY4LDUuOTgtNS45OFY2LjczYzAtMy4zLTIuNjgtNS45OC01Ljk4LTUuOThaIi8+CiAgPGc+CiAgICA8Y2lyY2xlIGNsYXNzPSJzdDAiIGN4PSI4LjMyIiBjeT0iMTEuMTEiIHI9IjEuNjgiLz4KICAgIDxjaXJjbGUgY2xhc3M9InN0MCIgY3g9IjE0LjU0IiBjeT0iMTEuMTEiIHI9IjEuNjgiLz4KICAgIDxjaXJjbGUgY2xhc3M9InN0MCIgY3g9IjIwLjc1IiBjeT0iMTEuMTEiIHI9IjEuNjgiLz4KICA8L2c+Cjwvc3ZnPg==");
+}
+
+.admonitionblock.tip td.icon i.fa {
+    background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAzMC45NiAzMiI+CiAgPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDMwLjIuMSwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDIuMS4xIEJ1aWxkIDEpICAtLT4KICA8ZGVmcz4KICAgIDxzdHlsZT4KICAgICAgLnN0MCB7CiAgICAgICAgZmlsbDogI2ZmZjsKICAgICAgfQoKICAgICAgLnN0MSB7CiAgICAgICAgZmlsbDogbm9uZTsKICAgICAgICBzdHJva2U6ICMyMzFmMjA7CiAgICAgICAgc3Ryb2tlLWxpbmVjYXA6IHJvdW5kOwogICAgICAgIHN0cm9rZS1saW5lam9pbjogcm91bmQ7CiAgICAgICAgc3Ryb2tlLXdpZHRoOiAxLjVweDsKICAgICAgfQogICAgPC9zdHlsZT4KICA8L2RlZnM+CiAgPGc+CiAgICA8cGF0aCBjbGFzcz0ic3QwIiBkPSJNMTUuNDgsNi4zOWMtNC42NSwwLTkuMjgsMy44Ny04Ljg3LDkuMTcuMTUsMS45OSwxLjAyLDMuOTQsMi4xOCw1LjM2LDIuNjYsMy4yMywyLjM1LDIuOTIsMi40Myw0LjUxaDguNTFjLjA4LTEuNTktLjIzLTEuMjgsMi40My00LjUxLDEuMTctMS40MiwyLjAzLTMuMzcsMi4xOC01LjM2LjQxLTUuMy00LjIyLTkuMTctOC44Ny05LjE3WiIvPgogICAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTExLjIzLDI1LjQzdjEuNTZjMCwyLjM1LDEuOTEsNC4yNiw0LjI2LDQuMjZoMGMyLjM3LDAsNC4yOC0xLjkzLDQuMjYtNC4zdi0xLjUyIi8+CiAgPC9nPgogIDxnPgogICAgPGxpbmUgY2xhc3M9InN0MSIgeDE9IjI1Ljg5IiB5MT0iNS4wNiIgeDI9IjI0LjI0IiB5Mj0iNi43Ii8+CiAgICA8bGluZSBjbGFzcz0ic3QxIiB4MT0iMjUuODkiIHkxPSIyNS44NyIgeDI9IjI0LjI0IiB5Mj0iMjQuMjMiLz4KICAgIDxsaW5lIGNsYXNzPSJzdDEiIHgxPSI1LjA3IiB5MT0iMjUuODciIHgyPSI2LjcyIiB5Mj0iMjQuMjMiLz4KICAgIDxsaW5lIGNsYXNzPSJzdDEiIHgxPSI1LjA3IiB5MT0iNS4wNiIgeDI9IjYuNzIiIHkyPSI2LjciLz4KICAgIDxsaW5lIGNsYXNzPSJzdDEiIHgxPSIxNS40OCIgeTE9Ii43NSIgeDI9IjE1LjQ4IiB5Mj0iMy4wNyIvPgogICAgPGxpbmUgY2xhc3M9InN0MSIgeDE9IjMwLjIxIiB5MT0iMTUuNDYiIHgyPSIyNy44OSIgeTI9IjE1LjQ2Ii8+CiAgICA8bGluZSBjbGFzcz0ic3QxIiB4MT0iLjc1IiB5MT0iMTUuNDYiIHgyPSIzLjA3IiB5Mj0iMTUuNDYiLz4KICA8L2c+CiAgPGc+CiAgICA8cGF0aCBjbGFzcz0ic3QxIiBkPSJNMTUuNDgsNi4zOWMtNC42NSwwLTkuMjgsMy44Ny04Ljg3LDkuMTcuMTUsMS45OSwxLjAyLDMuOTQsMi4xOCw1LjM2LDIuNjYsMy4yMywyLjM1LDIuOTIsMi40Myw0LjUxaDguNTFjLjA4LTEuNTktLjIzLTEuMjgsMi40My00LjUxLDEuMTctMS40MiwyLjAzLTMuMzcsMi4xOC01LjM2LjQxLTUuMy00LjIyLTkuMTctOC44Ny05LjE3WiIvPgogICAgPHBhdGggY2xhc3M9InN0MSIgZD0iTTExLjIzLDI1LjQzdjEuNTZjMCwyLjM1LDEuOTEsNC4yNiw0LjI2LDQuMjZoMGMyLjM3LDAsNC4yOC0xLjkzLDQuMjYtNC4zdi0xLjUyIi8+CiAgPC9nPgo8L3N2Zz4=");
+}
+
+.admonitionblock.important td.icon i.fa {
+    background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAyOC4xOSAyOC4xOSI+CiAgPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDMwLjIuMSwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDIuMS4xIEJ1aWxkIDEpICAtLT4KICA8ZGVmcz4KICAgIDxzdHlsZT4KICAgICAgLnN0MCB7CiAgICAgICAgZmlsbDogI2ZmZjsKICAgICAgfQoKICAgICAgLnN0MSwgLnN0MiB7CiAgICAgICAgc3Ryb2tlOiAjMjMxZjIwOwogICAgICB9CgogICAgICAuc3QxLCAuc3QyLCAuc3QzIHsKICAgICAgICBmaWxsOiBub25lOwogICAgICAgIHN0cm9rZS1saW5lY2FwOiByb3VuZDsKICAgICAgICBzdHJva2UtbGluZWpvaW46IHJvdW5kOwogICAgICB9CgogICAgICAuc3QxLCAuc3QzIHsKICAgICAgICBzdHJva2Utd2lkdGg6IDEuNXB4OwogICAgICB9CgogICAgICAuc3QyIHsKICAgICAgICBzdHJva2Utd2lkdGg6IDEuMzdweDsKICAgICAgfQoKICAgICAgLnN0MyB7CiAgICAgICAgc3Ryb2tlOiAjMzMzOwogICAgICB9CiAgICA8L3N0eWxlPgogIDwvZGVmcz4KICA8Zz4KICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xMy4wNywxLjJjLjU3LS42MSwxLjQ5LS42MSwyLjA2LDBsMS45NiwyLjA5Yy41Ny42MSwxLjcxLDEuMDgsMi41NCwxLjA1bDIuODctLjFjLjgzLS4wMywxLjQ4LjYzLDEuNDYsMS40NmwtLjEsMi44N2MtLjAzLjgzLjQ0LDEuOTcsMS4wNSwyLjU0bDIuMDksMS45NmMuNjEuNTcuNjEsMS40OSwwLDIuMDZsLTIuMDksMS45NmMtLjYxLjU3LTEuMDgsMS43MS0xLjA1LDIuNTRsLjEsMi44N2MuMDMuODMtLjYzLDEuNDgtMS40NiwxLjQ2bC0yLjg3LS4xYy0uODMtLjAzLTEuOTcuNDQtMi41MywxLjA1bC0xLjk2LDIuMWMtLjU3LjYxLTEuNDkuNjEtMi4wNiwwbC0xLjk2LTIuMWMtLjU3LS42MS0xLjcxLTEuMDgtMi41NC0xLjA1bC0yLjg3LjFjLS44My4wMy0xLjQ4LS42My0xLjQ2LTEuNDZsLjEtMi44N2MuMDMtLjgzLS40NC0xLjk3LTEuMDUtMi41NGwtMi4xLTEuOTZjLS42MS0uNTctLjYxLTEuNDksMC0yLjA2bDIuMS0xLjk2Yy42MS0uNTcsMS4wOC0xLjcxLDEuMDUtMi41M2wtLjEtMi44N2MtLjAzLS44My42My0xLjQ4LDEuNDYtMS40NmwyLjg3LjFjLjgzLjAzLDEuOTctLjQ0LDIuNTQtMS4wNWwxLjk2LTIuMDlaIi8+CiAgICA8cGF0aCBjbGFzcz0ic3QwIiBkPSJNMTMuMDcsMS4yYy41Ny0uNjEsMS40OS0uNjEsMi4wNiwwbDEuOTYsMi4wOWMuNTcuNjEsMS43MSwxLjA4LDIuNTQsMS4wNWwyLjg3LS4xYy44My0uMDMsMS40OC42MywxLjQ2LDEuNDZsLS4xLDIuODdjLS4wMy44My40NCwxLjk3LDEuMDUsMi41NGwyLjA5LDEuOTZjLjYxLjU3LjYxLDEuNDksMCwyLjA2bC0yLjA5LDEuOTZjLS42MS41Ny0xLjA4LDEuNzEtMS4wNSwyLjU0bC4xLDIuODdjLjAzLjgzLS42MywxLjQ4LTEuNDYsMS40NmwtMi44Ny0uMWMtLjgzLS4wMy0xLjk3LjQ0LTIuNTMsMS4wNWwtMS45NiwyLjFjLS41Ny42MS0xLjQ5LjYxLTIuMDYsMGwtMS45Ni0yLjFjLS41Ny0uNjEtMS43MS0xLjA4LTIuNTQtMS4wNWwtMi44Ny4xYy0uODMuMDMtMS40OC0uNjMtMS40Ni0xLjQ2bC4xLTIuODdjLjAzLS44My0uNDQtMS45Ny0xLjA1LTIuNTRsLTIuMS0xLjk2Yy0uNjEtLjU3LS42MS0xLjQ5LDAtMi4wNmwyLjEtMS45NmMuNjEtLjU3LDEuMDgtMS43MSwxLjA1LTIuNTNsLS4xLTIuODdjLS4wMy0uODMuNjMtMS40OCwxLjQ2LTEuNDZsMi44Ny4xYy44My4wMywxLjk3LS40NCwyLjU0LTEuMDVsMS45Ni0yLjA5WiIvPgogIDwvZz4KICA8Zz4KICAgIDxwYXRoIGNsYXNzPSJzdDMiIGQ9Ik0xMy4wNywxLjJjLjU3LS42MSwxLjQ5LS42MSwyLjA2LDBsMS45NiwyLjA5Yy41Ny42MSwxLjcxLDEuMDgsMi41NCwxLjA1bDIuODctLjFjLjgzLS4wMywxLjQ4LjYzLDEuNDYsMS40NmwtLjEsMi44N2MtLjAzLjgzLjQ0LDEuOTcsMS4wNSwyLjU0bDIuMDksMS45NmMuNjEuNTcuNjEsMS40OSwwLDIuMDZsLTIuMDksMS45NmMtLjYxLjU3LTEuMDgsMS43MS0xLjA1LDIuNTRsLjEsMi44N2MuMDMuODMtLjYzLDEuNDgtMS40NiwxLjQ2bC0yLjg3LS4xYy0uODMtLjAzLTEuOTcuNDQtMi41MywxLjA1bC0xLjk2LDIuMWMtLjU3LjYxLTEuNDkuNjEtMi4wNiwwbC0xLjk2LTIuMWMtLjU3LS42MS0xLjcxLTEuMDgtMi41NC0xLjA1bC0yLjg3LjFjLS44My4wMy0xLjQ4LS42My0xLjQ2LTEuNDZsLjEtMi44N2MuMDMtLjgzLS40NC0xLjk3LTEuMDUtMi41NGwtMi4xLTEuOTZjLS42MS0uNTctLjYxLTEuNDksMC0yLjA2bDIuMS0xLjk2Yy42MS0uNTcsMS4wOC0xLjcxLDEuMDUtMi41M2wtLjEtMi44N2MtLjAzLS44My42My0xLjQ4LDEuNDYtMS40NmwyLjg3LjFjLjgzLjAzLDEuOTctLjQ0LDIuNTQtMS4wNWwxLjk2LTIuMDlaIi8+CiAgICA8cGF0aCBjbGFzcz0ic3QxIiBkPSJNMTMuMDcsMS4yYy41Ny0uNjEsMS40OS0uNjEsMi4wNiwwbDEuOTYsMi4wOWMuNTcuNjEsMS43MSwxLjA4LDIuNTQsMS4wNWwyLjg3LS4xYy44My0uMDMsMS40OC42MywxLjQ2LDEuNDZsLS4xLDIuODdjLS4wMy44My40NCwxLjk3LDEuMDUsMi41NGwyLjA5LDEuOTZjLjYxLjU3LjYxLDEuNDksMCwyLjA2bC0yLjA5LDEuOTZjLS42MS41Ny0xLjA4LDEuNzEtMS4wNSwyLjU0bC4xLDIuODdjLjAzLjgzLS42MywxLjQ4LTEuNDYsMS40NmwtMi44Ny0uMWMtLjgzLS4wMy0xLjk3LjQ0LTIuNTMsMS4wNWwtMS45NiwyLjFjLS41Ny42MS0xLjQ5LjYxLTIuMDYsMGwtMS45Ni0yLjFjLS41Ny0uNjEtMS43MS0xLjA4LTIuNTQtMS4wNWwtMi44Ny4xYy0uODMuMDMtMS40OC0uNjMtMS40Ni0xLjQ2bC4xLTIuODdjLjAzLS44My0uNDQtMS45Ny0xLjA1LTIuNTRsLTIuMS0xLjk2Yy0uNjEtLjU3LS42MS0xLjQ5LDAtMi4wNmwyLjEtMS45NmMuNjEtLjU3LDEuMDgtMS43MSwxLjA1LTIuNTNsLS4xLTIuODdjLS4wMy0uODMuNjMtMS40OCwxLjQ2LTEuNDZsMi44Ny4xYy44My4wMywxLjk3LS40NCwyLjU0LTEuMDVsMS45Ni0yLjA5WiIvPgogIDwvZz4KICA8Zz4KICAgIDxyZWN0IGNsYXNzPSJzdDIiIHg9IjEyLjQ5IiB5PSI3LjY5IiB3aWR0aD0iMy4yMiIgaGVpZ2h0PSI4LjU0Ii8+CiAgICA8cmVjdCBjbGFzcz0ic3QyIiB4PSIxMi40OSIgeT0iMTguOSIgd2lkdGg9IjMuMjIiIGhlaWdodD0iMi42NyIvPgogIDwvZz4KPC9zdmc+");
 }
 
 /* Sidebar styling - matching PDF theme */
@@ -1083,20 +1114,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <div id="toc" class="floating-toc">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_preface"> 1. Preface</a>
-<ul class="sectlevel2">
-<li><a href="#_what_is_in_this_book">What Is in This Book?</a></li>
-<li><a href="#_who_is_this_book_for">Who Is This Book For?</a></li>
-<li><a href="#_how_to_read_this_book">How to Read This Book</a></li>
-<li><a href="#_a_note_on_the_narratives">A Note on the Narratives</a></li>
-<li><a href="#_conventions_used_in_this_book">Conventions Used in This Book</a></li>
-<li><a href="#_contact_the_author">Contact the Author</a></li>
-<li><a href="#_acknowledgments">Acknowledgments</a></li>
-<li><a href="#_about_the_authors">About the Authors</a></li>
-<li><a href="#_about_the_technical_reviewers">About the Technical Reviewers</a></li>
-<li><a href="#_statement_on_ai_use">Statement on AI Use</a></li>
-</ul>
-</li>
+<li><a href="#_preface"> 1. Preface</a></li>
 </ul>
 </div>
 </div>
@@ -1105,38 +1123,33 @@ document.addEventListener('DOMContentLoaded', function() {
 <h2 id="_preface"> 1. Preface</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>It&#8217;s a weird thing about writing a book that the preface, the part that sits at the very beginning, is almost always the last thing written.
-The author can&#8217;t introduce the work until it is finished, when the shape of the work is clear.
-Even with content planning, a list of ideas and goals, and an outline, the writing process is not linear.
-It loops back on itself to revisit assumptions, redefine goals, and chase new objectives.</p>
+<p>It&#8217;s a strange thing about writing a book that the preface, the part that sits at the very beginning, is almost always the last thing written.
+The author can&#8217;t introduce the work until it is finished, and the work&#8217;s shape is clear.
+Even with planning and an outline, the writing process is not linear.
+It loops back to revisit assumptions, redefine goals, and pursue new objectives.</p>
 </div>
 <div class="paragraph">
 <p>Incident response has long been taught as a linear process: preparation, identification, containment, eradication, recovery, and lessons learned.
-Over many years of teaching incident response and working cases alongside organizations in the middle of a crisis, I watched this pattern repeat.
-Responders would follow the prescribed steps, checking off each box as they went, only to find that the incident was not over when they thought it was.</p>
-</div>
-<div class="paragraph">
-<p>Attackers returned after containment.
-Scope was underestimated.
-Eradication efforts missed persistence mechanisms that quietly restored access.
-The linear incident models were not wrong, but they were not enough.</p>
+Over many years of teaching and working cases, I watched responders follow the prescribed steps, only to find that the incident was not over when they thought it was.
+Attackers returned after containment, the scope was underestimated, and eradication efforts missed persistence mechanisms that quietly restored access.
+The linear models were not wrong, but they were not enough to support modern incident response needs.</p>
 </div>
 <div class="paragraph">
 <p>Conventional models were built for an era when incidents were simpler and less frequent.
-The most recent revision of National Institute of Standards and Technology (NIST) SP 800-61 shifted to align with the broader Cybersecurity Framework, but in doing so it moved away from providing practical, operational guidance for the responders doing the work.
+The most recent revision of the National Institute of Standards and Technology (NIST) SP 800-61 shifted to align with the broader Cybersecurity Framework, but in doing so, moved away from practical guidance for responders doing the work.
 I believe what the field needs is an adaptive, iterative approach to incident response.
 It should include explicit verification, triage, and scoping steps to give organizations the insight they need to minimize impact and damage from incidents.</p>
 </div>
 <div class="paragraph">
-<p>This book introduces a new model: the Dynamic Approach to Incident Response (DAIR).
-It does not attempt to replace the excellent resources that address specific angles like cloud forensics, cyber threat intelligence, or ransomware analysis.
-Instead, it occupies the space between tool-focused guides and executive strategy, providing a framework for technical analysts on how to respond to incidents more effectively.</p>
+<p>This book addresses that need with a new model: the <strong>Dynamic Approach to Incident Response (DAIR)</strong>.
+These pages do not attempt to replace the excellent resources that address specific investigative techniques, such as memory forensics, malware analysis, or threat hunting.
+Instead, they occupy the space between tool-focused guides and executive strategy, providing a framework for technical analysts to respond to incidents more effectively.</p>
 </div>
 <div class="paragraph">
 <p>I did not write this book alone.
 Ryan Chapman brings deep expertise in ransomware and cyber extortion response.
-Megan Roddie-Fonseca contributes specialized knowledge in the complexities of cloud incident response.
-Dean Parsons adds critical perspective on control systems and operational technology.
+Megan Roddie-Fonseca contributes specialized knowledge in cloud incident response.
+Dean Parsons adds a critical perspective on control systems and operational technology.
 I am thankful for their partnership and support in this work.
 Their contributions extend the approach presented here into the specialized domains where modern responders operate.</p>
 </div>
@@ -1144,14 +1157,13 @@ Their contributions extend the approach presented here into the specialized doma
 <p>My goal is to make this book as widely useful as possible.
 To that end, I am publishing it under a Creative Commons license (CC BY-SA 4.0).
 It is freely available for anyone to read, share, and adapt for commercial or non-commercial use, provided that you give appropriate credit, provide a link to the license, and indicate if changes were made.
-I believe that effective incident response is necessary for an effective cybersecurity strategy, and I want to make this content accessible to as many people and for as many purposes as possible.</p>
+You can find this book online at <a href="https://www.dynamicincidentresponse.com/">dynamicincidentresponse.com</a>.</p>
 </div>
 <div class="paragraph">
-<p>The pages ahead present a practical, iterative framework for incident response built from real-world experience.
-Like this preface, effective response starts wherever the situation demands, not where a checklist says it should.</p>
+<p>What follows is a practical, iterative incident response framework built on real-world experience.
+Like this preface, an effective response starts wherever the situation demands, not where a checklist says it should.</p>
 </div>
-<div class="sect2">
-<h3 id="_what_is_in_this_book">What Is in This Book?</h3>
+<h3 id="_what_is_in_this_book" class="discrete">What Is in This Book?</h3>
 <div class="paragraph">
 <p>We wrote this book to provide a comprehensive guide for responding to cybersecurity incidents.
 It covers the essential concepts, methodologies, and tools needed to effectively manage and mitigate the impact of breaches and attacks in modern organizations.
@@ -1160,8 +1172,7 @@ The book is structured to guide readers through the entire incident response lif
 <div class="paragraph">
 <p>The book is organized into three parts:</p>
 </div>
-<div class="sect3">
-<h4 id="_part_1_elements_of_incident_response">Part 1: Elements of Incident Response</h4>
+<h4 id="_part_1_elements_of_incident_response" class="discrete">Part 1: Elements of Incident Response</h4>
 <div class="ulist">
 <ul>
 <li>
@@ -1174,23 +1185,18 @@ The book is structured to guide readers through the entire incident response lif
 <p><a href="gettingstarted.html#_getting_started">Getting Started</a> establishes foundational terminology and concepts for incident response that we will use throughout the book.</p>
 </li>
 <li>
-<p><a href="existingmodels.html#_existing_incident_response_models">Existing Incident Response Models</a> reviews the PICERL model, NIST SP 800-61, and their variations, providing context for how the field has approached incident response to date.</p>
-</li>
-<li>
-<p><a href="shortcomings.html#_shortcomings_in_incident_response_models">Shortcomings in Incident Response Models</a> identifies limitations in existing models, including their emphasis on linear progression, insufficient scoping guidance, and lack of incident verification requirements.</p>
+<p><a href="existingmodels.html#_incident_response_models_and_their_limitations">Incident Response Models and Their Limitations</a> reviews the PICERL model, NIST SP 800-61, and their variations, then identifies limitations in these models including their emphasis on linear progression, insufficient scoping guidance, and lack of incident verification requirements.</p>
 </li>
 </ul>
 </div>
-</div>
-<div class="sect3">
-<h4 id="_part_2_a_dynamic_approach_to_incident_response">Part 2: A Dynamic Approach to Incident Response</h4>
+<h4 id="_part_2_a_dynamic_approach_to_incident_response" class="discrete">Part 2: A Dynamic Approach to Incident Response</h4>
 <div class="ulist">
 <ul>
 <li>
 <p><a href="dynamicapproach.html#_a_dynamic_approach_to_incident_response">A Dynamic Approach to Incident Response</a> introduces the Dynamic Approach to Incident Response (DAIR) model, explaining its waypoints, outcomes, and the response actions loop that distinguishes it from traditional linear models.</p>
 </li>
 <li>
-<p><a href="prepare.html#_prepare_activity">Prepare Activity</a> covers organizational and team readiness, including policy development, playbook creation, tabletop exercises, security monitoring, and cyber threat intelligence integration.</p>
+<p><a href="prepare.html#_prepare_activity">Prepare Activity</a> covers organizational and team readiness, including policy development, playbook creation, tabletop exercises, security monitoring, and the integration of cyber threat intelligence.</p>
 </li>
 <li>
 <p><a href="detect.html#_detect_activity">Detect Activity</a> explores detection methodologies including signature-based, behavioral, and AI-assisted approaches, along with the technical, human, and cloud-native data sources that feed detection efforts.</p>
@@ -1208,7 +1214,7 @@ The book is structured to guide readers through the entire incident response lif
 <p><a href="contain.html#_contain_activity">Contain Activity</a> presents containment strategies across network, host, identity, and cloud environments, covering both passive and active approaches with guidance on coordinated containment timing.</p>
 </li>
 <li>
-<p><a href="eradicate.html#_eradicate_activity">Eradicate Activity</a> addresses removing attacker persistence, conducting root cause analysis, performing investigation across endpoints, networks, logs, and cloud platforms, and remediating the vulnerabilities that enabled the compromise.</p>
+<p><a href="eradicate.html#_eradicate_activity">Eradicate Activity</a> addresses removing attacker persistence, conducting root-cause analysis, performing investigations across endpoints, networks, logs, and cloud platforms, and remediating the vulnerabilities that enabled the compromise.</p>
 </li>
 <li>
 <p><a href="recover.html#_recover_activity">Recover Activity</a> covers phased system restoration, pre-restoration verification, enhanced monitoring configuration, and the coordination required to bring systems back into production with confidence.</p>
@@ -1218,9 +1224,7 @@ The book is structured to guide readers through the entire incident response lif
 </li>
 </ul>
 </div>
-</div>
-<div class="sect3">
-<h4 id="_part_3_special_considerations_in_incident_response">Part 3: Special Considerations in Incident Response</h4>
+<h4 id="_part_3_special_considerations_in_incident_response" class="discrete">Part 3: Special Considerations in Incident Response</h4>
 <div class="ulist">
 <ul>
 <li>
@@ -1230,7 +1234,7 @@ The book is structured to guide readers through the entire incident response lif
 <p><a href="considerations-ransomware.html#_incident_response_for_ransomware">Incident Response for Ransomware</a> applies the DAIR model to ransomware and multi-vector extortion campaigns, covering ransomware-specific preparation, verification indicators, data exfiltration detection, decryption assessment, backup strategies, and post-incident debrief.</p>
 </li>
 <li>
-<p><a href="considerations-cloud.html#_incident_response_for_cloud_systems">Incident Response for Cloud Systems</a> addresses the distinct challenges of responding to incidents in cloud environments, including identity-first containment, ephemeral resource investigation, and cloud-native recovery techniques.</p>
+<p><a href="considerations-cloud.html#_incident_response_for_cloud_systems">Incident Response for Cloud Systems</a> addresses the distinct challenges of incident response in cloud environments, including identity-first containment, ephemeral resource investigation, and cloud-native recovery techniques.</p>
 </li>
 <li>
 <p><a href="considerations-ot.html#_incident_response_for_operational_technology">Incident Response for Operational Technology</a> examines incident response in operational technology environments where safety, physical processes, and specialized protocols introduce constraints not present in traditional IT incidents.</p>
@@ -1243,34 +1247,29 @@ The book is structured to guide readers through the entire incident response lif
 <div class="paragraph">
 <p>Each chapter concludes with Step-by-Step sections that translate concepts into actionable checklists readers can apply immediately.</p>
 </div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_who_is_this_book_for">Who Is This Book For?</h3>
+<h3 id="_who_is_this_book_for" class="discrete">Who Is This Book For?</h3>
 <div class="paragraph">
 <p>This book is intended to serve as a resource for cybersecurity professionals working in incident response roles, including incident responders, security analysts, IT professionals, and anyone interested in learning about effective incident management.
-While the book addresses some advanced topics, the content is accessible to readers with varying levels of experience in cybersecurity and incident response.
-Readers should have a basic understanding of networking, operating systems, and cybersecurity concepts to fully benefit from the material presented in this book.</p>
+While the book addresses advanced topics, its content is accessible to readers with varying levels of cybersecurity and incident response experience.
+Readers should have a basic understanding of networking, operating systems, and cybersecurity concepts to fully benefit from this book&#8217;s material.</p>
 </div>
 <div class="paragraph">
 <p>This book is not intended to be a comprehensive guide to all aspects of cybersecurity or incident response investigation.
-Instead, it focuses on practical techniques and methodologies that can be applied in real-world scenarios.
+Instead, it focuses on practical techniques and methodologies applicable to real-world scenarios.
 Readers who influence their organization&#8217;s incident response practices will likely find the most value in this book.</p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="_how_to_read_this_book">How to Read This Book</h3>
+<h3 id="_how_to_read_this_book" class="discrete">How to Read This Book</h3>
 <div class="paragraph">
 <p>Start with <a href="supplychaincalamity.html#_case_study_supply_chain_calamity">Case Study: Supply Chain Calamity</a>, the opening case study.
 It&#8217;s a fun narrative that follows a cloud architect through a supply chain compromise, and it sets the stage for why incident response matters.</p>
 </div>
 <div class="paragraph">
-<p>If you&#8217;re just getting started in incident response, continue with <a href="considerations-ai.html#_introduction">Introduction</a>, <a href="gettingstarted.html#_getting_started">Getting Started</a>, and <a href="existingmodels.html#_existing_incident_response_models">Existing Incident Response Models</a>.
+<p>If you&#8217;re just getting started in incident response, continue with <a href="considerations-ai.html#_introduction">Introduction</a>, <a href="gettingstarted.html#_getting_started">Getting Started</a>, and <a href="existingmodels.html#_incident_response_models_and_their_limitations">Incident Response Models and Their Limitations</a>.
 They cover the history, foundational concepts, and existing models that the rest of the book builds on.</p>
 </div>
 <div class="paragraph">
-<p>If you&#8217;re not sure what problems this book is trying to solve, read <a href="shortcomings.html#_shortcomings_in_incident_response_models">Shortcomings in Incident Response Models</a>.
-That chapter lays out the specific gaps in how organizations have traditionally approached incident response, and it motivates the framework introduced in Part 2.</p>
+<p>If you&#8217;re not sure what problems this book is trying to solve, read <a href="existingmodels.html#_shortcomings_in_existing_models">Shortcomings in Existing Models</a>.
+That section outlines the specific gaps in how organizations have traditionally approached incident response and motivates the framework introduced in Part 2.</p>
 </div>
 <div class="paragraph">
 <p>Part 2 is the heart of the book.
@@ -1284,27 +1283,23 @@ Jump to whatever is most relevant to your situation.</p>
 </div>
 <div class="paragraph">
 <p>Otherwise, flip around until something catches your attention.
-I hope you bookmark, highlight, underline, and annotate as you make your way through this book and pick up useful tactics for minimizing the impact of the next incident you have to work.</p>
+I hope you bookmark, highlight, underline, and annotate as you make your way through this book, and pick up useful tactics to minimize the impact of the next incident you have to work on.</p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="_a_note_on_the_narratives">A Note on the Narratives</h3>
+<h3 id="_a_note_on_the_narratives" class="discrete">A Note on the Narratives</h3>
 <div class="paragraph">
 <p>Throughout this book, you&#8217;ll encounter first-person narratives and fictional case studies that illustrate incident response concepts in action.
 These stories are inspired by the <em>Stealing the Network</em> series by Ryan Russell, Johnny Long, and a community of contributors whose chapters blended real security assessment experiences into compelling, educational fiction.
-I loved reading those books when they came out in the mid 2000s, and I later learned that most of the chapters were drawn from practical experiences, tweaked, merged, and reshaped to protect the identities of the organizations involved.</p>
+I loved reading those books when they came out in the mid-2000s, and I later learned that most of the chapters were drawn from practical experiences, tweaked, merged, and reshaped to protect the identities of the organizations involved.</p>
 </div>
 <div class="paragraph">
 <p>The narratives in this book follow a similar approach.
-Incident responders are frequently constrained by non-disclosure agreements that prevent us from sharing the details of cases we&#8217;ve worked.
-Fictional narratives give us an opportunity to draw on firsthand experience by blending elements of past incidents together while preserving the anonymity of customers and compliance with those agreements.</p>
+Incident responders are frequently constrained by non-disclosure agreements that prevent us from sharing the details of cases we&#8217;ve worked on.
+Fictional narratives give us an opportunity to draw on firsthand experience by blending elements of past incidents while preserving customers' anonymity and compliance with those agreements.</p>
 </div>
 <div class="paragraph">
-<p>I hope the narratives are relatable to modern cybersecurity issues, and that serve as a practical way to reinforce each chapter&#8217;s learning objectives.</p>
+<p>I hope the narratives are relatable to modern cybersecurity issues and serve as a practical way to reinforce each chapter&#8217;s learning objectives.</p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="_conventions_used_in_this_book">Conventions Used in This Book</h3>
+<h3 id="_conventions_used_in_this_book" class="discrete">Conventions Used in This Book</h3>
 <div class="paragraph">
 <p><a href="#table-typography-conventions">Table 1</a> illustrates the typography conventions used throughout this book.</p>
 </div>
@@ -1383,7 +1378,7 @@ External references point to resources outside the book and appear as labeled li
 <div class="paragraph">
 <p>Listing blocks are used to denote output from tools used during our analysis.
 Content that is bold represents commands that are entered to run or interact with a command-line tool.
-Important output is noted with a numeric circle callout, with detail following the listing.
+Important outputs are noted with a numeric circle callout, with details following the listing.
 An example is shown in <a href="#table-sample-terminal-output">Listing 1</a>.</p>
 </div>
 <div id="table-sample-terminal-output" class="listingblock">
@@ -1408,9 +1403,7 @@ Do you wish to continue? <strong>yes</strong>
 </tr>
 </table>
 </div>
-</div>
-<div class="sect2">
-<h3 id="_contact_the_author">Contact the Author</h3>
+<h3 id="_contact_the_author" class="discrete">Contact the Author</h3>
 <div class="paragraph">
 <p>I welcome questions, comments, and feedback on this book.
 You can reach me through any of the following channels:</p>
@@ -1434,12 +1427,10 @@ You can reach me through any of the following channels:</p>
 </li>
 </ul>
 </div>
-</div>
-<div class="sect2">
-<h3 id="_acknowledgments">Acknowledgments</h3>
+<h3 id="_acknowledgments" class="discrete">Acknowledgments</h3>
 <div class="paragraph">
-<p>My colleague Mike Murr had the idea that we needed to break out of the linear incident response model and came up with the early concept for what would become the Dynamic Approach to Incident Response.
-His work inspired me, and I am thankful for his many contributions to the field of incident response.</p>
+<p>My colleague Mike Murr had the idea that we needed to break out of the linear incident response model and developed the early concept for what would become the Dynamic Approach to Incident Response.
+His work inspired me, and I am thankful for his many contributions to incident response.</p>
 </div>
 <div class="paragraph">
 <p>Many other brilliant and generous people contributed to this work.
@@ -1485,9 +1476,7 @@ Special thanks to:</p>
 </li>
 </ul>
 </div>
-</div>
-<div class="sect2">
-<h3 id="_about_the_authors">About the Authors</h3>
+<h3 id="_about_the_authors" class="discrete">About the Authors</h3>
 <div class="paragraph">
 <p><strong>Joshua Wright</strong> is a SANS Faculty Fellow and author of SEC504: Hacker Tools, Techniques, and Incident Handling, one of the most widely taken courses in the SANS curriculum.
 For more than two decades, he has trained thousands of professionals worldwide in incident response techniques and developed the hands-on exercises that prepare students for the GIAC Certified Incident Handler (GCIH) certification.
@@ -1495,7 +1484,7 @@ Joshua serves as Dean of Students at the SANS Technology Institute, an NSA Cente
 As Senior Technical Director at Counter Hack, he leads cybersecurity engagements for customers across diverse industries, bringing real-world experience directly into his teaching and research.</p>
 </div>
 <div class="paragraph">
-<p><strong>Ryan Chapman</strong> is a SANS Certified Instructor and works as a team lead for a managed threat hunting and incident response firm, bringing over fourteen years of experience in digital forensics and incident response.
+<p><strong>Ryan Chapman</strong> is a SANS Certified Instructor and a team lead at a managed threat-hunting and incident-response firm, bringing over fourteen years of experience in digital forensics and incident response.
 He is the author of FOR528: Ransomware and Cyber Extortion and a co-author of FOR610: Reverse Engineering Malware.
 Ryan&#8217;s career spans incident response consulting, security operations, and cyber incident response teams, where he has guided organizations from initial detection through remediation.
 His expertise in ransomware analysis, threat hunting, and malware reverse engineering informs his practical approach to teaching responders how to handle complex intrusions.</p>
@@ -1522,9 +1511,7 @@ His teaching translates real-world experience protecting energy, water, and elec
 <div class="paragraph">
 <p><em>Dean contributed <a href="considerations-ot.html#_incident_response_for_operational_technology">Incident Response for Operational Technology</a> to this book.</em></p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="_about_the_technical_reviewers">About the Technical Reviewers</h3>
+<h3 id="_about_the_technical_reviewer" class="discrete">About the Technical Reviewer</h3>
 <div class="paragraph">
 <p><strong>Steve Armstrong-Godwin</strong>'s career began more than twenty-five years ago when he joined the UK Royal Air Force (RAF), bringing with him a love of IT and a desire to protect others.
 When the opportunity to move into information security presented itself, Steve jumped at the chance, eventually leading the RAF&#8217;s penetration and TEMPEST testing teams and having some memorable work experiences along the way.</p>
@@ -1537,28 +1524,23 @@ When the opportunity to move into information security presented itself, Steve j
 </blockquote>
 </div>
 <div class="paragraph">
-<p>Steve has more than fourteen years of experience in incident response and management, handling cyber incidents across the globe.
+<p>Steve has more than fourteen years of experience in incident response and management, handling cyber incidents worldwide.
 He currently serves as the Lead of Security Incident Response and Threat Management at Danske Bank, where he brings his extensive operational background to defending one of Scandinavia&#8217;s largest financial institutions.</p>
 </div>
 <div class="paragraph">
 <p>Steve is a SANS Principal Instructor and the author of the LDR553: Cyber Incident Management course.
 His students regularly praise his engaging teaching style, contagious energy, and ability to make complex incident management concepts relatable through real-world scenarios.</p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="_statement_on_ai_use">Statement on AI Use</h3>
+<h3 id="_statement_on_ai_use" class="discrete">Statement on AI Use</h3>
 <div class="paragraph">
-<p>I believe we have a human right to know when the content we are consuming is generated by AI.
-Further, I think it&#8217;s reasonable for readers to ask if the book they are thinking about reading is worth their investment versus being a shallow piece of content generated by AI tools.</p>
+<p>I believe we have a right to know when the content we are consuming is generated by AI.
+Further, I think it&#8217;s reasonable for readers to ask if the book they are thinking about reading is worth their investment versus being a shallow piece of content generated by AI tools.
+In this section, I disclose how I used AI tools in the research, coding, image creation, and writing of this book.</p>
 </div>
+<h4 id="_research" class="discrete">Research</h4>
 <div class="paragraph">
-<p>In this section, I disclose how I used AI tools in the research, coding, image creation, and writing of this book.</p>
-</div>
-<div class="sect3">
-<h4 id="_research">Research</h4>
-<div class="paragraph">
-<p>At several points, I used AI tools including Claude, Claude Code, and ChatGPT to perform research for this book.
-Many of the stories and experiences came from my own work, but I also used AI tools to research topics for supportive or contradictory information to ensure that I showcase a broader perspective than just my own experiences.</p>
+<p>At several points, I used AI tools, including Claude, Claude Code, and ChatGPT, to conduct research for this book.
+Many of the stories and experiences came from my own work, but I also used AI tools to research topics and gather supportive or contradictory information to ensure I showcased a broader perspective than just my own experiences.</p>
 </div>
 <div class="quoteblock">
 <blockquote>
@@ -1577,15 +1559,13 @@ Is there a decision tree that companies should consider when thinking about purs
 <div class="title">Figure 1. ChatGPT Deep Research Prompt for Open Source vs. Commercial Tools</div>
 </div>
 <div class="paragraph">
-<p>I carefully reviewed the output from ChatGPT Deep Research and other AI tools, considering my own experiences and knowledge, to ensure that the information was accurate and relevant to the topics in this book.</p>
+<p>I carefully reviewed the output from ChatGPT Deep Research and other AI tools, along with my own experiences and knowledge, to ensure the information was accurate and relevant to the topics in this book.</p>
 </div>
-</div>
-<div class="sect3">
-<h4 id="_code">Code</h4>
+<h4 id="_code" class="discrete">Code</h4>
 <div class="paragraph">
 <p>Claude Code was my go-to tool for much of the custom code developed in the examples used in this book.
 This includes the stealer code Pyrix uses in <a href="supplychaincalamity.html#_case_study_supply_chain_calamity">Case Study: Supply Chain Calamity</a>, various sample scripts (including the AWS Lambda function in <a href="contain.html#aws_lambda_deny_and_log_function">[aws_lambda_deny_and_log_function]</a>), and the timeline of incident response models (<a href="introduction.html#timeline-of-incident-response-models">[timeline-of-incident-response-models]</a>).
-Claude Code also helped with all of the build tools used to produce the book itself (I will be forever thankful to not have to remember <code>Makefile</code> syntax).</p>
+Claude Code also helped with all the build tools used to produce the book itself (I will be forever thankful not to have to remember <code>Makefile</code> syntax).</p>
 </div>
 <div class="paragraph">
 <p>I also used Claude Code to help build an index for this book, using a three-step process:</p>
@@ -1593,13 +1573,13 @@ Claude Code also helped with all of the build tools used to produce the book its
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Use Claude Opus 4.6 to generate a concordance of keywords by section for each chapter</p>
+<p>Use Claude Opus 4.6 to generate a concordance of keywords by section for each chapter.</p>
 </li>
 <li>
-<p>Manual review of the concordance to add or remove keywords and phrases as needed</p>
+<p>Manual review of the concordance to add or remove keywords and phrases as needed.</p>
 </li>
 <li>
-<p>Run a Python script to insert the index markup into the AsciiDoc source files for hidden and non-hidden index entries</p>
+<p>Run a Python script to insert the index markup into the AsciiDoc source files for hidden and non-hidden index entries.</p>
 </li>
 </ol>
 </div>
@@ -1607,13 +1587,11 @@ Claude Code also helped with all of the build tools used to produce the book its
 <p>All code generated by Claude Code was carefully reviewed, tested, and modified as needed to ensure it met my requirements for accuracy, security, and quality.
 I reviewed all content generated by Python code used to produce this book (including the index) for accuracy.</p>
 </div>
-</div>
-<div class="sect3">
-<h4 id="_images">Images</h4>
+<h4 id="_images" class="discrete">Images</h4>
 <div class="paragraph">
 <p>In a few cases, I used AI tools (mostly Gemini&#8217;s Nano Banana Pro model) to help with images and illustrations.
-Most of the images I manually created using PowerPoint, flowchart tools including Mermaid and diagrams.net, sketches using Apple Freeform, vector drawing with Affinity Designer 2, and other photo editing tools.
-For the images that were more illustrative, I made an initial sketch and then used Gemini to help create a more polished version of the image, like the example shown in <a href="#_sketch_vs_final_image">Figure 2</a>.</p>
+Most of the images I manually created using PowerPoint, flowchart tools such as Mermaid and Diagrams.net, Apple Freeform sketches, Affinity Designer 2 for vector drawing, and other photo editing tools.
+For the more illustrative images, I made an initial sketch and then used Gemini to create a more polished version, as shown in <a href="#_sketch_vs_final_image">Figure 2</a>.</p>
 </div>
 <div id="_sketch_vs_final_image" class="imageblock">
 <div class="content">
@@ -1622,15 +1600,13 @@ For the images that were more illustrative, I made an initial sketch and then us
 <div class="title">Figure 2. Sketch vs Final Image</div>
 </div>
 <div class="paragraph">
-<p>The output images were imperfect, requiring multiple edits after downloading the image from Gemini, but I think they produced a better final result than I could have created on my own without investing a lot more time learning Adobe Illustrator.</p>
+<p>The output images were imperfect, requiring multiple edits after downloading them from Gemini, but I think they produced a better final result than I could have achieved on my own without investing a lot more time learning Adobe Illustrator.</p>
 </div>
-</div>
-<div class="sect3">
-<h4 id="_narrative_writing">Narrative Writing</h4>
+<h4 id="_narrative_writing" class="discrete">Narrative Writing</h4>
 <div class="paragraph">
 <p>I have been writing technical content for nearly thirty years, but creative writing has never been my strength.
-I know that creative writing narratives are powerful for explaining complex topics and exposing the reader to a different perspective for learning.
-I knew I wanted to include narratives (the opening narrative <a href="supplychaincalamity.html#_case_study_supply_chain_calamity">Chapter 1: Supply Chain Calamity</a>, and supporting narratives after each chapter in <a href="#_part_3_special_considerations_in_incident_response">Part 3: Special Considerations in Incident Response</a>), but I struggled to write them in a way that felt authentic and engaging.</p>
+I know that creative writing narratives are powerful for explaining complex topics and for exposing readers to different perspectives for learning.
+I knew I wanted to include narratives (the opening narrative, <a href="supplychaincalamity.html#_case_study_supply_chain_calamity">Chapter 1: Supply Chain Calamity</a>, and supporting narratives after each chapter in <a href="#_part_3_special_considerations_in_incident_response">Part 3: Special Considerations in Incident Response</a>), but I struggled to write them in a way that felt authentic and engaging.</p>
 </div>
 <div class="paragraph">
 <p>I used Claude Code as a tool to help in the development of these narratives:</p>
@@ -1638,13 +1614,13 @@ I knew I wanted to include narratives (the opening narrative <a href="supplychai
 <div class="ulist">
 <ul>
 <li>
-<p>Brainstorming story ideas and plot points</p>
+<p>Brainstorming story ideas and plot points.</p>
 </li>
 <li>
-<p>Integrating learning objectives into the narratives</p>
+<p>Integrating learning objectives into the narratives.</p>
 </li>
 <li>
-<p>Drafting and refining the narrative text</p>
+<p>Drafting and refining the narrative text.</p>
 </li>
 </ul>
 </div>
@@ -1652,23 +1628,21 @@ I knew I wanted to include narratives (the opening narrative <a href="supplychai
 <p>I believe the end result is content that is more engaging and effective for learning, and likely much better than I could have written from scratch.</p>
 </div>
 <div class="paragraph">
-<p>I scrutinized each chapter and narrative for accuracy, tone, and style to ensure it met my standards.
+<p>I scrutinized each chapter and narrative for accuracy, tone, and style, ensuring they met my standards.
 I expanded content and included chunking elements (listings, tables, images, admonitions, etc.) where it aligned with my vision for the learning objectives in this book.</p>
 </div>
-</div>
-<div class="sect3">
-<h4 id="_technical_writing">Technical Writing</h4>
+<h4 id="_technical_writing" class="discrete">Technical Writing</h4>
 <div class="paragraph">
 <p>This is the big one.
 I wrote the vast majority of the words in this book, though sometimes it&#8217;s hard to distinguish what words would have been written without AI assistance.</p>
 </div>
 <div class="paragraph">
-<p>Some days the words just didn&#8217;t come easily, and I used Claude Code to help me get unstuck:</p>
+<p>Some days, the words just didn&#8217;t come easily, and I used Claude Code to help me get unstuck:</p>
 </div>
 <div class="quoteblock">
 <blockquote>
 <div class="paragraph">
-<p>Help me with the last paragraph in @shortcomings.adoc ; I feel like it has a weak ending and doesn&#8217;t do
+<p>Help me with the last paragraph in @existingmodels.adoc ; I feel like it has a weak ending and doesn&#8217;t do
 enough to emphasize the problems illustrated with the response effort in the chapter. Show me several options.</p>
 </div>
 </blockquote>
@@ -1706,12 +1680,10 @@ I hope, dear reader, that you find the end result to be a book that is worth you
 </div>
 </div>
 </div>
-</div>
-</div>
 <div id="footer">
 <div id="footer-text">
 Version 1.0<br>
-Last updated 2026-03-18 13:18:43 UTC
+Last updated 2026-04-04 17:17:04 UTC
 </div>
 </div>
 <script type="text/x-mathjax-config">

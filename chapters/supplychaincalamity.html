@@ -438,7 +438,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Lora:ital,wght@0,400;0,700;1,400;1,700&family=Rokkitt:wght@800&display=swap" rel="stylesheet">
 
 <style>
 /* Hamburger menu button - fixed top-left */
@@ -615,7 +615,7 @@ table.tableblock > .title,
     font-style: normal;
 }
 
-/* Quote/blockquote styling - matching PDF theme */
+/* Quote/blockquote styling - matching PDF theme with decorative quotation mark */
 blockquote,
 .quoteblock blockquote,
 .quoteblock blockquote p {
@@ -625,9 +625,9 @@ blockquote,
 }
 
 .quoteblock {
-    border-left: 4px solid #09456D;
-    margin: 1.5em 0 !important;
-    padding: 1em 1.5em 1em 1em !important;
+    border-left: 4px solid #09456D !important;
+    margin: 1.25em 0 !important;
+    padding: 0.3em 1.5em 0.3em 1.25em !important;
 }
 
 .quoteblock blockquote {
@@ -635,25 +635,40 @@ blockquote,
     padding: 0 !important;
 }
 
-.quoteblock blockquote p {
+.quoteblock blockquote::before {
+    content: '\201C' !important;
+    display: block !important;
+    float: none !important;
+    font-family: 'Rokkitt', serif !important;
+    font-weight: 800 !important;
+    font-size: 3em !important;
+    line-height: 0.8 !important;
+    color: #09456D !important;
+    margin-left: 0 !important;
+    margin-bottom: 0 !important;
+    text-shadow: none !important;
+}
+
+.quoteblock blockquote p,
+.quoteblock blockquote .paragraph p {
     margin: 0 !important;
+    margin-bottom: 0 !important;
     padding: 0 !important;
     line-height: 1.6;
 }
 
-/* Remove the decorative open-quote icon */
-.quoteblock blockquote::before {
-    content: none !important;
+.quoteblock blockquote .paragraph {
+    margin-bottom: 0 !important;
 }
 
 .quoteblock blockquote {
-    padding-left: 0.5em !important;
+    padding-left: 0 !important;
 }
 
 /* Blockquotes inside sidebars need spacing */
 .sidebarblock .quoteblock {
     margin: 1.5em 0 !important;
-    padding: 0.5em 0 0.5em 1em !important;
+    padding: 0.25em 0 0.5em 1em !important;
     background-color: transparent !important;
 }
 
@@ -718,12 +733,28 @@ blockquote,
     color: #1B365D;
 }
 
-.admonitionblock td.icon i {
-    color: #1B365D;
+/* Custom admonition icons - replace Font Awesome with artist SVGs */
+.admonitionblock td.icon i.fa {
+    font-size: 0 !important;
+    width: 32px;
+    height: 32px;
+    display: block;
+    margin: 0 auto;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
-.admonitionblock td.icon [class^="fa icon-"] {
-    color: #1B365D;
+.admonitionblock.note td.icon i.fa {
+    background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAyOS4wOCAyNy45Ij4KICA8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMzAuMi4xLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogMi4xLjEgQnVpbGQgMSkgIC0tPgogIDxkZWZzPgogICAgPHN0eWxlPgogICAgICAuc3QwIHsKICAgICAgICBmaWxsOiAjMjMxZjIwOwogICAgICB9CgogICAgICAuc3QxIHsKICAgICAgICBmaWxsOiAjZmZmOwogICAgICB9CgogICAgICAuc3QyIHsKICAgICAgICBmaWxsOiBub25lOwogICAgICAgIHN0cm9rZTogIzIzMWYyMDsKICAgICAgICBzdHJva2UtbGluZWNhcDogcm91bmQ7CiAgICAgICAgc3Ryb2tlLWxpbmVqb2luOiByb3VuZDsKICAgICAgICBzdHJva2Utd2lkdGg6IDEuNXB4OwogICAgICB9CiAgICA8L3N0eWxlPgogIDwvZGVmcz4KICA8cGF0aCBjbGFzcz0ic3QxIiBkPSJNMjIuMzUuNzVINi43M0MzLjQzLjc1Ljc1LDMuNDMuNzUsNi43M3Y4Ljc2YzAsMy4zLDIuNjgsNS45OCw1Ljk4LDUuOThoNC4xNGMuNDIuNTUsMi4zLDMuODQsMy4xOSw1LjQxLjIxLjM3Ljc0LjM3Ljk1LDAsLjg5LTEuNTcsMi43OC00Ljg2LDMuMTktNS40MWg0LjE0YzMuMywwLDUuOTgtMi42OCw1Ljk4LTUuOThWNi43M2MwLTMuMy0yLjY4LTUuOTgtNS45OC01Ljk4WiIvPgogIDxwYXRoIGNsYXNzPSJzdDIiIGQ9Ik0yMi4zNS43NUg2LjczQzMuNDMuNzUuNzUsMy40My43NSw2LjczdjguNzZjMCwzLjMsMi42OCw1Ljk4LDUuOTgsNS45OGg0LjE0Yy40Mi41NSwyLjMsMy44NCwzLjE5LDUuNDEuMjEuMzcuNzQuMzcuOTUsMCwuODktMS41NywyLjc4LTQuODYsMy4xOS01LjQxaDQuMTRjMy4zLDAsNS45OC0yLjY4LDUuOTgtNS45OFY2LjczYzAtMy4zLTIuNjgtNS45OC01Ljk4LTUuOThaIi8+CiAgPGc+CiAgICA8Y2lyY2xlIGNsYXNzPSJzdDAiIGN4PSI4LjMyIiBjeT0iMTEuMTEiIHI9IjEuNjgiLz4KICAgIDxjaXJjbGUgY2xhc3M9InN0MCIgY3g9IjE0LjU0IiBjeT0iMTEuMTEiIHI9IjEuNjgiLz4KICAgIDxjaXJjbGUgY2xhc3M9InN0MCIgY3g9IjIwLjc1IiBjeT0iMTEuMTEiIHI9IjEuNjgiLz4KICA8L2c+Cjwvc3ZnPg==");
+}
+
+.admonitionblock.tip td.icon i.fa {
+    background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAzMC45NiAzMiI+CiAgPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDMwLjIuMSwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDIuMS4xIEJ1aWxkIDEpICAtLT4KICA8ZGVmcz4KICAgIDxzdHlsZT4KICAgICAgLnN0MCB7CiAgICAgICAgZmlsbDogI2ZmZjsKICAgICAgfQoKICAgICAgLnN0MSB7CiAgICAgICAgZmlsbDogbm9uZTsKICAgICAgICBzdHJva2U6ICMyMzFmMjA7CiAgICAgICAgc3Ryb2tlLWxpbmVjYXA6IHJvdW5kOwogICAgICAgIHN0cm9rZS1saW5lam9pbjogcm91bmQ7CiAgICAgICAgc3Ryb2tlLXdpZHRoOiAxLjVweDsKICAgICAgfQogICAgPC9zdHlsZT4KICA8L2RlZnM+CiAgPGc+CiAgICA8cGF0aCBjbGFzcz0ic3QwIiBkPSJNMTUuNDgsNi4zOWMtNC42NSwwLTkuMjgsMy44Ny04Ljg3LDkuMTcuMTUsMS45OSwxLjAyLDMuOTQsMi4xOCw1LjM2LDIuNjYsMy4yMywyLjM1LDIuOTIsMi40Myw0LjUxaDguNTFjLjA4LTEuNTktLjIzLTEuMjgsMi40My00LjUxLDEuMTctMS40MiwyLjAzLTMuMzcsMi4xOC01LjM2LjQxLTUuMy00LjIyLTkuMTctOC44Ny05LjE3WiIvPgogICAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTExLjIzLDI1LjQzdjEuNTZjMCwyLjM1LDEuOTEsNC4yNiw0LjI2LDQuMjZoMGMyLjM3LDAsNC4yOC0xLjkzLDQuMjYtNC4zdi0xLjUyIi8+CiAgPC9nPgogIDxnPgogICAgPGxpbmUgY2xhc3M9InN0MSIgeDE9IjI1Ljg5IiB5MT0iNS4wNiIgeDI9IjI0LjI0IiB5Mj0iNi43Ii8+CiAgICA8bGluZSBjbGFzcz0ic3QxIiB4MT0iMjUuODkiIHkxPSIyNS44NyIgeDI9IjI0LjI0IiB5Mj0iMjQuMjMiLz4KICAgIDxsaW5lIGNsYXNzPSJzdDEiIHgxPSI1LjA3IiB5MT0iMjUuODciIHgyPSI2LjcyIiB5Mj0iMjQuMjMiLz4KICAgIDxsaW5lIGNsYXNzPSJzdDEiIHgxPSI1LjA3IiB5MT0iNS4wNiIgeDI9IjYuNzIiIHkyPSI2LjciLz4KICAgIDxsaW5lIGNsYXNzPSJzdDEiIHgxPSIxNS40OCIgeTE9Ii43NSIgeDI9IjE1LjQ4IiB5Mj0iMy4wNyIvPgogICAgPGxpbmUgY2xhc3M9InN0MSIgeDE9IjMwLjIxIiB5MT0iMTUuNDYiIHgyPSIyNy44OSIgeTI9IjE1LjQ2Ii8+CiAgICA8bGluZSBjbGFzcz0ic3QxIiB4MT0iLjc1IiB5MT0iMTUuNDYiIHgyPSIzLjA3IiB5Mj0iMTUuNDYiLz4KICA8L2c+CiAgPGc+CiAgICA8cGF0aCBjbGFzcz0ic3QxIiBkPSJNMTUuNDgsNi4zOWMtNC42NSwwLTkuMjgsMy44Ny04Ljg3LDkuMTcuMTUsMS45OSwxLjAyLDMuOTQsMi4xOCw1LjM2LDIuNjYsMy4yMywyLjM1LDIuOTIsMi40Myw0LjUxaDguNTFjLjA4LTEuNTktLjIzLTEuMjgsMi40My00LjUxLDEuMTctMS40MiwyLjAzLTMuMzcsMi4xOC01LjM2LjQxLTUuMy00LjIyLTkuMTctOC44Ny05LjE3WiIvPgogICAgPHBhdGggY2xhc3M9InN0MSIgZD0iTTExLjIzLDI1LjQzdjEuNTZjMCwyLjM1LDEuOTEsNC4yNiw0LjI2LDQuMjZoMGMyLjM3LDAsNC4yOC0xLjkzLDQuMjYtNC4zdi0xLjUyIi8+CiAgPC9nPgo8L3N2Zz4=");
+}
+
+.admonitionblock.important td.icon i.fa {
+    background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAyOC4xOSAyOC4xOSI+CiAgPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDMwLjIuMSwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDIuMS4xIEJ1aWxkIDEpICAtLT4KICA8ZGVmcz4KICAgIDxzdHlsZT4KICAgICAgLnN0MCB7CiAgICAgICAgZmlsbDogI2ZmZjsKICAgICAgfQoKICAgICAgLnN0MSwgLnN0MiB7CiAgICAgICAgc3Ryb2tlOiAjMjMxZjIwOwogICAgICB9CgogICAgICAuc3QxLCAuc3QyLCAuc3QzIHsKICAgICAgICBmaWxsOiBub25lOwogICAgICAgIHN0cm9rZS1saW5lY2FwOiByb3VuZDsKICAgICAgICBzdHJva2UtbGluZWpvaW46IHJvdW5kOwogICAgICB9CgogICAgICAuc3QxLCAuc3QzIHsKICAgICAgICBzdHJva2Utd2lkdGg6IDEuNXB4OwogICAgICB9CgogICAgICAuc3QyIHsKICAgICAgICBzdHJva2Utd2lkdGg6IDEuMzdweDsKICAgICAgfQoKICAgICAgLnN0MyB7CiAgICAgICAgc3Ryb2tlOiAjMzMzOwogICAgICB9CiAgICA8L3N0eWxlPgogIDwvZGVmcz4KICA8Zz4KICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xMy4wNywxLjJjLjU3LS42MSwxLjQ5LS42MSwyLjA2LDBsMS45NiwyLjA5Yy41Ny42MSwxLjcxLDEuMDgsMi41NCwxLjA1bDIuODctLjFjLjgzLS4wMywxLjQ4LjYzLDEuNDYsMS40NmwtLjEsMi44N2MtLjAzLjgzLjQ0LDEuOTcsMS4wNSwyLjU0bDIuMDksMS45NmMuNjEuNTcuNjEsMS40OSwwLDIuMDZsLTIuMDksMS45NmMtLjYxLjU3LTEuMDgsMS43MS0xLjA1LDIuNTRsLjEsMi44N2MuMDMuODMtLjYzLDEuNDgtMS40NiwxLjQ2bC0yLjg3LS4xYy0uODMtLjAzLTEuOTcuNDQtMi41MywxLjA1bC0xLjk2LDIuMWMtLjU3LjYxLTEuNDkuNjEtMi4wNiwwbC0xLjk2LTIuMWMtLjU3LS42MS0xLjcxLTEuMDgtMi41NC0xLjA1bC0yLjg3LjFjLS44My4wMy0xLjQ4LS42My0xLjQ2LTEuNDZsLjEtMi44N2MuMDMtLjgzLS40NC0xLjk3LTEuMDUtMi41NGwtMi4xLTEuOTZjLS42MS0uNTctLjYxLTEuNDksMC0yLjA2bDIuMS0xLjk2Yy42MS0uNTcsMS4wOC0xLjcxLDEuMDUtMi41M2wtLjEtMi44N2MtLjAzLS44My42My0xLjQ4LDEuNDYtMS40NmwyLjg3LjFjLjgzLjAzLDEuOTctLjQ0LDIuNTQtMS4wNWwxLjk2LTIuMDlaIi8+CiAgICA8cGF0aCBjbGFzcz0ic3QwIiBkPSJNMTMuMDcsMS4yYy41Ny0uNjEsMS40OS0uNjEsMi4wNiwwbDEuOTYsMi4wOWMuNTcuNjEsMS43MSwxLjA4LDIuNTQsMS4wNWwyLjg3LS4xYy44My0uMDMsMS40OC42MywxLjQ2LDEuNDZsLS4xLDIuODdjLS4wMy44My40NCwxLjk3LDEuMDUsMi41NGwyLjA5LDEuOTZjLjYxLjU3LjYxLDEuNDksMCwyLjA2bC0yLjA5LDEuOTZjLS42MS41Ny0xLjA4LDEuNzEtMS4wNSwyLjU0bC4xLDIuODdjLjAzLjgzLS42MywxLjQ4LTEuNDYsMS40NmwtMi44Ny0uMWMtLjgzLS4wMy0xLjk3LjQ0LTIuNTMsMS4wNWwtMS45NiwyLjFjLS41Ny42MS0xLjQ5LjYxLTIuMDYsMGwtMS45Ni0yLjFjLS41Ny0uNjEtMS43MS0xLjA4LTIuNTQtMS4wNWwtMi44Ny4xYy0uODMuMDMtMS40OC0uNjMtMS40Ni0xLjQ2bC4xLTIuODdjLjAzLS44My0uNDQtMS45Ny0xLjA1LTIuNTRsLTIuMS0xLjk2Yy0uNjEtLjU3LS42MS0xLjQ5LDAtMi4wNmwyLjEtMS45NmMuNjEtLjU3LDEuMDgtMS43MSwxLjA1LTIuNTNsLS4xLTIuODdjLS4wMy0uODMuNjMtMS40OCwxLjQ2LTEuNDZsMi44Ny4xYy44My4wMywxLjk3LS40NCwyLjU0LTEuMDVsMS45Ni0yLjA5WiIvPgogIDwvZz4KICA8Zz4KICAgIDxwYXRoIGNsYXNzPSJzdDMiIGQ9Ik0xMy4wNywxLjJjLjU3LS42MSwxLjQ5LS42MSwyLjA2LDBsMS45NiwyLjA5Yy41Ny42MSwxLjcxLDEuMDgsMi41NCwxLjA1bDIuODctLjFjLjgzLS4wMywxLjQ4LjYzLDEuNDYsMS40NmwtLjEsMi44N2MtLjAzLjgzLjQ0LDEuOTcsMS4wNSwyLjU0bDIuMDksMS45NmMuNjEuNTcuNjEsMS40OSwwLDIuMDZsLTIuMDksMS45NmMtLjYxLjU3LTEuMDgsMS43MS0xLjA1LDIuNTRsLjEsMi44N2MuMDMuODMtLjYzLDEuNDgtMS40NiwxLjQ2bC0yLjg3LS4xYy0uODMtLjAzLTEuOTcuNDQtMi41MywxLjA1bC0xLjk2LDIuMWMtLjU3LjYxLTEuNDkuNjEtMi4wNiwwbC0xLjk2LTIuMWMtLjU3LS42MS0xLjcxLTEuMDgtMi41NC0xLjA1bC0yLjg3LjFjLS44My4wMy0xLjQ4LS42My0xLjQ2LTEuNDZsLjEtMi44N2MuMDMtLjgzLS40NC0xLjk3LTEuMDUtMi41NGwtMi4xLTEuOTZjLS42MS0uNTctLjYxLTEuNDksMC0yLjA2bDIuMS0xLjk2Yy42MS0uNTcsMS4wOC0xLjcxLDEuMDUtMi41M2wtLjEtMi44N2MtLjAzLS44My42My0xLjQ4LDEuNDYtMS40NmwyLjg3LjFjLjgzLjAzLDEuOTctLjQ0LDIuNTQtMS4wNWwxLjk2LTIuMDlaIi8+CiAgICA8cGF0aCBjbGFzcz0ic3QxIiBkPSJNMTMuMDcsMS4yYy41Ny0uNjEsMS40OS0uNjEsMi4wNiwwbDEuOTYsMi4wOWMuNTcuNjEsMS43MSwxLjA4LDIuNTQsMS4wNWwyLjg3LS4xYy44My0uMDMsMS40OC42MywxLjQ2LDEuNDZsLS4xLDIuODdjLS4wMy44My40NCwxLjk3LDEuMDUsMi41NGwyLjA5LDEuOTZjLjYxLjU3LjYxLDEuNDksMCwyLjA2bC0yLjA5LDEuOTZjLS42MS41Ny0xLjA4LDEuNzEtMS4wNSwyLjU0bC4xLDIuODdjLjAzLjgzLS42MywxLjQ4LTEuNDYsMS40NmwtMi44Ny0uMWMtLjgzLS4wMy0xLjk3LjQ0LTIuNTMsMS4wNWwtMS45NiwyLjFjLS41Ny42MS0xLjQ5LjYxLTIuMDYsMGwtMS45Ni0yLjFjLS41Ny0uNjEtMS43MS0xLjA4LTIuNTQtMS4wNWwtMi44Ny4xYy0uODMuMDMtMS40OC0uNjMtMS40Ni0xLjQ2bC4xLTIuODdjLjAzLS44My0uNDQtMS45Ny0xLjA1LTIuNTRsLTIuMS0xLjk2Yy0uNjEtLjU3LS42MS0xLjQ5LDAtMi4wNmwyLjEtMS45NmMuNjEtLjU3LDEuMDgtMS43MSwxLjA1LTIuNTNsLS4xLTIuODdjLS4wMy0uODMuNjMtMS40OCwxLjQ2LTEuNDZsMi44Ny4xYy44My4wMywxLjk3LS40NCwyLjU0LTEuMDVsMS45Ni0yLjA5WiIvPgogIDwvZz4KICA8Zz4KICAgIDxyZWN0IGNsYXNzPSJzdDIiIHg9IjEyLjQ5IiB5PSI3LjY5IiB3aWR0aD0iMy4yMiIgaGVpZ2h0PSI4LjU0Ii8+CiAgICA8cmVjdCBjbGFzcz0ic3QyIiB4PSIxMi40OSIgeT0iMTguOSIgd2lkdGg9IjMuMjIiIGhlaWdodD0iMi42NyIvPgogIDwvZz4KPC9zdmc+");
 }
 
 /* Sidebar styling - matching PDF theme */
@@ -1087,7 +1118,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <ul class="sectlevel2">
 <li><a href="#_jordan">Jordan</a></li>
 <li><a href="#_pyrix">Pyrix</a></li>
-<li><a href="#_the_response">The Response</a></li>
+<li><a href="#_sam">Sam</a></li>
 </ul>
 </li>
 </ul>
@@ -1770,21 +1801,20 @@ Her response cut off the stealer&#8217;s access to her workstation, but the exfi
 </div>
 </div>
 <div class="sect2">
-<h3 id="_the_response">The Response</h3>
+<h3 id="_sam">Sam</h3>
 <div class="paragraph">
-<p>Four days after Jordan killed the suspicious processes, she filed an IT support ticket.
-
-The ticket was low priority, categorized under "Software Issue," and described an SDK that had installed unexpected background processes.
-Jordan had been heads-down on the Gilded Freight integration since the incident, and she noted in the ticket that the processes had already been terminated and the SDK removed.
-It sat in the queue for two more days before Sam, the on-call incident response analyst, picked it up.</p>
+<p>Sam had been on-call for three quiet days when the ticket landed in his queue.
+Six years in security operations had taught him to take every ticket seriously, even the low-priority ones.
+This one was categorized under <code>SOFTWARE_ISSUE</code>, filed by a cloud solutions architect named Jordan.
+The ticket described an SDK that had installed unexpected background processes on her workstation.
+Jordan noted that she had already terminated the processes and removed the SDK, and she had been heads-down on an integration project since the incident six days earlier.</p>
 </div>
 <div class="paragraph">
-<p>Sam was methodical.
-Six years in security operations had taught him to take every ticket seriously, even the low-priority ones.
+<p>Sam was methodical, and something about the SDK processes didn&#8217;t sit right.
 He started with a brief call to Jordan to understand what she had observed.</p>
 </div>
 <div class="paragraph">
-<p>Jordan walked Sam through the timeline: the port conflict on 8080, the <code>ms</code> and <code>ssupd</code> processes, the obfuscated shell script, and the steps she took to kill the processes and remove the SDK directory.
+<p>Jordan walked him through the timeline: the port conflict on 8080, the <code>ms</code> and <code>ssupd</code> processes, the weird shell script, and the steps she took to stop the processes and remove the SDK directory.
 She mentioned she hadn&#8217;t seen the processes return after termination.
 Sam thanked her and began his investigation.</p>
 </div>
@@ -2010,7 +2040,7 @@ By the time Sam closed the ticket, the attacker&#8217;s foothold had expanded we
 <div id="footer">
 <div id="footer-text">
 Version 1.0<br>
-Last updated 2026-03-18 13:18:43 UTC
+Last updated 2026-04-04 17:17:04 UTC
 </div>
 </div>
 <script type="text/x-mathjax-config">

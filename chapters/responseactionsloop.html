@@ -438,7 +438,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Lora:ital,wght@0,400;0,700;1,400;1,700&family=Rokkitt:wght@800&display=swap" rel="stylesheet">
 
 <style>
 /* Hamburger menu button - fixed top-left */
@@ -615,7 +615,7 @@ table.tableblock > .title,
     font-style: normal;
 }
 
-/* Quote/blockquote styling - matching PDF theme */
+/* Quote/blockquote styling - matching PDF theme with decorative quotation mark */
 blockquote,
 .quoteblock blockquote,
 .quoteblock blockquote p {
@@ -625,9 +625,9 @@ blockquote,
 }
 
 .quoteblock {
-    border-left: 4px solid #09456D;
-    margin: 1.5em 0 !important;
-    padding: 1em 1.5em 1em 1em !important;
+    border-left: 4px solid #09456D !important;
+    margin: 1.25em 0 !important;
+    padding: 0.3em 1.5em 0.3em 1.25em !important;
 }
 
 .quoteblock blockquote {
@@ -635,25 +635,40 @@ blockquote,
     padding: 0 !important;
 }
 
-.quoteblock blockquote p {
+.quoteblock blockquote::before {
+    content: '\201C' !important;
+    display: block !important;
+    float: none !important;
+    font-family: 'Rokkitt', serif !important;
+    font-weight: 800 !important;
+    font-size: 3em !important;
+    line-height: 0.8 !important;
+    color: #09456D !important;
+    margin-left: 0 !important;
+    margin-bottom: 0 !important;
+    text-shadow: none !important;
+}
+
+.quoteblock blockquote p,
+.quoteblock blockquote .paragraph p {
     margin: 0 !important;
+    margin-bottom: 0 !important;
     padding: 0 !important;
     line-height: 1.6;
 }
 
-/* Remove the decorative open-quote icon */
-.quoteblock blockquote::before {
-    content: none !important;
+.quoteblock blockquote .paragraph {
+    margin-bottom: 0 !important;
 }
 
 .quoteblock blockquote {
-    padding-left: 0.5em !important;
+    padding-left: 0 !important;
 }
 
 /* Blockquotes inside sidebars need spacing */
 .sidebarblock .quoteblock {
     margin: 1.5em 0 !important;
-    padding: 0.5em 0 0.5em 1em !important;
+    padding: 0.25em 0 0.5em 1em !important;
     background-color: transparent !important;
 }
 
@@ -718,12 +733,28 @@ blockquote,
     color: #1B365D;
 }
 
-.admonitionblock td.icon i {
-    color: #1B365D;
+/* Custom admonition icons - replace Font Awesome with artist SVGs */
+.admonitionblock td.icon i.fa {
+    font-size: 0 !important;
+    width: 32px;
+    height: 32px;
+    display: block;
+    margin: 0 auto;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
-.admonitionblock td.icon [class^="fa icon-"] {
-    color: #1B365D;
+.admonitionblock.note td.icon i.fa {
+    background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAyOS4wOCAyNy45Ij4KICA8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMzAuMi4xLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogMi4xLjEgQnVpbGQgMSkgIC0tPgogIDxkZWZzPgogICAgPHN0eWxlPgogICAgICAuc3QwIHsKICAgICAgICBmaWxsOiAjMjMxZjIwOwogICAgICB9CgogICAgICAuc3QxIHsKICAgICAgICBmaWxsOiAjZmZmOwogICAgICB9CgogICAgICAuc3QyIHsKICAgICAgICBmaWxsOiBub25lOwogICAgICAgIHN0cm9rZTogIzIzMWYyMDsKICAgICAgICBzdHJva2UtbGluZWNhcDogcm91bmQ7CiAgICAgICAgc3Ryb2tlLWxpbmVqb2luOiByb3VuZDsKICAgICAgICBzdHJva2Utd2lkdGg6IDEuNXB4OwogICAgICB9CiAgICA8L3N0eWxlPgogIDwvZGVmcz4KICA8cGF0aCBjbGFzcz0ic3QxIiBkPSJNMjIuMzUuNzVINi43M0MzLjQzLjc1Ljc1LDMuNDMuNzUsNi43M3Y4Ljc2YzAsMy4zLDIuNjgsNS45OCw1Ljk4LDUuOThoNC4xNGMuNDIuNTUsMi4zLDMuODQsMy4xOSw1LjQxLjIxLjM3Ljc0LjM3Ljk1LDAsLjg5LTEuNTcsMi43OC00Ljg2LDMuMTktNS40MWg0LjE0YzMuMywwLDUuOTgtMi42OCw1Ljk4LTUuOThWNi43M2MwLTMuMy0yLjY4LTUuOTgtNS45OC01Ljk4WiIvPgogIDxwYXRoIGNsYXNzPSJzdDIiIGQ9Ik0yMi4zNS43NUg2LjczQzMuNDMuNzUuNzUsMy40My43NSw2LjczdjguNzZjMCwzLjMsMi42OCw1Ljk4LDUuOTgsNS45OGg0LjE0Yy40Mi41NSwyLjMsMy44NCwzLjE5LDUuNDEuMjEuMzcuNzQuMzcuOTUsMCwuODktMS41NywyLjc4LTQuODYsMy4xOS01LjQxaDQuMTRjMy4zLDAsNS45OC0yLjY4LDUuOTgtNS45OFY2LjczYzAtMy4zLTIuNjgtNS45OC01Ljk4LTUuOThaIi8+CiAgPGc+CiAgICA8Y2lyY2xlIGNsYXNzPSJzdDAiIGN4PSI4LjMyIiBjeT0iMTEuMTEiIHI9IjEuNjgiLz4KICAgIDxjaXJjbGUgY2xhc3M9InN0MCIgY3g9IjE0LjU0IiBjeT0iMTEuMTEiIHI9IjEuNjgiLz4KICAgIDxjaXJjbGUgY2xhc3M9InN0MCIgY3g9IjIwLjc1IiBjeT0iMTEuMTEiIHI9IjEuNjgiLz4KICA8L2c+Cjwvc3ZnPg==");
+}
+
+.admonitionblock.tip td.icon i.fa {
+    background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAzMC45NiAzMiI+CiAgPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDMwLjIuMSwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDIuMS4xIEJ1aWxkIDEpICAtLT4KICA8ZGVmcz4KICAgIDxzdHlsZT4KICAgICAgLnN0MCB7CiAgICAgICAgZmlsbDogI2ZmZjsKICAgICAgfQoKICAgICAgLnN0MSB7CiAgICAgICAgZmlsbDogbm9uZTsKICAgICAgICBzdHJva2U6ICMyMzFmMjA7CiAgICAgICAgc3Ryb2tlLWxpbmVjYXA6IHJvdW5kOwogICAgICAgIHN0cm9rZS1saW5lam9pbjogcm91bmQ7CiAgICAgICAgc3Ryb2tlLXdpZHRoOiAxLjVweDsKICAgICAgfQogICAgPC9zdHlsZT4KICA8L2RlZnM+CiAgPGc+CiAgICA8cGF0aCBjbGFzcz0ic3QwIiBkPSJNMTUuNDgsNi4zOWMtNC42NSwwLTkuMjgsMy44Ny04Ljg3LDkuMTcuMTUsMS45OSwxLjAyLDMuOTQsMi4xOCw1LjM2LDIuNjYsMy4yMywyLjM1LDIuOTIsMi40Myw0LjUxaDguNTFjLjA4LTEuNTktLjIzLTEuMjgsMi40My00LjUxLDEuMTctMS40MiwyLjAzLTMuMzcsMi4xOC01LjM2LjQxLTUuMy00LjIyLTkuMTctOC44Ny05LjE3WiIvPgogICAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTExLjIzLDI1LjQzdjEuNTZjMCwyLjM1LDEuOTEsNC4yNiw0LjI2LDQuMjZoMGMyLjM3LDAsNC4yOC0xLjkzLDQuMjYtNC4zdi0xLjUyIi8+CiAgPC9nPgogIDxnPgogICAgPGxpbmUgY2xhc3M9InN0MSIgeDE9IjI1Ljg5IiB5MT0iNS4wNiIgeDI9IjI0LjI0IiB5Mj0iNi43Ii8+CiAgICA8bGluZSBjbGFzcz0ic3QxIiB4MT0iMjUuODkiIHkxPSIyNS44NyIgeDI9IjI0LjI0IiB5Mj0iMjQuMjMiLz4KICAgIDxsaW5lIGNsYXNzPSJzdDEiIHgxPSI1LjA3IiB5MT0iMjUuODciIHgyPSI2LjcyIiB5Mj0iMjQuMjMiLz4KICAgIDxsaW5lIGNsYXNzPSJzdDEiIHgxPSI1LjA3IiB5MT0iNS4wNiIgeDI9IjYuNzIiIHkyPSI2LjciLz4KICAgIDxsaW5lIGNsYXNzPSJzdDEiIHgxPSIxNS40OCIgeTE9Ii43NSIgeDI9IjE1LjQ4IiB5Mj0iMy4wNyIvPgogICAgPGxpbmUgY2xhc3M9InN0MSIgeDE9IjMwLjIxIiB5MT0iMTUuNDYiIHgyPSIyNy44OSIgeTI9IjE1LjQ2Ii8+CiAgICA8bGluZSBjbGFzcz0ic3QxIiB4MT0iLjc1IiB5MT0iMTUuNDYiIHgyPSIzLjA3IiB5Mj0iMTUuNDYiLz4KICA8L2c+CiAgPGc+CiAgICA8cGF0aCBjbGFzcz0ic3QxIiBkPSJNMTUuNDgsNi4zOWMtNC42NSwwLTkuMjgsMy44Ny04Ljg3LDkuMTcuMTUsMS45OSwxLjAyLDMuOTQsMi4xOCw1LjM2LDIuNjYsMy4yMywyLjM1LDIuOTIsMi40Myw0LjUxaDguNTFjLjA4LTEuNTktLjIzLTEuMjgsMi40My00LjUxLDEuMTctMS40MiwyLjAzLTMuMzcsMi4xOC01LjM2LjQxLTUuMy00LjIyLTkuMTctOC44Ny05LjE3WiIvPgogICAgPHBhdGggY2xhc3M9InN0MSIgZD0iTTExLjIzLDI1LjQzdjEuNTZjMCwyLjM1LDEuOTEsNC4yNiw0LjI2LDQuMjZoMGMyLjM3LDAsNC4yOC0xLjkzLDQuMjYtNC4zdi0xLjUyIi8+CiAgPC9nPgo8L3N2Zz4=");
+}
+
+.admonitionblock.important td.icon i.fa {
+    background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAyOC4xOSAyOC4xOSI+CiAgPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDMwLjIuMSwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDIuMS4xIEJ1aWxkIDEpICAtLT4KICA8ZGVmcz4KICAgIDxzdHlsZT4KICAgICAgLnN0MCB7CiAgICAgICAgZmlsbDogI2ZmZjsKICAgICAgfQoKICAgICAgLnN0MSwgLnN0MiB7CiAgICAgICAgc3Ryb2tlOiAjMjMxZjIwOwogICAgICB9CgogICAgICAuc3QxLCAuc3QyLCAuc3QzIHsKICAgICAgICBmaWxsOiBub25lOwogICAgICAgIHN0cm9rZS1saW5lY2FwOiByb3VuZDsKICAgICAgICBzdHJva2UtbGluZWpvaW46IHJvdW5kOwogICAgICB9CgogICAgICAuc3QxLCAuc3QzIHsKICAgICAgICBzdHJva2Utd2lkdGg6IDEuNXB4OwogICAgICB9CgogICAgICAuc3QyIHsKICAgICAgICBzdHJva2Utd2lkdGg6IDEuMzdweDsKICAgICAgfQoKICAgICAgLnN0MyB7CiAgICAgICAgc3Ryb2tlOiAjMzMzOwogICAgICB9CiAgICA8L3N0eWxlPgogIDwvZGVmcz4KICA8Zz4KICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xMy4wNywxLjJjLjU3LS42MSwxLjQ5LS42MSwyLjA2LDBsMS45NiwyLjA5Yy41Ny42MSwxLjcxLDEuMDgsMi41NCwxLjA1bDIuODctLjFjLjgzLS4wMywxLjQ4LjYzLDEuNDYsMS40NmwtLjEsMi44N2MtLjAzLjgzLjQ0LDEuOTcsMS4wNSwyLjU0bDIuMDksMS45NmMuNjEuNTcuNjEsMS40OSwwLDIuMDZsLTIuMDksMS45NmMtLjYxLjU3LTEuMDgsMS43MS0xLjA1LDIuNTRsLjEsMi44N2MuMDMuODMtLjYzLDEuNDgtMS40NiwxLjQ2bC0yLjg3LS4xYy0uODMtLjAzLTEuOTcuNDQtMi41MywxLjA1bC0xLjk2LDIuMWMtLjU3LjYxLTEuNDkuNjEtMi4wNiwwbC0xLjk2LTIuMWMtLjU3LS42MS0xLjcxLTEuMDgtMi41NC0xLjA1bC0yLjg3LjFjLS44My4wMy0xLjQ4LS42My0xLjQ2LTEuNDZsLjEtMi44N2MuMDMtLjgzLS40NC0xLjk3LTEuMDUtMi41NGwtMi4xLTEuOTZjLS42MS0uNTctLjYxLTEuNDksMC0yLjA2bDIuMS0xLjk2Yy42MS0uNTcsMS4wOC0xLjcxLDEuMDUtMi41M2wtLjEtMi44N2MtLjAzLS44My42My0xLjQ4LDEuNDYtMS40NmwyLjg3LjFjLjgzLjAzLDEuOTctLjQ0LDIuNTQtMS4wNWwxLjk2LTIuMDlaIi8+CiAgICA8cGF0aCBjbGFzcz0ic3QwIiBkPSJNMTMuMDcsMS4yYy41Ny0uNjEsMS40OS0uNjEsMi4wNiwwbDEuOTYsMi4wOWMuNTcuNjEsMS43MSwxLjA4LDIuNTQsMS4wNWwyLjg3LS4xYy44My0uMDMsMS40OC42MywxLjQ2LDEuNDZsLS4xLDIuODdjLS4wMy44My40NCwxLjk3LDEuMDUsMi41NGwyLjA5LDEuOTZjLjYxLjU3LjYxLDEuNDksMCwyLjA2bC0yLjA5LDEuOTZjLS42MS41Ny0xLjA4LDEuNzEtMS4wNSwyLjU0bC4xLDIuODdjLjAzLjgzLS42MywxLjQ4LTEuNDYsMS40NmwtMi44Ny0uMWMtLjgzLS4wMy0xLjk3LjQ0LTIuNTMsMS4wNWwtMS45NiwyLjFjLS41Ny42MS0xLjQ5LjYxLTIuMDYsMGwtMS45Ni0yLjFjLS41Ny0uNjEtMS43MS0xLjA4LTIuNTQtMS4wNWwtMi44Ny4xYy0uODMuMDMtMS40OC0uNjMtMS40Ni0xLjQ2bC4xLTIuODdjLjAzLS44My0uNDQtMS45Ny0xLjA1LTIuNTRsLTIuMS0xLjk2Yy0uNjEtLjU3LS42MS0xLjQ5LDAtMi4wNmwyLjEtMS45NmMuNjEtLjU3LDEuMDgtMS43MSwxLjA1LTIuNTNsLS4xLTIuODdjLS4wMy0uODMuNjMtMS40OCwxLjQ2LTEuNDZsMi44Ny4xYy44My4wMywxLjk3LS40NCwyLjU0LTEuMDVsMS45Ni0yLjA5WiIvPgogIDwvZz4KICA8Zz4KICAgIDxwYXRoIGNsYXNzPSJzdDMiIGQ9Ik0xMy4wNywxLjJjLjU3LS42MSwxLjQ5LS42MSwyLjA2LDBsMS45NiwyLjA5Yy41Ny42MSwxLjcxLDEuMDgsMi41NCwxLjA1bDIuODctLjFjLjgzLS4wMywxLjQ4LjYzLDEuNDYsMS40NmwtLjEsMi44N2MtLjAzLjgzLjQ0LDEuOTcsMS4wNSwyLjU0bDIuMDksMS45NmMuNjEuNTcuNjEsMS40OSwwLDIuMDZsLTIuMDksMS45NmMtLjYxLjU3LTEuMDgsMS43MS0xLjA1LDIuNTRsLjEsMi44N2MuMDMuODMtLjYzLDEuNDgtMS40NiwxLjQ2bC0yLjg3LS4xYy0uODMtLjAzLTEuOTcuNDQtMi41MywxLjA1bC0xLjk2LDIuMWMtLjU3LjYxLTEuNDkuNjEtMi4wNiwwbC0xLjk2LTIuMWMtLjU3LS42MS0xLjcxLTEuMDgtMi41NC0xLjA1bC0yLjg3LjFjLS44My4wMy0xLjQ4LS42My0xLjQ2LTEuNDZsLjEtMi44N2MuMDMtLjgzLS40NC0xLjk3LTEuMDUtMi41NGwtMi4xLTEuOTZjLS42MS0uNTctLjYxLTEuNDksMC0yLjA2bDIuMS0xLjk2Yy42MS0uNTcsMS4wOC0xLjcxLDEuMDUtMi41M2wtLjEtMi44N2MtLjAzLS44My42My0xLjQ4LDEuNDYtMS40NmwyLjg3LjFjLjgzLjAzLDEuOTctLjQ0LDIuNTQtMS4wNWwxLjk2LTIuMDlaIi8+CiAgICA8cGF0aCBjbGFzcz0ic3QxIiBkPSJNMTMuMDcsMS4yYy41Ny0uNjEsMS40OS0uNjEsMi4wNiwwbDEuOTYsMi4wOWMuNTcuNjEsMS43MSwxLjA4LDIuNTQsMS4wNWwyLjg3LS4xYy44My0uMDMsMS40OC42MywxLjQ2LDEuNDZsLS4xLDIuODdjLS4wMy44My40NCwxLjk3LDEuMDUsMi41NGwyLjA5LDEuOTZjLjYxLjU3LjYxLDEuNDksMCwyLjA2bC0yLjA5LDEuOTZjLS42MS41Ny0xLjA4LDEuNzEtMS4wNSwyLjU0bC4xLDIuODdjLjAzLjgzLS42MywxLjQ4LTEuNDYsMS40NmwtMi44Ny0uMWMtLjgzLS4wMy0xLjk3LjQ0LTIuNTMsMS4wNWwtMS45NiwyLjFjLS41Ny42MS0xLjQ5LjYxLTIuMDYsMGwtMS45Ni0yLjFjLS41Ny0uNjEtMS43MS0xLjA4LTIuNTQtMS4wNWwtMi44Ny4xYy0uODMuMDMtMS40OC0uNjMtMS40Ni0xLjQ2bC4xLTIuODdjLjAzLS44My0uNDQtMS45Ny0xLjA1LTIuNTRsLTIuMS0xLjk2Yy0uNjEtLjU3LS42MS0xLjQ5LDAtMi4wNmwyLjEtMS45NmMuNjEtLjU3LDEuMDgtMS43MSwxLjA1LTIuNTNsLS4xLTIuODdjLS4wMy0uODMuNjMtMS40OCwxLjQ2LTEuNDZsMi44Ny4xYy44My4wMywxLjk3LS40NCwyLjU0LTEuMDVsMS45Ni0yLjA5WiIvPgogIDwvZz4KICA8Zz4KICAgIDxyZWN0IGNsYXNzPSJzdDIiIHg9IjEyLjQ5IiB5PSI3LjY5IiB3aWR0aD0iMy4yMiIgaGVpZ2h0PSI4LjU0Ii8+CiAgICA8cmVjdCBjbGFzcz0ic3QyIiB4PSIxMi40OSIgeT0iMTguOSIgd2lkdGg9IjMuMjIiIGhlaWdodD0iMi42NyIvPgogIDwvZz4KPC9zdmc+");
 }
 
 /* Sidebar styling - matching PDF theme */
@@ -1105,9 +1136,9 @@ document.addEventListener('DOMContentLoaded', function() {
 <p>
 The response actions loop represents the core operational cycle of the Dynamic Approach to Incident Response, embodying the iterative nature of effective incident handling.
 
-Unlike traditional linear models that progress sequentially through containment, eradication, and recovery, the response actions loop recognizes that incident response is a learning process where each iteration reveals new information requiring additional action.
+Unlike traditional linear models that progress sequentially through containment, eradication, and recovery, the response actions loop recognizes that incident response is a learning process in which each iteration reveals new information that requires additional action.
 
-This cyclic approach comprising the scope, contain, eradicate, and recover activities may be executed multiple times before an incident is truly resolved.</p>
+This cyclic approach comprising the scope, contain, eradicate, and recover activities may be executed multiple times before an incident is resolved.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1123,22 +1154,22 @@ Each iteration through the loop provides new insights that inform subsequent cyc
 </div>
 <div class="paragraph">
 <p>
-The response actions loop draws inspiration from Colonel John Boyd&#8217;s OODA loop (Observe, Orient, Decide, Act), a decision-making framework originally developed for military combat operations. <sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>
+The response actions loop is inspired by Colonel John Boyd&#8217;s OODA loop (Observe, Orient, Decide, Act), a decision-making framework originally developed for military combat operations. <sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>
 In incident response, this translates to:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Observe</strong> through scoping activities that reveal the extent of compromise</p>
+<p><strong>Observe</strong> through scoping activities that reveal the extent of compromise.</p>
 </li>
 <li>
-<p><strong>Orient</strong> by analyzing collected evidence to understand attacker methods</p>
+<p><strong>Orient</strong> by analyzing collected evidence to understand attacker methods.</p>
 </li>
 <li>
-<p><strong>Decide</strong> on appropriate containment and eradication strategies</p>
+<p><strong>Decide</strong> on appropriate containment and eradication strategies.</p>
 </li>
 <li>
-<p><strong>Act</strong> by implementing those strategies and recovering systems</p>
+<p><strong>Act</strong> by implementing those strategies and recovering systems.</p>
 </li>
 </ul>
 </div>
@@ -1148,21 +1179,21 @@ Like the OODA loop, the response actions loop emphasizes the importance of movin
 Each pass through the loop refines understanding and improves response effectiveness.</p>
 </div>
 <div class="paragraph">
-<p>Single-pass incident response frequently fails for several reasons:</p>
+<p>A single-pass incident response frequently fails for these reasons:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Incomplete understanding: An incomplete initial understanding leads to partial remediation that leaves attacker footholds intact</p>
+<p>Incomplete understanding: An incomplete initial understanding leads to partial remediation, leaving attacker footholds intact.</p>
 </li>
 <li>
-<p>Insufficient insight: New discoveries during eradication reveal additional compromised systems requiring scoping</p>
+<p>Insufficient insight: New discoveries during eradication reveal additional compromised systems requiring scoping.</p>
 </li>
 <li>
-<p>Incomplete evidence: Evidence analysis uncovers previously unknown attack vectors or persistence mechanisms through iterative scoping</p>
+<p>Incomplete evidence: Evidence analysis uncovers previously unknown attack vectors or persistence mechanisms through iterative scoping.</p>
 </li>
 <li>
-<p>Limited scope: Continued review of the breadth of the incident leads to related IOCs stemming from initial compromise insights</p>
+<p>Limited scope: Continued review of the incident&#8217;s breadth reveals related IOCs stemming from initial compromise insights.</p>
 </li>
 </ul>
 </div>
@@ -1174,14 +1205,14 @@ Each pass through the loop refines understanding and improves response effective
 <h3 id="_the_four_response_action_loop_activities">The Four Response Action Loop Activities</h3>
 <div class="paragraph">
 <p>Each activity in the response actions loop serves a specific purpose while contributing to the overall learning process.
-We will cover each of these activities in greater detail in later chapters, but they are summarized here for context.</p>
+We will cover each of these activities in greater detail in later chapters; they are summarized here for context.</p>
 </div>
 <div class="sect3">
 <h4 id="_scope_understanding_breadth">Scope: Understanding Breadth</h4>
 <div class="paragraph">
 <p>
-Scoping determines the extent of compromise, providing insight into what other systems may be involved with the incident.
-Initial scoping might identify a handful of compromised systems, but subsequent iterations often reveal additional systems with the same malware variants, new indicators of compromise discovered during analysis, lateral movement paths previously overlooked, and data repositories accessed by the attacker.
+Scoping determines the extent of the compromise, providing insight into which other systems may be involved in the incident.
+Initial scoping might identify a handful of compromised systems, but subsequent iterations often reveal additional systems with the same malware variants, new indicators of compromise discovered during analysis, previously overlooked lateral movement paths, and data repositories accessed by the attacker.
 Each iteration refines the scope understanding, potentially expanding or contracting the incident boundaries based on new evidence.</p>
 </div>
 </div>
@@ -1208,9 +1239,9 @@ Subsequent iterations address sophisticated persistence discovered through deepe
 <h4 id="_recover_restoring_operations">Recover: Restoring Operations</h4>
 <div class="paragraph">
 <p>
-Recovery returns systems to normal operation while addressing root causes that contributed to the incident.
+Recovery returns systems to normal operation while addressing the root causes of the incident.
 Early recovery iterations might restore critical systems from backups, reset compromised credentials, and patch exploited vulnerabilities.
-Later iterations implement systemic security improvements based on root cause analysis, enhanced monitoring for specific attack patterns, policy changes addressing process failures, and architectural modifications to prevent recurrence.</p>
+Later iterations implement systemic security improvements based on root-cause analysis, enhanced monitoring for specific attack patterns, policy changes to address process failures, and architectural modifications to prevent recurrence.</p>
 </div>
 </div>
 </div>
@@ -1218,7 +1249,7 @@ Later iterations implement systemic security improvements based on root cause an
 <h3 id="_iteration_triggers">Iteration Triggers</h3>
 <div class="paragraph">
 <p>In practice, multiple iterations through the response actions loop are common, driven by new discoveries and evolving understanding.
-We continue to repeat the response actions loop until we reach a point where no new information emerges, and the incident is resolved to the organization&#8217;s satisfaction.</p>
+We continue the response actions loop until no new information emerges and the incident is resolved to the organization&#8217;s satisfaction.</p>
 </div>
 <div class="paragraph">
 <p>Various discoveries warrant new iterations through the response actions loop, including:</p>
@@ -1236,7 +1267,7 @@ Network analysis revealing communication with additional C2 infrastructure trigg
 <h4 id="_incomplete_eradication">Incomplete Eradication</h4>
 <div class="paragraph">
 <p>Failed eradication attempts often reveal sophisticated persistence mechanisms requiring another iteration.
-Systems thought clean may show signs of reinfection, indicating missed persistence mechanisms or ongoing attacker access through unidentified vectors.
+Systems that appear clean may show signs of reinfection, indicating missed persistence mechanisms or ongoing attacker access via unidentified vectors.
 Each failed eradication provides valuable intelligence about attacker techniques, informing more comprehensive subsequent attempts.</p>
 </div>
 </div>
@@ -1265,25 +1296,25 @@ Each iteration builds on prior knowledge, progressively refining understanding a
 <div class="sect2">
 <h3 id="_documentation_and_communication">Documentation and Communication</h3>
 <div class="paragraph">
-<p>Each activity in the response actions loop requires thorough documentation to support legal requirements, organizational learning, and effective stakeholder communication.
+<p>Each activity in the response actions loop requires thorough documentation to meet legal requirements, support organizational learning, and enable effective stakeholder communication.
 Scoping decisions, containment actions, eradication procedures, and recovery steps all generate information that should be captured systematically throughout the incident lifecycle.
 This documentation serves multiple purposes: it provides a defensible record of response decisions, enables knowledge transfer between team members across shifts and iterations, and supports post-incident analysis that improves future response capabilities.</p>
 </div>
 <div class="paragraph">
 <p>
-Capture documentation in a way that is controlled but accessible to authorized incident response personnel, ensuring that all response actions are recorded in a centralized incident tracking system or case management platform.
+Documentation should be captured in a controlled yet accessible manner for authorized incident response personnel, ensuring that all response actions are recorded in a centralized incident tracking system or case management platform.
 For many organizations, security labels and access controls within existing ticketing systems can restrict access to sensitive incident documentation while allowing incident responders to update and review actions as needed.
 Maintain documentation continuity across multiple iterations of the response actions loop, linking related findings and actions so that the full incident narrative remains coherent as understanding evolves.</p>
 </div>
 <div class="paragraph">
-<p>Organizations may require specific documentation resources to meet the needs of the business and industry-specific regulatory requirements.
+<p>Organizations may require specific documentation resources to meet business and industry-specific regulatory requirements.
 At a minimum, response actions documentation should include decision documentation, impact assessment, and stakeholder communication logs for each phase of the response.</p>
 </div>
 <div class="sect3">
 <h4 id="_decision_documentation">Decision Documentation</h4>
 <div class="paragraph">
 <p>
-Decision documentation records what actions were taken, when they were executed, who authorized them, and the rationale behind each decision.
+Decision documentation records the actions taken, when they were executed, who authorized them, and the rationale for each decision.
 During scoping, document which systems were examined, what indicators were searched, and what findings emerged from each iteration.</p>
 </div>
 <div class="paragraph">
@@ -1300,7 +1331,7 @@ Recovery records should include which systems were restored, what validation ste
 <div class="paragraph">
 <p>
 Impact assessment tracks the operational impact of response actions on business processes, user productivity, and system availability.
-During the incident, analysts should identify and record which business functions were affected by each action, approximately how many users experienced disruptions, what revenue impact occurred from system downtime, and what workarounds were implemented to maintain critical operations.
+During the incident, analysts should identify and record which business functions were affected by each action, the approximate number of users affected by disruptions, the revenue impact of system downtime, and the workarounds implemented to maintain critical operations.
 This assessment helps improve future response strategies by identifying which approaches provided effective security with minimal business disruption.</p>
 </div>
 <div class="paragraph">
@@ -1312,7 +1343,7 @@ This assessment helps improve future response strategies by identifying which ap
 <div class="paragraph">
 <p>
 Stakeholder communication keeps leadership and affected parties informed of progress through regular updates tailored to different audience needs and authority levels.
-Create executive summaries for senior leadership focusing on business impact, risk reduction, and resource requirements without excessive technical detail.</p>
+Create executive summaries for senior leadership that focus on business impact, risk reduction, and resource requirements, without excessive technical detail.</p>
 </div>
 <div class="paragraph">
 <p>Deliver technical briefings for IT teams and security staff that include implementation details, monitoring requirements, and validation procedures.
@@ -1320,10 +1351,10 @@ Communicate with affected users about service disruptions, workarounds, and expe
 </div>
 <div class="paragraph">
 <p>Adjust communication frequency and detail based on incident severity and stakeholder needs, recognizing that communication requirements may intensify during critical phases and decrease as the incident stabilizes.
-The documentation needs will change for different organizations and can be as simple or complex as necessary to meet the needs of the business.</p>
+Documentation needs vary across organizations and can be as simple or as complex as necessary to support the business.</p>
 </div>
 <div class="paragraph">
-<p>Effective documentation and communication practices create a foundation for informed decision making throughout the response actions loop.
+<p>Effective documentation and communication practices create a foundation for informed decision-making throughout the response actions loop.
 Documentation is an additional responsibility for analysts that requires time and effort, but it is essential for ensuring that response actions are transparent, defensible, and aligned with organizational objectives.
 The records generated during each iteration of the response actions loop support not only the current incident but also future response efforts by capturing lessons learned and preserving institutional knowledge.
 As teams cycle through multiple iterations, this documentation will accumulate into a comprehensive incident narrative.</p>
@@ -1333,24 +1364,24 @@ As teams cycle through multiple iterations, this documentation will accumulate i
 <div class="sect2">
 <h3 id="_knowing_when_to_stop">Knowing When to Stop</h3>
 <div class="paragraph">
-<p>Determining when to exit the response actions loop requires careful judgment based on technical indicators, business considerations, and input from organizational decision makers.
+<p>Determining when to exit the response actions loop requires careful judgment informed by technical indicators, business considerations, and input from organizational decision-makers.
 
 From a technical perspective, teams look for signs that the incident is truly resolved, such as no new IOCs discovered during scoping, monitoring showing no signs of attacker activity, eradication verification confirming threat removal, and systems operating normally after recovery.
 These indicators provide confidence that the threat has been successfully addressed and the organization can safely conclude active response efforts.</p>
 </div>
 <div class="paragraph">
 <p>Business indicators also play a critical role in the decision to exit the loop.
-Organizations should assess whether operational objectives are met, whether an acceptable risk level has been achieved, and whether cost-benefit analysis favors conclusion of active response activities.
+Organizations should assess whether operational objectives are met, whether an acceptable risk level has been achieved, and whether the cost-benefit analysis supports the conclusion that active response activities should continue.
 Resource constraints may require prioritization, forcing difficult decisions about when to conclude response efforts even when some uncertainty remains.</p>
 </div>
 <div class="paragraph">
 <p>The decision to exit the response actions loop often involves organizational leadership providing input on acceptable risk levels and operational priorities.
-Leadership should weigh risk acceptance for residual uncertainties against business pressure to resume normal operations.
+Leadership should weigh the risk of accepting residual uncertainties against business pressure to resume normal operations.
 Regulatory requirements for incident closure may mandate specific conditions before the incident can be formally closed.
 Strategic decisions about ongoing monitoring help balance the need for continued vigilance against the need to return resources to normal operations.</p>
 </div>
 <div class="paragraph">
-<p>In some organizations, these decisions may require a formal sign-off process, while others may rely on consensus among important stakeholders.
+<p>In some organizations, these decisions may require formal sign-off, while others may rely on consensus among key stakeholders.
 This does not necessarily represent process maturity, but rather a reflection of organizational culture and risk tolerance.
 What matters is ensuring that the decision to exit the loop is deliberate, well-informed, and aligned with organizational objectives.</p>
 </div>
@@ -1358,16 +1389,16 @@ What matters is ensuring that the decision to exit the loop is deliberate, well-
 <div class="sect2">
 <h3 id="_practical_considerations">Practical Considerations</h3>
 <div class="paragraph">
-<p>In my experience working with different teams on refining their incident response processes, the response actions loop seems like an increase in effort and complexity.
+<p>In my experience working with different teams to refine their incident response processes, the response actions loop seems to increase effort and complexity.
 This is true, as the iterative approach requires more time and resources upfront.
-However, it is necessary to effectively address all the elements of a sophisticated incident that would otherwise be missed in a linear approach.</p>
+However, it is necessary to address all elements of a sophisticated incident effectively, which would otherwise be missed in a linear approach.</p>
 </div>
 <div class="paragraph">
 <p>
 Consider the example shown in <a href="#_linear_response_threat_processing">Figure 2</a>.
 In this example, the incident response team works from an initial threat report and responds to the incident, but fails to learn about additional threats in the process.
 
-By contrast, using an iterative model as shown in <a href="#_iterative_response_threat_processing">Figure 3</a>, the team uncovers multiple related threats through successive iterations of the response actions loop.</p>
+In contrast, using an iterative model as shown in <a href="#_iterative_response_threat_processing">Figure 3</a>, the team uncovers multiple related threats through successive iterations of the response actions loop.</p>
 </div>
 <div id="_linear_response_threat_processing" class="imageblock">
 <div class="content">
@@ -1382,7 +1413,7 @@ By contrast, using an iterative model as shown in <a href="#_iterative_response_
 <div class="title">Figure 3. Iterative Response Threat Processing</div>
 </div>
 <div class="paragraph">
-<p>To successfully implement the response actions loop, teams should address several practical considerations that arise from the iterative nature of the process.</p>
+<p>To successfully implement the response actions loop, teams should address several practical considerations arising from the process&#8217;s iterative nature.</p>
 </div>
 <div class="paragraph">
 <p>First, organizational resources should be managed effectively throughout the incident response process, including multiple iterations of the response actions loop.
@@ -1390,10 +1421,10 @@ By contrast, using an iterative model as shown in <a href="#_iterative_response_
 Teams may experience fatigue across multiple iterations, requiring careful rotation and rest periods to maintain effectiveness.
 Budget constraints may limit the time invested in the response effort, forcing teams to prioritize the most critical scoping and remediation activities.
 Tool limitations may constrain iteration speed, particularly when forensic analysis or evidence collection requires time-consuming manual processes.
-Decision makers should balance the need for thorough response with resource realities, avoiding burnout while ensuring sufficient effort to resolve the incident.</p>
+Decision makers should balance the need for a thorough response with resource realities, avoiding burnout while ensuring sufficient effort to resolve the incident.</p>
 </div>
 <div class="paragraph">
-<p>Second, documentation requirements create significant burden across multiple iterations.
+<p>Second, documentation requirements create a significant burden across multiple iterations.
 Each iteration generates substantial documentation that should be maintained coherently across the entire incident lifecycle.
 Legal and compliance requirements add complexity, particularly when regulatory frameworks mandate specific documentation standards or retention periods.
 Knowledge transfer between shifts requires careful coordination to ensure that incoming team members understand the current state and can continue response activities without duplication or gaps.
@@ -1403,7 +1434,7 @@ Decision makers should be careful not to require excessive documentation that de
 <p>Third, stakeholder patience often wanes as iterations continue.
 Leadership may not understand why multiple iterations are necessary, viewing repeated cycles as evidence of poor planning or execution rather than as the natural progression of incident understanding.
 Business units may pressure for faster resolution, prioritizing return to normal operations over thorough remediation.
-Effective communication from the incident response team helps manage these expectations, explaining the value of iterative learning and demonstrating progress through each cycle while acknowledging the business need for resolution.</p>
+Effective communication from the incident response team helps manage these expectations by explaining the value of iterative learning, demonstrating progress through each cycle, and acknowledging the business need for resolution.</p>
 </div>
 <div class="paragraph">
 <p>The response actions loop transforms incident response from a linear checklist into a dynamic learning process.
@@ -1437,16 +1468,16 @@ A standalone version of this step-by-step guide is available for download on the
 <div class="ulist">
 <ul>
 <li>
-<p>Scope: Determine the extent of compromise across the environment</p>
+<p>Scope: Determine the extent of compromise across the environment.</p>
 </li>
 <li>
-<p>Contain: Prevent further damage while preserving evidence</p>
+<p>Contain: Prevent further damage while preserving evidence.</p>
 </li>
 <li>
-<p>Eradicate: Remove attacker presence from all identified systems</p>
+<p>Eradicate: Remove attacker presence from all identified systems.</p>
 </li>
 <li>
-<p>Recover: Restore systems to normal operation and address root causes</p>
+<p>Recover: Restore systems to normal operation and address root causes.</p>
 </li>
 </ul>
 </div>
@@ -1456,16 +1487,16 @@ A standalone version of this step-by-step guide is available for download on the
 <div class="ulist">
 <ul>
 <li>
-<p>New indicators of compromise discovered during analysis</p>
+<p>New indicators of compromise were discovered during analysis.</p>
 </li>
 <li>
-<p>Evidence of incomplete eradication or reinfection</p>
+<p>Evidence of incomplete eradication or reinfection.</p>
 </li>
 <li>
-<p>Revelations from forensic analysis requiring expanded scoping</p>
+<p>Revelations from forensic analysis that require expanded scoping.</p>
 </li>
 <li>
-<p>Changing business priorities or regulatory requirements</p>
+<p>Changing business priorities or regulatory requirements.</p>
 </li>
 </ul>
 </div>
@@ -1475,19 +1506,19 @@ A standalone version of this step-by-step guide is available for download on the
 <div class="ulist">
 <ul>
 <li>
-<p>Record decision documentation for each activity (what, when, who, rationale)</p>
+<p>Record decision documentation for each activity (what, when, who, rationale).</p>
 </li>
 <li>
-<p>Track impact assessment of response actions on business processes and system availability</p>
+<p>Track the impact assessment of response actions on business processes and system availability.</p>
 </li>
 <li>
-<p>Provide stakeholder communication tailored to different audiences (executive summaries, technical briefings, user notifications)</p>
+<p>Provide stakeholder communication tailored to different audiences (executive summaries, technical briefings, user notifications).</p>
 </li>
 <li>
-<p>Maintain documentation continuity across iterations, linking related findings and actions</p>
+<p>Maintain documentation continuity across iterations, linking related findings and actions.</p>
 </li>
 <li>
-<p>Adjust communication frequency and detail based on incident severity and stakeholder needs</p>
+<p>Adjust communication frequency and detail based on incident severity and stakeholder needs.</p>
 </li>
 </ul>
 </div>
@@ -1497,13 +1528,13 @@ A standalone version of this step-by-step guide is available for download on the
 <div class="ulist">
 <ul>
 <li>
-<p>Document findings from each iteration to support the overall incident narrative</p>
+<p>Document findings from each iteration to support the overall incident narrative.</p>
 </li>
 <li>
-<p>Link new discoveries to prior iterations for continuity</p>
+<p>Link new discoveries to prior iterations for continuity.</p>
 </li>
 <li>
-<p>Ensure knowledge transfer between shifts through coordinated documentation</p>
+<p>Ensure knowledge transfer between shifts through coordinated documentation.</p>
 </li>
 </ul>
 </div>
@@ -1513,16 +1544,16 @@ A standalone version of this step-by-step guide is available for download on the
 <div class="ulist">
 <ul>
 <li>
-<p>No new IOCs discovered during scoping activities</p>
+<p>No new IOCs discovered during scoping activities.</p>
 </li>
 <li>
-<p>Monitoring shows no signs of attacker activity</p>
+<p>Monitoring shows no signs of attacker activity.</p>
 </li>
 <li>
-<p>Eradication verification confirms threat removal</p>
+<p>Eradication verification confirms threat removal.</p>
 </li>
 <li>
-<p>Systems operating normally after recovery</p>
+<p>Systems are operating normally after recovery.</p>
 </li>
 </ul>
 </div>
@@ -1532,16 +1563,16 @@ A standalone version of this step-by-step guide is available for download on the
 <div class="ulist">
 <ul>
 <li>
-<p>Operational objectives are met</p>
+<p>Operational objectives are met.</p>
 </li>
 <li>
-<p>Acceptable risk level has been achieved</p>
+<p>Acceptable risk level has been achieved.</p>
 </li>
 <li>
-<p>Cost-benefit analysis favors conclusion of active response</p>
+<p>Cost-benefit analysis supports an active response.</p>
 </li>
 <li>
-<p>Resource constraints require prioritization decisions</p>
+<p>Resource constraints require prioritization of decisions.</p>
 </li>
 </ul>
 </div>
@@ -1551,16 +1582,16 @@ A standalone version of this step-by-step guide is available for download on the
 <div class="ulist">
 <ul>
 <li>
-<p>Present technical and business indicators to leadership</p>
+<p>Present technical and business indicators to the leadership.</p>
 </li>
 <li>
-<p>Discuss risk acceptance for residual uncertainties</p>
+<p>Discuss risk acceptance for residual uncertainties.</p>
 </li>
 <li>
-<p>Confirm regulatory requirements for incident closure are met</p>
+<p>Confirm regulatory requirements for incident closure are met.</p>
 </li>
 <li>
-<p>Establish ongoing monitoring plans for continued vigilance</p>
+<p>Establish ongoing monitoring plans for continued vigilance.</p>
 </li>
 </ul>
 </div>
@@ -1570,16 +1601,16 @@ A standalone version of this step-by-step guide is available for download on the
 <div class="ulist">
 <ul>
 <li>
-<p>Manage team fatigue through rotation and rest periods</p>
+<p>Manage team fatigue through rotation and rest periods.</p>
 </li>
 <li>
-<p>Account for budget constraints and tool limitations that may affect iteration speed</p>
+<p>Account for budget constraints and tool limitations that may affect iteration speed.</p>
 </li>
 <li>
-<p>Balance documentation requirements with active response efforts</p>
+<p>Balance documentation requirements with active response efforts.</p>
 </li>
 <li>
-<p>Communicate progress to stakeholders to manage expectations and explain the value of iterative learning</p>
+<p>Communicate progress to stakeholders to manage expectations and explain the value of iterative learning.</p>
 </li>
 </ul>
 </div>
@@ -1599,7 +1630,7 @@ A standalone version of this step-by-step guide is available for download on the
 <div id="footer">
 <div id="footer-text">
 Version 1.0<br>
-Last updated 2026-03-18 13:18:46 UTC
+Last updated 2026-04-04 17:17:07 UTC
 </div>
 </div>
 <script type="text/x-mathjax-config">
