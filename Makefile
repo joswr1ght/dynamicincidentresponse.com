@@ -23,7 +23,7 @@ deploy-pdf:
 		$(S3_BUCKET)/dynamicir.pdf
 
 deploy-checklists:
-	aws s3 sync checklists/ $(S3_BUCKET)/resources/
+	cd $(IRSBS_DIR) && make s3-stepbystep
 
 chapters:
 	cd $(IRSBS_DIR) && make webchapters
