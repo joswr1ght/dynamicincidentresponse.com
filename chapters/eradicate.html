@@ -1848,12 +1848,12 @@ The timeline of threat events is shown in <a href="#_hayabusa_timeline_report">F
 <div class="title">Listing 2. Hayabusa Windows Event Log Analysis Command</div>
 <div class="content">
 <pre>$ <strong>hayabusa csv-timeline -d eventlogs/ -T -o hayabusa-threathunting.csv -E --timeline-start "2020-01-01 00:00:00 +00:00"  --timeline-end "2020-02-28 00:00:00 +00:00" --no-color</strong> <i class="conum" data-value="1"></i><b>(1)</b>
-┏┓ ┏┳━━━┳┓  ┏┳━━━┳━━┓┏┓ ┏┳━━━┳━━━┓
-┃┃ ┃┃┏━┓┃┗┓┏┛┃┏━┓┃┏┓┃┃┃ ┃┃┏━┓┃┏━┓┃
-┃┗━┛┃┃ ┃┣┓┗┛┏┫┃ ┃┃┗┛┗┫┃ ┃┃┗━━┫┃ ┃┃
-┃┏━┓┃┗━┛┃┗┓┏┛┃┗━┛┃┏━┓┃┃ ┃┣━━┓┃┗━┛┃
-┃┃ ┃┃┏━┓┃ ┃┃ ┃┏━┓┃┗━┛┃┗━┛┃┗━┛┃┏━┓┃
-┗┛ ┗┻┛ ┗┛ ┗┛ ┗┛ ┗┻━━━┻━━━┻━━━┻┛ ┗┛
+┏┓ &#32;┏┳━━━┳┓ &#32; &#32;┏┳━━━┳━━┓┏┓ &#32;┏┳━━━┳━━━┓
+┃┃ &#32;┃┃┏━┓┃┗┓┏┛┃┏━┓┃┏┓┃┃┃ &#32;┃┃┏━┓┃┏━┓┃
+┃┗━┛┃┃ &#32;┃┣┓┗┛┏┫┃ &#32;┃┃┗┛┗┫┃ &#32;┃┃┗━━┫┃ &#32;┃┃
+┃┏━┓┃┗━┛┃┗┓┏┛┃┗━┛┃┏━┓┃┃ &#32;┃┣━━┓┃┗━┛┃
+┃┃ &#32;┃┃┏━┓┃ &#32;┃┃ &#32;┃┏━┓┃┗━┛┃┗━┛┃┗━┛┃┏━┓┃
+┗┛ &#32;┗┻┛ &#32;┗┛ &#32;┗┛ &#32;┗┛ &#32;┗┻━━━┻━━━┻━━━┻┛ &#32;┗┛
    by Yamato Security
 
 Start time: 2025/11/24 12:03
@@ -2474,7 +2474,7 @@ By assigning host names in the <code>graph-generator/known-ips.ts</code> file, r
 <div id="_aws_vpc_flow_log_analysis_graph_generation" class="listingblock">
 <div class="title">Listing 13. AWS VPC Flow Log Analysis Graph Generation</div>
 <div class="content">
-<pre>$ <strong>gzcat ~/flowlogs/</strong>.log.gz &gt; flowlogs_combined.txt* <i class="conum" data-value="1"></i><b>(1)</b>
+<pre>$ <strong>gzcat ~/flowlogs/&#42;.log.gz &gt; flowlogs_combined.txt</strong> <i class="conum" data-value="1"></i><b>(1)</b>
 $ <strong>head -4 ../flowlogs_combined.txt</strong>
 2 058390152209 eni-e362dfbb 10.0.2.1 10.0.3.1 50413 5432 6 11 34622 1764152928 1764152962 REJECT OK
 2 058390152209 eni-e978320b 10.0.2.2 10.0.3.1 56261 5432 6 74 64131 1764153408 1764153436 ACCEPT OK
@@ -3103,9 +3103,9 @@ In their assessment of the incident, GitLab researchers shared multiple IOCs to 
 <table id="_gitlab_npm_supply_chain_compromise_iocs" class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 1. GitLab NPM Supply Chain Compromise IOCs</caption>
 <colgroup>
-<col style="width: 9.0909%;">
 <col style="width: 18.1818%;">
-<col style="width: 72.7273%;">
+<col style="width: 36.3636%;">
+<col style="width: 45.4546%;">
 </colgroup>
 <thead>
 <tr>
@@ -3352,9 +3352,8 @@ Cloud incidents typically fall into two main categories requiring distinct eradi
 Infrastructure-as-a-Service compromises present two distinct attack surfaces that require different investigative approaches: the cloud control plane and the infrastructure itself.
 Understanding this distinction helps structure a thorough investigation before removing the attacker&#8217;s access.</p>
 </div>
-<div class="paragraph">
-<p><strong>Cloud Control Plane Investigation</strong></p>
-</div>
+<div class="sect5">
+<h6 id="_cloud_control_plane_investigation">Cloud Control Plane Investigation</h6>
 <div class="paragraph">
 <p>
 The cloud control plane encompasses all the management APIs, IAM systems, and configuration services that govern how cloud resources are created, modified, and accessed.
@@ -3461,9 +3460,9 @@ survivorBingo-role-jv27lw38
 <div class="paragraph">
 <p>Pay particular attention to privileged roles and roles with permissions to modify IAM itself (<code>iam:PutRolePolicy</code>, <code>iam:AttachUserPolicy</code>, <code>iam:CreateRole</code>, <code>iam:UpdateAssumeRolePolicy</code>, etc.), as these permissions allow attackers to continuously create new persistence mechanisms as long as they retain access to the cloud environment.</p>
 </div>
-<div class="paragraph">
-<p><strong>Infrastructure Investigation</strong></p>
 </div>
+<div class="sect5">
+<h6 id="_infrastructure_investigation">Infrastructure Investigation</h6>
 <div class="paragraph">
 <p>For the infrastructure itself (virtual machines, containers, storage, databases, etc.), apply the same forensic procedures used in on-premises environments.
 The important difference is that cloud environments offer additional capabilities for evidence preservation, such as snapshots and logging.</p>
@@ -3527,6 +3526,7 @@ Check IAM roles for excessive permissions that could enable privilege escalation
 <p>Review network configurations and security group modifications.
 Attackers modify firewall rules, security groups, and network ACLs to enable access to compromised resources or to establish command-and-control channels.
 Check VPC peering connections, VPN configurations, and transit gateway attachments that could enable lateral movement to other cloud environments or on-premises networks.</p>
+</div>
 </div>
 </div>
 <div class="sect4">
@@ -3942,12 +3942,11 @@ Cloud environments present unique persistence challenges because attackers can c
 The investigation phase should have identified unauthorized cloud resources, IAM modifications, and changes to container images.
 Eradication now focuses on removing these cloud-native persistence mechanisms.</p>
 </div>
+<div class="sect5">
+<h6 id="_lambdaserverless_functions">Lambda/Serverless Functions</h6>
 <div class="paragraph">
 <p>
-<strong>Lambda/Serverless Functions</strong></p>
-</div>
-<div class="paragraph">
-<p>Serverless functions allow attackers to execute code without managing servers, making them attractive for persistence.
+Serverless functions allow attackers to execute code without managing servers, making them attractive for persistence.
 Delete malicious functions identified during the investigation using the cloud provider&#8217;s CLI tools.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
@@ -3981,12 +3980,12 @@ Delete malicious functions identified during the investigation using the cloud p
 <p>After deleting functions, review CloudTrail, Azure Activity Log, or Cloud Audit Logs to confirm the deletion was successful.
 Check for associated triggers such as API Gateway endpoints, S3 event notifications, or CloudWatch Events rules that may need to be removed.</p>
 </div>
+</div>
+<div class="sect5">
+<h6 id="_iam_policy_modifications">IAM Policy Modifications</h6>
 <div class="paragraph">
 <p>
-<strong>IAM Policy Modifications</strong></p>
-</div>
-<div class="paragraph">
-<p>IAM changes represent a particularly insidious form of cloud persistence because they grant access rather than execute code directly.
+IAM changes represent a particularly insidious form of cloud persistence because they grant access rather than execute code directly.
 Attackers who modify IAM policies can grant themselves persistent access across cloud accounts that will survive even comprehensive credential rotation.</p>
 </div>
 <div class="paragraph">
@@ -3996,12 +3995,12 @@ Remove unauthorized users and service principals that the attacker created to ma
 Revoke elevated permissions granted during the compromise, particularly administrative roles assigned to standard user accounts or overly permissive policies attached to existing roles.
 Reset access keys for compromised accounts to invalidate any credentials the attacker may have stolen.</p>
 </div>
+</div>
+<div class="sect5">
+<h6 id="_container_image_modifications">Container Image Modifications</h6>
 <div class="paragraph">
 <p>
-<strong>Container Image Modifications</strong></p>
-</div>
-<div class="paragraph">
-<p>Container images provide another vector for cloud persistence.
+Container images provide another vector for cloud persistence.
 Attackers who modify container images ensure their code executes whenever new containers are deployed from those images.
 This persistence survives container restarts, scaling events, and even cluster redeployment if the compromised images remain in use.</p>
 </div>
@@ -4010,6 +4009,7 @@ This persistence survives container restarts, scaling events, and even cluster r
 After removing images from registries, force redeployment of affected workloads to ensure running containers are replaced with instances from known-good images.
 
 Review CI/CD pipelines to ensure they build from trusted base images and that build processes have not been compromised.</p>
+</div>
 </div>
 </div>
 </div>
@@ -4137,9 +4137,8 @@ Execute credential resets in phases aligned with account privilege levels (tier 
 <p>
 NOTE: Microsoft&#8217;s tier model for enterprise access defines three account tiers: tier 0 (domain admins, enterprise admins, schema admins), tier 1 (server and application admins), and tier 2 (workstation users). <sup class="footnote">[<a id="_footnoteref_38" class="footnote" href="#_footnotedef_38" title="View footnote.">38</a>]</sup></p>
 </div>
-<div class="paragraph">
-<p><strong>Phase 1: Privileged Account Reset</strong></p>
-</div>
+<div class="sect5">
+<h6 id="_phase_1_privileged_account_reset">Phase 1: Privileged Account Reset</h6>
 <div class="paragraph">
 <p>Reset credentials for all Tier-0 and Tier-1 privileged accounts first.
 These accounts provide the greatest access and represent the highest risk if attackers retained copies of the credentials.</p>
@@ -4219,9 +4218,9 @@ For compromises limited to credential theft without domain controller access, pa
 </div>
 </div>
 </div>
-<div class="paragraph">
-<p><strong>Phase 2: Service Account and Identity Infrastructure Reset</strong></p>
 </div>
+<div class="sect5">
+<h6 id="_phase_2_service_account_and_identity_infrastructure_reset">Phase 2: Service Account and Identity Infrastructure Reset</h6>
 <div class="paragraph">
 <p>Reset credentials for service accounts and identity infrastructure components.
 These accounts often have broad access across the environment and may be targeted for persistence.</p>
@@ -4249,9 +4248,9 @@ Coordinate with application teams to update service configurations before the re
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p><strong>Phase 3: General User Account Reset</strong></p>
 </div>
+<div class="sect5">
+<h6 id="_phase_3_general_user_account_reset">Phase 3: General User Account Reset</h6>
 <div class="paragraph">
 <p>After privileged and service accounts are secured, execute a staged reset of remaining user accounts.
 Prioritize targeted users and accounts with broad data access before the general user population.</p>
@@ -4267,6 +4266,7 @@ Communicate the reset timeline to affected users in advance.</p>
 However, password resets alone do not revoke existing sessions or invalidate tokens issued before the reset.
 Attackers who established sessions or obtained tokens before the password change can continue using those authorization materials until they expire or are explicitly revoked.
 Responders need to take additional steps to address cryptographic root rotation, session revocation, and hybrid identity remediation.</p>
+</div>
 </div>
 </div>
 <div class="sect4">
@@ -4341,13 +4341,13 @@ In practice, administrators may want to wait longer, perhaps twenty-four to fort
 <p>Verify replication completed successfully after each reset using <code>repadmin /replsum</code> before proceeding.
 Incomplete replication can result in authentication failures when users authenticate against domain controllers with inconsistent krbtgt keys.</p>
 </div>
-<div class="paragraph">
-<p><strong>Multi-Domain Forest Considerations</strong></p>
-</div>
+<div class="sect5">
+<h6 id="_multi_domain_forest_considerations">Multi-Domain Forest Considerations</h6>
 <div class="paragraph">
 <p>In multi-domain forests, reset krbtgt in child domains before resetting it in parent domains.
 Each domain has its own krbtgt account, and the reset sequence should follow trust relationships.
 Perform two resets per domain, with appropriate delays, and verify replication between each reset.</p>
+</div>
 </div>
 </div>
 <div class="sect4">
@@ -4364,7 +4364,7 @@ Use <code>netdom</code> to reset each domain controller&#8217;s machine account 
 <div id="_resetting_domain_controller_machine_account_password" class="listingblock">
 <div class="title">Listing 29. Resetting Domain Controller Machine Account Password</div>
 <div class="content">
-<pre>PS C:&#92;&gt; <strong>netdom resetpwd /server:FM-SRV-DC01 /userd:FALSIMENTIS&#92;Administrator /passwordd:&#42;</strong>
+<pre>PS C:&#92;&gt; <strong>netdom resetpwd /server:FM-SRV-DC01 /userd:FALSIMENTIS&#92;Administrator /passwordd:&#42;</strong> <i class="conum" data-value="1"></i><b>(1)</b>
 Type the password associated with the domain user: &#42;&#42;&#42;&#42;&#42;&#42;&#42;&#42;&#42;&#42;&#42;&#42;
 
 The machine account password for the local machine has been successfully reset.
@@ -4373,6 +4373,14 @@ The command completed successfully.
 
 PS C:\&gt;</pre>
 </div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>The second <code>d</code> in <code>/passwordd</code> is used to distinguish the <em>domain</em> password from a local account.</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>Execute this command on each domain controller, specifying a different domain controller as the <code>/server</code> target.
@@ -4469,12 +4477,11 @@ Password resets in on-premises Active Directory do not automatically revoke clou
 <p>Hybrid identity remediation combines on-premises credential resets with cloud session revocation and conditional access enforcement.
 The goal is to ensure attackers cannot reauthenticate from compromised devices after credentials are reset.</p>
 </div>
+<div class="sect5">
+<h6 id="_entra_id_session_and_token_revocation">Entra ID Session and Token Revocation</h6>
 <div class="paragraph">
 <p>
-<strong>Entra ID Session and Token Revocation</strong></p>
-</div>
-<div class="paragraph">
-<p>Revoke all refresh tokens and active sessions for compromised users in Entra ID.
+Revoke all refresh tokens and active sessions for compromised users in Entra ID.
 This forces re-authentication for all cloud applications the next time they attempt to use stored tokens.
 Password reset alone is insufficient because existing tokens remain valid until they expire or are explicitly revoked.</p>
 </div>
@@ -4566,12 +4573,12 @@ An attacker with a compromised device in this environment could maintain access 
 </div>
 </div>
 </div>
+</div>
+<div class="sect5">
+<h6 id="_entra_connect_and_directory_synchronization">Entra Connect and Directory Synchronization</h6>
 <div class="paragraph">
 <p>
-<strong>Entra Connect and Directory Synchronization</strong></p>
-</div>
-<div class="paragraph">
-<p>If Entra Connect or another directory synchronization service is compromised, reset the synchronization service account credentials and review the synchronization configuration for unauthorized changes.</p>
+If Entra Connect or another directory synchronization service is compromised, reset the synchronization service account credentials and review the synchronization configuration for unauthorized changes.</p>
 </div>
 <div class="paragraph">
 <p>Attackers who compromise directory synchronization can modify cloud identities, create backdoor accounts for persistent access, or alter group memberships that propagate to the cloud environment.
@@ -4581,6 +4588,7 @@ Verify that synchronization rules have not been modified and that no unauthorize
 <p>Review the Entra Connect synchronization service account in the Entra admin center under <strong>Identity | Hybrid management | Microsoft Entra Connect | Connect Sync</strong>.
 Reset the service account credentials and verify the connector configuration.
 On the Entra Connect server, open the <strong>Synchronization Rules Editor</strong> to review inbound and outbound synchronization rules for unauthorized modifications.</p>
+</div>
 </div>
 </div>
 <div class="sect4">
@@ -4949,44 +4957,29 @@ Apply security patches for exploited vulnerabilities as part of the eradication 
 This is a straightforward recommendation that will be intuitive for organizations, but there are important considerations to ensure effective patching during incident response.</p>
 </div>
 <div class="paragraph">
-<p><strong>Test and Verify Before Broad Rollout</strong></p>
-</div>
-<div class="paragraph">
-<p>Every patch should be tested and verified prior to broad deployment.
+<p><strong>Test and Verify Before Broad Rollout</strong>: Every patch should be tested and verified prior to broad deployment.
 Develop a documented procedure for applying and verifying the patch, including expected outcomes and rollback steps if issues arise.
 Testing in a non-production environment helps identify compatibility issues before they affect critical systems.</p>
 </div>
 <div class="paragraph">
-<p><strong>Track Patch Status with Inventory Management</strong></p>
-</div>
-<div class="paragraph">
-<p>Use inventory management to ensure that all systems requiring remediation receive patches.
+<p><strong>Track Patch Status with Inventory Management</strong>: Use inventory management to ensure that all systems requiring remediation receive patches.
 Technology platforms such as configuration management databases (CMDBs) or vulnerability scanners can help automate this documentation process.
 For organizations without these tools, manual spreadsheets or other tracking mechanisms (simple lists, tickets, etc.) can provide visibility into patch status across the environment.
 The goal is to maintain a clear record of which systems have been patched and which still require remediation.</p>
 </div>
 <div class="paragraph">
-<p><strong>Balance Change Management with Speed</strong></p>
-</div>
-<div class="paragraph">
-<p>Use change management processes where possible, but many organizations will benefit from prioritizing speed and risk reduction during incident response.
+<p><strong>Balance Change Management with Speed</strong>: Use change management processes where possible, but many organizations will benefit from prioritizing speed and risk reduction during incident response.
 A vulnerability actively exploited against the organization poses an immediate risk that often justifies expedited patching.
 Coordinate with decision-makers to establish an appropriate risk tolerance for bypassing standard change windows.
 Document any deviations from normal procedures for the incident record.</p>
 </div>
 <div class="paragraph">
-<p><strong>Consider Phased Rollout for Large Environments</strong></p>
-</div>
-<div class="paragraph">
-<p>For environments with many affected systems, consider a phased rollout in which groups of systems are patched and verified before moving to the next group.
+<p><strong>Consider Phased Rollout for Large Environments</strong>: For environments with many affected systems, consider a phased rollout in which groups of systems are patched and verified before moving to the next group.
 This approach identifies concerns or problems with patching early in the process before they affect all systems.
 Start with lower-risk systems, when possible, to validate the patch before applying it to critical infrastructure.</p>
 </div>
 <div class="paragraph">
-<p><strong>Verify System Functionality After Patching</strong></p>
-</div>
-<div class="paragraph">
-<p>Use system verification procedures to ensure systems preserve needed functionality after patching.
+<p><strong>Verify System Functionality After Patching</strong>: Use system verification procedures to ensure systems preserve needed functionality after patching.
 Coordinate with system owners to validate that patched systems continue to operate correctly.
 Some patches may require configuration changes or application updates to maintain compatibility.
 Document any issues encountered and their resolutions for future consideration.</p>
@@ -5219,9 +5212,8 @@ Vulnerability remediation should cover all the supporting elements that led to t
 </tr>
 </table>
 </div>
-<div class="paragraph">
-<p><strong>Harden System Configurations</strong></p>
-</div>
+<div class="sect5">
+<h6 id="_harden_system_configurations">Harden System Configurations</h6>
 <div class="paragraph">
 <p>
 In <a href="prepare.html#_apply_system_hardening_processes">Apply System Hardening Processes</a>, we looked at the preparation activity for applying CIS benchmarks and other hardening guides. <sup class="footnote">[<a id="_footnoteref_52" class="footnote" href="#_footnotedef_52" title="View footnote.">52</a>]</sup>
@@ -5409,6 +5401,7 @@ Remove rules that are no longer required and restrict overly broad allow rules.<
 Remote access services, in particular, should be limited to those required for business operations.
 Services such as Telnet, FTP, RDP, and SMB are frequently targeted by attackers and should be disabled unless explicitly required.
 Where remote access is required, use secure alternatives such as SSH or VPNs with multi-factor authentication.</p>
+</div>
 </div>
 </div>
 </div>
@@ -7135,7 +7128,7 @@ A standalone version of this step-by-step guide is available for download on the
 <div id="footer">
 <div id="footer-text">
 Version 1.0<br>
-Last updated 2026-04-04 17:17:07 UTC
+Last updated 2026-04-05 02:45:36 UTC
 </div>
 </div>
 <script type="text/x-mathjax-config">

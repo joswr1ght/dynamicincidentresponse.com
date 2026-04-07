@@ -3634,21 +3634,10 @@ Combine CVSS severity with asset criticality, exposure level, and threat intelli
 </div>
 </div>
 <div class="paragraph">
-<p></p>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-The <a href="https://www.first.org/epss/">Exploit Prediction and Scoring (EPSS)</a> metric, from the Forum of Incident Response and Security Teams (FIRST), provides a data-driven approach to prioritizing vulnerability remediation based on the likelihood of exploitation.
+<p>
+TIP: The <a href="https://www.first.org/epss/">Exploit Prediction and Scoring (EPSS)</a> metric, from the Forum of Incident Response and Security Teams (FIRST), provides a data-driven approach to prioritizing vulnerability remediation based on the likelihood of exploitation.
 Where CVSS focuses on how difficult a vulnerability <em>would be</em> to exploit, the EPSS metric estimates the probability that a vulnerability <em>will</em> be exploited in the wild.
-EPSS offers another dimension to vulnerability prioritization for software management that complements CVSS scores.
-</td>
-</tr>
-</table>
+EPSS offers another dimension to vulnerability prioritization for software management that complements CVSS scores.</p>
 </div>
 </div>
 <div class="sect4">
@@ -4278,7 +4267,7 @@ A standalone version of this step-by-step guide is available for download on the
 <p>Policy on engaging with third-party incident response providers</p>
 </li>
 <li>
-<p>Containment authorization policies defining who can authorize systems to be taken offline</p>
+<p>Containment authorization policies defining who can authorize systems to be taken offline, including tiered authorization levels (analyst-authorized actions like endpoint isolation, team lead-authorized actions like segment isolation, management-authorized actions like shutting down production systems)</p>
 </li>
 <li>
 <p>Recovery time objectives (RTO) and recovery point objectives (RPO) for critical systems</p>
@@ -4613,7 +4602,7 @@ A standalone version of this step-by-step guide is available for download on the
 <div class="ulist">
 <ul>
 <li>
-<p>Establish break-glass accounts with appropriate protections</p>
+<p>Establish break-glass accounts secured with hardware tokens or a credential vault, with alerting on use and periodic testing</p>
 </li>
 <li>
 <p>Document access request procedures for incident response</p>
@@ -4632,7 +4621,7 @@ A standalone version of this step-by-step guide is available for download on the
 <div class="ulist">
 <ul>
 <li>
-<p>Schedule regular exercises (monthly tabletop discussions, quarterly technical drills, annual full-scale exercises)</p>
+<p>Schedule regular exercises (monthly tabletop discussions, quarterly technical drills, annual full-scale exercises that combine tabletop discussion with technical execution)</p>
 </li>
 <li>
 <p>Develop realistic scenarios based on relevant threats</p>
@@ -4648,6 +4637,25 @@ A standalone version of this step-by-step guide is available for download on the
 </li>
 <li>
 <p>Document findings and track improvement implementation</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Maintain preparation documentation on a regular review cycle:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Review contact lists quarterly with verification of current information</p>
+</li>
+<li>
+<p>Review playbooks annually and after significant technology changes</p>
+</li>
+<li>
+<p>Review policy documents annually aligned with broader governance cycles</p>
+</li>
+<li>
+<p>Assign specific individuals responsible for keeping documents current and include document review in their performance expectations</p>
 </li>
 </ul>
 </div>
@@ -4689,7 +4697,10 @@ A standalone version of this step-by-step guide is available for download on the
 <p>Maintain configuration management with version control</p>
 </li>
 <li>
-<p>Track software inventory including version information and SBOM capabilities</p>
+<p>Track software inventory including version information</p>
+</li>
+<li>
+<p>Maintain Software Bill of Materials (SBOM) data to identify systems affected by vulnerabilities in third-party components</p>
 </li>
 <li>
 <p>Discover and document shadow IT through billing and expense report reviews</p>
@@ -4821,7 +4832,7 @@ A standalone version of this step-by-step guide is available for download on the
 <p>Use adversary simulation and purple teaming to validate detection coverage against known attack techniques (e.g., MITRE ATT&amp;CK, Atomic Red Team)</p>
 </li>
 <li>
-<p>Prioritize remediation based on exploitability, asset criticality, and threat intelligence about active exploitation</p>
+<p>Prioritize remediation using CVSS severity alongside EPSS exploitation probability, asset criticality, exposure, and threat intelligence about active exploitation</p>
 </li>
 <li>
 <p>Track remediation progress and escalate persistent vulnerabilities that exceed acceptable risk thresholds</p>
@@ -4906,7 +4917,7 @@ A standalone version of this step-by-step guide is available for download on the
 <div id="footer">
 <div id="footer-text">
 Version 1.0<br>
-Last updated 2026-04-04 17:17:06 UTC
+Last updated 2026-04-05 02:45:34 UTC
 </div>
 </div>
 <script type="text/x-mathjax-config">

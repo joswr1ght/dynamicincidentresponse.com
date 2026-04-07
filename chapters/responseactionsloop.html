@@ -1447,7 +1447,9 @@ This iterative approach, while potentially requiring more time initially, ultima
 <h3 id="_response_actions_loop_step_by_step">Response Actions Loop: Step-by-Step</h3>
 <div class="paragraph">
 <p>The following steps provide a condensed reference for response actions loop activities.
-Each step corresponds to topics covered earlier in this chapter, organized for use when managing the iterative cycle of scoping, containment, eradication, and recovery.</p>
+Each step corresponds to topics covered earlier in this chapter, organized for use when managing the iterative cycle of scoping, containment, eradication, and recovery.
+The loop is inspired by Boyd&#8217;s OODA model and is inherently iterative: a single pass rarely produces a complete response because initial understanding is partial, new insights surface during eradication, and evidence analysis reveals previously unknown attack vectors.
+Expect to cycle through the loop multiple times, with each activity expanding in sophistication as understanding improves.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -1464,20 +1466,20 @@ A standalone version of this step-by-step guide is available for download on the
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Execute the response actions loop cycle:</p>
+<p>Execute the response actions loop, expecting each activity to deepen across iterations:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Scope: Determine the extent of compromise across the environment.</p>
+<p>Scope: Determine the extent of compromise, refining boundaries as new evidence emerges.</p>
 </li>
 <li>
-<p>Contain: Prevent further damage while preserving evidence.</p>
+<p>Contain: Begin with basic isolation, then progress to careful segmentation, application-specific restrictions, and deceptive containment as understanding improves.</p>
 </li>
 <li>
-<p>Eradicate: Remove attacker presence from all identified systems.</p>
+<p>Eradicate: Remove obvious persistence first, then address sophisticated mechanisms, backdoors, and living-off-the-land techniques revealed through deeper analysis.</p>
 </li>
 <li>
-<p>Recover: Restore systems to normal operation and address root causes.</p>
+<p>Recover: Restore critical systems early, then implement systemic improvements based on root-cause analysis in later iterations.</p>
 </li>
 </ul>
 </div>
@@ -1601,16 +1603,19 @@ A standalone version of this step-by-step guide is available for download on the
 <div class="ulist">
 <ul>
 <li>
-<p>Manage team fatigue through rotation and rest periods.</p>
+<p>Manage team fatigue through rotation and rest periods to maintain effectiveness across multiple cycles.</p>
 </li>
 <li>
-<p>Account for budget constraints and tool limitations that may affect iteration speed.</p>
+<p>Account for budget constraints and tool limitations that may affect iteration speed, particularly time-consuming forensic analysis or evidence collection.</p>
 </li>
 <li>
-<p>Balance documentation requirements with active response efforts.</p>
+<p>Balance documentation requirements with active response efforts, avoiding excessive documentation that detracts from active response.</p>
 </li>
 <li>
-<p>Communicate progress to stakeholders to manage expectations and explain the value of iterative learning.</p>
+<p>Manage stakeholder patience as iterations continue. Leadership may view repeated cycles as poor execution rather than as the natural progression of incident understanding.</p>
+</li>
+<li>
+<p>Communicate progress to stakeholders to manage expectations, explain the value of iterative learning, and address business pressure for faster resolution.</p>
 </li>
 </ul>
 </div>
@@ -1630,7 +1635,7 @@ A standalone version of this step-by-step guide is available for download on the
 <div id="footer">
 <div id="footer-text">
 Version 1.0<br>
-Last updated 2026-04-04 17:17:07 UTC
+Last updated 2026-04-05 02:45:36 UTC
 </div>
 </div>
 <script type="text/x-mathjax-config">

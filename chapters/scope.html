@@ -1196,18 +1196,12 @@ IOCs come in many forms, and understanding their variety helps responders cast a
 <p>Technical indicators provide concrete, searchable artifacts that can be systematically hunted across the environment:</p>
 </div>
 <div class="paragraph">
-<p><strong>File-based Indicators</strong></p>
-</div>
-<div class="paragraph">
 <p>
-These indicators include malware hashes, suspicious filenames, or specific file paths used by attackers.
+<strong>File-based Indicators</strong>: These indicators include malware hashes, suspicious filenames, or specific file paths used by attackers.
 A single malicious executable discovered on one system should trigger searches across all systems for the same file hash, similar filenames, or files in unusual locations.</p>
 </div>
 <div class="paragraph">
-<p><strong>Network Indicators</strong></p>
-</div>
-<div class="paragraph">
-<p>These indicators are broad but particularly valuable, allowing organizations to leverage investigative insight to quickly assess a large number of systems.
+<p><strong>Network Indicators</strong>: These indicators are broad but particularly valuable, allowing organizations to leverage investigative insight to quickly assess a large number of systems.
 
 Network indicators include IP addresses, domain names, URLs, network signatures, and other network anomalies (often characterized by Network Detection and Response (NDR) platforms), including unusual network activity patterns.
 
@@ -1215,27 +1209,18 @@ For example, if an investigation reveals anomalous network activity attributed t
 This level of analysis may reveal additional compromised systems not yet exhibiting obvious symptoms.</p>
 </div>
 <div class="paragraph">
-<p><strong>Process and Service Indicators</strong></p>
-</div>
-<div class="paragraph">
-<p>These indicators include suspicious process names, service names, scheduled task names, command-line arguments, and any other process-launch configuration details.
+<p><strong>Process and Service Indicators</strong>: These indicators include suspicious process names, service names, scheduled task names, command-line arguments, and any other process-launch configuration details.
 Attackers often use consistent naming patterns across compromised systems, making these valuable for scoping.
 Randomly-named processes or services can also be valuable indicators, since they deviate from normal system behavior.</p>
 </div>
 <div class="paragraph">
-<p><strong>Registry and Configuration Indicators</strong></p>
-</div>
-<div class="paragraph">
-<p>These indicators involve specific keys, values, or configuration changes within the system registry.
+<p><strong>Registry and Configuration Indicators</strong>: These indicators involve specific keys, values, or configuration changes within the system registry.
 
 PowerShell scripts stored in registry values, WMI event subscriptions, or modified system settings can serve as IOCs for broader searches.
 Similarly, non-Windows systems may have comparable indicators revealed in configuration files (e.g., ASCII-based or encoded data, including macOS property list files).</p>
 </div>
 <div class="paragraph">
-<p><strong>Account-based Indicators</strong></p>
-</div>
-<div class="paragraph">
-<p>These indicators include unauthorized user accounts, suspicious account usage patterns, or privilege escalations.
+<p><strong>Account-based Indicators</strong>: These indicators include unauthorized user accounts, suspicious account usage patterns, or privilege escalations.
 An attacker-created account on one system warrants immediate investigation for similar accounts throughout the organization.</p>
 </div>
 </div>
@@ -1246,26 +1231,17 @@ An attacker-created account on one system warrants immediate investigation for s
 Behavioral indicators often require more sophisticated analysis but can uncover widespread compromise that static indicators miss.</p>
 </div>
 <div class="paragraph">
-<p><strong>Temporal Patterns</strong></p>
-</div>
-<div class="paragraph">
-<p>Temporal patterns observed in logging data, SIEM trend analysis, or aggregate network investigations may indicate coordinated activity across multiple systems.
+<p><strong>Temporal Patterns</strong>: Temporal patterns observed in logging data, SIEM trend analysis, or aggregate network investigations may indicate coordinated activity across multiple systems.
 Simultaneous logons, synchronized file modifications, or regular beacon intervals can indicate widespread compromise even when individual events appear benign.
 Attackers often operate on consistent schedules, creating predictable patterns that become visible when analyzed across the environment.</p>
 </div>
 <div class="paragraph">
-<p><strong>Data Movement Patterns</strong></p>
-</div>
-<div class="paragraph">
-<p>These patterns show unusual data flows between systems or to external destinations.
+<p><strong>Data Movement Patterns</strong>: These patterns show unusual data flows between systems or to external destinations.
 Large data transfers, especially during off-hours, may indicate exfiltration activities.
 Systems that do not typically communicate but are suddenly transferring large amounts of data warrant investigation as potential indicators of data staging or exfiltration.</p>
 </div>
 <div class="paragraph">
-<p><strong>Lateral Movement Indicators</strong></p>
-</div>
-<div class="paragraph">
-<p>These indicators include authentication, remote access, or service usage patterns that indicate an attacker moving between systems.
+<p><strong>Lateral Movement Indicators</strong>: These indicators include authentication, remote access, or service usage patterns that indicate an attacker moving between systems.
 
 Pass-the-hash attacks, remote desktop sessions, or WMI usage for remote execution leave distinctive patterns that differ from normal administrative activity.
 Multiple authentication attempts across many systems in a short timeframe often reveal automated lateral movement tools.</p>
@@ -1305,26 +1281,17 @@ By combining these data sources in a single platform, analysts can use overlappi
 Given resource limitations, scoping often proceeds in phases rather than attempting to investigate the entire environment simultaneously.</p>
 </div>
 <div class="paragraph">
-<p><strong>Critical Asset Prioritization</strong></p>
-</div>
-<div class="paragraph">
-<p>This approach focuses initial scoping on high-value systems, including domain controllers, file servers, databases, and systems containing sensitive data.
+<p><strong>Critical Asset Prioritization</strong>: This approach focuses initial scoping on high-value systems, including domain controllers, file servers, databases, and systems containing sensitive data.
 These systems warrant immediate attention regardless of initial IOC location.
 
 Sometimes referred to as <em>pivoting</em> in an investigation, critical asset prioritization ensures that the most important organizational assets are quickly assessed and protected.</p>
 </div>
 <div class="paragraph">
-<p><strong>Lateral Expansion</strong></p>
-</div>
-<div class="paragraph">
-<p>This phase extends scoping to systems directly connected to known-compromised hosts, including those on the same network segment, those with recent authentication from compromised accounts, and those sharing administrative credentials.
+<p><strong>Lateral Expansion</strong>: This phase extends scoping to systems directly connected to known-compromised hosts, including those on the same network segment, those with recent authentication from compromised accounts, and those sharing administrative credentials.
 Lateral expansion follows the likely paths an attacker would take to move through the environment.</p>
 </div>
 <div class="paragraph">
-<p><strong>Environmental Sweep</strong></p>
-</div>
-<div class="paragraph">
-<p>This phase eventually extends to all systems in the environment, ensuring no compromised systems remain undiscovered.
+<p><strong>Environmental Sweep</strong>: This phase eventually extends to all systems in the environment, ensuring no compromised systems remain undiscovered.
 Environmental sweeps may occur over days or weeks for large organizations.</p>
 </div>
 </div>
@@ -1392,7 +1359,7 @@ Understanding the full timeline also helps identify any systems that may have be
 <div class="title">SE3R Documentation Method</div>
 <div class="paragraph">
 <p>
-SE3R is a "maximum capture, maximum grasp" documentation technique developed by Eric Shepherd that aims to comprehensively capture fine-grained details from incident narratives while preventing the unconscious filtering and editing that typically occurs during analysis.
+SE3R is a <em>maximum capture, maximum grasp</em> documentation technique developed by Eric Shepherd that aims to comprehensively capture fine-grained details from incident narratives while preventing the unconscious filtering and editing that typically occurs during analysis.
 The method provides a systematic five-stage process (Survey, Extract, Read, Review, and Respond) designed to enable thorough detail capture, systematic analysis of incident information, identification of issues and anomalies requiring investigation, and effective planning of investigative response actions.</p>
 </div>
 <div class="paragraph">
@@ -2091,6 +2058,9 @@ A standalone version of this step-by-step guide is available for download on the
 <li>
 <p>Determine when sensitive data was accessed or exfiltrated.</p>
 </li>
+<li>
+<p>Consider applying a structured documentation technique such as SE3R (Survey, Extract, Read, Review, Respond) to capture fine-grained details from incident narratives and surface gaps that warrant further investigation.</p>
+</li>
 </ul>
 </div>
 </li>
@@ -2124,6 +2094,9 @@ A standalone version of this step-by-step guide is available for download on the
 <p>For systems with limited logging, use alternative evidence sources such as network flow data and authentication logs from connected systems.</p>
 </li>
 <li>
+<p>For ICS and industrial devices without centralized logging (for example, PLCs like the Siemens S7-1200), rely on network flow data as the primary source of evidence.</p>
+</li>
+<li>
 <p>Watch for anti-forensic techniques (log deletion, timestomping, encryption and obfuscation, living off the land).</p>
 </li>
 <li>
@@ -2131,6 +2104,9 @@ A standalone version of this step-by-step guide is available for download on the
 </li>
 <li>
 <p>Apply cloud-specific scoping tools and techniques for cloud and hybrid environments, including cloud provider audit logs and container runtime security.</p>
+</li>
+<li>
+<p>Scope cloud environments quickly. Ephemeral resources can deallocate and take evidence with them if scoping is delayed.</p>
 </li>
 <li>
 <p>Manage scale and complexity through prioritization and automation.</p>
@@ -2162,7 +2138,7 @@ A standalone version of this step-by-step guide is available for download on the
 <div id="footer">
 <div id="footer-text">
 Version 1.0<br>
-Last updated 2026-04-04 17:17:07 UTC
+Last updated 2026-04-05 02:45:36 UTC
 </div>
 </div>
 <script type="text/x-mathjax-config">

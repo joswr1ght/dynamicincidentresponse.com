@@ -2320,6 +2320,9 @@ A standalone version of this step-by-step guide is available for download on the
 <div class="ulist">
 <ul>
 <li>
+<p>Treat eradication verification as an ongoing activity rather than a single decision.</p>
+</li>
+<li>
 <p>Re-scan the system for indicators of compromise identified during the investigation.</p>
 </li>
 <li>
@@ -2327,6 +2330,9 @@ A standalone version of this step-by-step guide is available for download on the
 </li>
 <li>
 <p>Verify unauthorized accounts have been disabled or removed.</p>
+</li>
+<li>
+<p>Perform registry and configuration validation, scheduled task review, startup item inspection, and integrity checks for critical binaries, feeding the results into go or no-go decisions for each recovery phase.</p>
 </li>
 <li>
 <p>Check for any persistence mechanisms that may have been missed during eradication.</p>
@@ -2573,10 +2579,13 @@ A standalone version of this step-by-step guide is available for download on the
 <div class="ulist">
 <ul>
 <li>
-<p>Present scheduling options and associated risks to decision makers.</p>
+<p>Present scheduling options and associated risks to decision makers, recommending off-hours restoration where feasible to reduce user impact, ease monitoring, and provide rollback flexibility.</p>
 </li>
 <li>
-<p>Document guidance provided and decisions made regarding timing.</p>
+<p>Recognize that timing decisions ultimately belong to organizational leadership.</p>
+</li>
+<li>
+<p>Document guidance provided and decisions made regarding timing, including rationale when leadership chooses immediate restoration against recommendations.</p>
 </li>
 <li>
 <p>Communicate the restoration schedule to all affected teams.</p>
@@ -2588,9 +2597,15 @@ A standalone version of this step-by-step guide is available for download on the
 </div>
 </li>
 <li>
-<p>Execute phased or coordinated restoration:</p>
+<p>Select phased or coordinated restoration based on context:</p>
 <div class="ulist">
 <ul>
+<li>
+<p>Use phased recovery when eradication confidence is limited or capacity is constrained. Restore a small set of systems first, enable monitoring, and watch for anomalies before scaling up.</p>
+</li>
+<li>
+<p>Use coordinated recovery for interconnected systems with well-documented dependencies that require simultaneous restoration.</p>
+</li>
 <li>
 <p>Restore systems according to the planned sequence.</p>
 </li>
@@ -2602,6 +2617,28 @@ A standalone version of this step-by-step guide is available for download on the
 </li>
 <li>
 <p>Document any deviations from the planned restoration sequence.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Manage recovery coordination complexity:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Designate an incident response coordinator for incidents spanning multiple systems and teams to track progress, facilitate communication, and ensure steps execute in the proper sequence.</p>
+</li>
+<li>
+<p>Define explicit handoff criteria between restoration, validation, acceptance testing, and production release.</p>
+</li>
+<li>
+<p>Translate technical recovery work into business language when engaging with leadership to manage business pressure for rapid restoration.</p>
+</li>
+<li>
+<p>Prepare communication templates for common scenarios (delays, partial restoration, user action required) before recovery begins.</p>
+</li>
+<li>
+<p>Establish post-recovery baseline documentation through thorough acceptance testing and owner sign-off to defend against misplaced problem attribution when unrelated issues emerge later.</p>
 </li>
 </ul>
 </div>
@@ -2816,7 +2853,7 @@ A standalone version of this step-by-step guide is available for download on the
 <div id="footer">
 <div id="footer-text">
 Version 1.0<br>
-Last updated 2026-04-04 17:17:08 UTC
+Last updated 2026-04-05 02:45:37 UTC
 </div>
 </div>
 <script type="text/x-mathjax-config">

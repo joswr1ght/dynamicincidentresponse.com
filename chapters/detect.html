@@ -1701,9 +1701,8 @@ The minimal effort required to create and maintain this file pays off when it ac
 Detection operations should use cloud-native logging, cloud provider APIs, and specialized detection tools designed for cloud workloads.
 Specialized detection solutions vary depending on the cloud deployment architecture: containerized, serverless, or hybrid environments.</p>
 </div>
-<div class="paragraph">
-<p><strong>Container and Kubernetes Detection</strong></p>
-</div>
+<div class="sect4">
+<h5 id="_container_and_kubernetes_detection">Container and Kubernetes Detection</h5>
 <div class="paragraph">
 <p>
 Container and Kubernetes detection employs multiple approaches to identify threats in containerized environments.
@@ -1730,9 +1729,9 @@ Organizations should configure centralized log collection and consider runtime d
 </tr>
 </table>
 </div>
-<div class="paragraph">
-<p><strong>Serverless and Microservices Detection</strong></p>
 </div>
+<div class="sect4">
+<h5 id="_serverless_and_microservices_detection">Serverless and Microservices Detection</h5>
 <div class="paragraph">
 <p>Detection in agentless environments, such as serverless functions and microservices, requires alternative approaches, as traditional endpoint agents cannot run in these execution environments.</p>
 </div>
@@ -1741,9 +1740,9 @@ Organizations should configure centralized log collection and consider runtime d
 Analysts should watch for abnormal invocation patterns, unexpected outbound connection attempts, unusual access to secrets or environment variables, and deviations from baseline execution characteristics (such as timeouts, throttling, and unusual memory and CPU consumption).
 The ephemeral nature of these environments makes real-time detection important since evidence exists only briefly.</p>
 </div>
-<div class="paragraph">
-<p><strong>Hybrid Cloud</strong></p>
 </div>
+<div class="sect4">
+<h5 id="_hybrid_cloud">Hybrid Cloud</h5>
 <div class="paragraph">
 <p>Detection across distributed infrastructure, including hybrid and multi-cloud environments, requires unifying telemetry and detection logic across on-premises systems and multiple cloud providers.
 Organizations deploy a mix of agentless approaches, including API access and snapshot-based analysis alongside agent-based runtime monitoring for workloads that support it.
@@ -1763,6 +1762,7 @@ Organizations that leverage multiple cloud providers should consider detection s
 </td>
 </tr>
 </table>
+</div>
 </div>
 </div>
 </div>
@@ -2163,6 +2163,28 @@ A standalone version of this step-by-step guide is available for download on the
 <div class="olist arabic">
 <ol class="arabic">
 <li>
+<p>Select and combine detection methodologies:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Use signature-based detection for efficient, high-confidence identification of known threats.</p>
+</li>
+<li>
+<p>Apply behavioral detection to identify threats that evade signatures, including mass file encryption, unusual access patterns, living-off-the-land techniques, and insider misuse.</p>
+</li>
+<li>
+<p>Scope behavioral baselines to business units or functional groups so meaningful anomalies stand out from normal activity.</p>
+</li>
+<li>
+<p>Layer ML-based detection for scoring and correlation at scale, using human-in-the-loop workflows to preserve analyst judgment on final classification.</p>
+</li>
+<li>
+<p>Map detection logic to MITRE ATT&amp;CK techniques rather than specific indicators so rules remain effective as attackers modify tools.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
 <p>Establish detection data sources:</p>
 <div class="ulist">
 <ul>
@@ -2182,12 +2204,6 @@ A standalone version of this step-by-step guide is available for download on the
 <p>Ensure comprehensive log collection across critical systems.</p>
 </li>
 <li>
-<p>Enable cloud-native logging (Kubernetes audit logs, cloud provider flow logs, control plane events).</p>
-</li>
-<li>
-<p>Establish behavioral baselines at the business-unit or functional-group level for meaningful anomaly detection.</p>
-</li>
-<li>
 <p>Train employees on security awareness and incident reporting.</p>
 </li>
 <li>
@@ -2195,6 +2211,28 @@ A standalone version of this step-by-step guide is available for download on the
 </li>
 <li>
 <p>Publish a security.txt file to facilitate external security reporting.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Adapt detection to cloud-native environments:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Enable cloud provider flow logs, control plane events, and Kubernetes audit logs.</p>
+</li>
+<li>
+<p>Deploy eBPF-based kernel monitoring and container runtime socket monitoring for containerized workloads.</p>
+</li>
+<li>
+<p>Use service mesh telemetry for east-west traffic visibility between services.</p>
+</li>
+<li>
+<p>For serverless and microservices workloads, collect function telemetry and watch for abnormal invocation patterns, unexpected outbound connections, unusual access to secrets or environment variables, and deviations from baseline execution characteristics.</p>
+</li>
+<li>
+<p>Unify telemetry across on-premises, hybrid, and multi-cloud environments to enable cross-environment correlation.</p>
 </li>
 </ul>
 </div>
@@ -2242,6 +2280,9 @@ A standalone version of this step-by-step guide is available for download on the
 </li>
 <li>
 <p>Analyze encrypted traffic metadata (JA4+ fingerprints, connection patterns, certificate attributes).</p>
+</li>
+<li>
+<p>Deploy TLS inspection for internal systems where policy permits to provide richer visibility for hunting and investigation.</p>
 </li>
 <li>
 <p>Document findings and new IOCs discovered during hunting.</p>
@@ -2310,7 +2351,7 @@ A standalone version of this step-by-step guide is available for download on the
 <p>Monitor for log tampering, disabled audit policies, and gaps in log data as indicators of adversary evasion.</p>
 </li>
 <li>
-<p>Retrain and recalibrate ML-based detection models to address model drift and evolving attacker techniques.</p>
+<p>Retrain and recalibrate ML-based detection models to address model drift, validating training data for quality and avoiding contamination from mislabeled examples.</p>
 </li>
 <li>
 <p>Retain test environments for validating changes to detection logic before production deployment.</p>
@@ -2360,7 +2401,7 @@ A standalone version of this step-by-step guide is available for download on the
 <div id="footer">
 <div id="footer-text">
 Version 1.0<br>
-Last updated 2026-04-04 17:17:06 UTC
+Last updated 2026-04-05 02:45:35 UTC
 </div>
 </div>
 <script type="text/x-mathjax-config">

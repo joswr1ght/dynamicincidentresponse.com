@@ -2092,7 +2092,8 @@ Decision-makers need to understand not only the technical details of the inciden
 <h3 id="_verify_and_triage_step_by_step">Verify and Triage: Step-by-Step</h3>
 <div class="paragraph">
 <p>The following steps provide a condensed reference for verification and triage activities.
-Each step corresponds to topics covered earlier in this chapter, organized for use when validating a potential incident, assessing risk, and working with decision makers to determine response priorities.</p>
+Each step corresponds to topics covered earlier in this chapter, organized for use when validating a potential incident, assessing risk, and working with decision makers to determine response priorities.
+Verification serves as a gating function before engaging the broader team: it ensures that the response effort is appropriate for the risk and avoids expending resources on incidents that are not real.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -2129,6 +2130,9 @@ A standalone version of this step-by-step guide is available for download on the
 </li>
 <li>
 <p>Evidence references</p>
+</li>
+<li>
+<p>Maintain documentation integrity by keeping notes focused on the incident at hand, avoiding contamination that could compromise the documentation&#8217;s validity as evidence in legal proceedings</p>
 </li>
 </ul>
 </div>
@@ -2167,10 +2171,23 @@ A standalone version of this step-by-step guide is available for download on the
 </li>
 <li>
 <p>Verify the incident using the information collected during the detect activity and CTI enrichment.
-Choose to continue, stop, or defer the investigation.</p>
+Select one of three verification outcomes:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Continue</strong>: The incident is real. Escalate and engage the broader incident response team and stakeholders.</p>
 </li>
 <li>
-<p><strong>Triage</strong>: Present the verified incident to decision makers:</p>
+<p><strong>Stop</strong>: The incident is not real. Close it and document the findings for future reference.</p>
+</li>
+<li>
+<p><strong>Defer</strong>: The available information is insufficient. Request additional information from the reporting party or other sources before making a determination.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Triage</strong>: Present the verified incident to decision makers (managers, executives, data owners, legal counsel, or business unit leaders with authority over the response):</p>
 <div class="ulist">
 <ul>
 <li>
@@ -2213,7 +2230,7 @@ Choose to continue, stop, or defer the investigation.</p>
 <div id="footer">
 <div id="footer-text">
 Version 1.0<br>
-Last updated 2026-04-04 17:17:06 UTC
+Last updated 2026-04-05 02:45:35 UTC
 </div>
 </div>
 <script type="text/x-mathjax-config">

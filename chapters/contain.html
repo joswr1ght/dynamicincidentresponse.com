@@ -1384,14 +1384,12 @@ Service disruption disables compromised services or applications to prevent furt
 This might include stopping web services that attackers are using to exfiltrate data, disabling remote access protocols such as Remote Desktop Protocol (RDP) or Secure Shell (SSH) that provide attacker entry points, or shutting down specific business applications that attackers have compromised.
 Organizations should coordinate service disruption with business stakeholders to understand operational impacts and identify alternative workflows during the containment period.</p>
 </div>
-<div class="paragraph">
-<p>
-.When RMM Tools Turn Against You: The Stryker Compromise</p>
-</div>
 <div class="sidebarblock">
 <div class="content">
+<div class="title">When RMM Tools Turn Against You: The Stryker Compromise</div>
 <div class="paragraph">
-<p>Stryker is one of the world&#8217;s largest medical technology companies, producing devices and equipment used in hospitals and surgical settings worldwide.
+<p>
+Stryker is one of the world&#8217;s largest medical technology companies, producing devices and equipment used in hospitals and surgical settings worldwide.
 Based in Kalamazoo, Michigan, the company manufactures products ranging from joint replacement implants and surgical instruments to hospital beds and robotic-assisted surgery systems.
 With $25 billion in annual revenue and approximately 56,000 employees worldwide, a disruption to Stryker&#8217;s operations has far-reaching consequences for healthcare providers and patients.</p>
 </div>
@@ -1641,14 +1639,12 @@ Also, attackers may use a legitimate hosted infrastructure provider name for the
 <p>For larger organizations, network route manipulation can redirect entire network ranges to containment infrastructure, enabling enterprise-wide isolation.
 This advanced technique requires coordination with network engineering teams and careful planning to avoid disrupting legitimate business communications while achieving effective containment of widespread compromises.</p>
 </div>
-<div class="paragraph">
-<p>
-.DNS Over HTTPS and Sinkhole Limitations</p>
-</div>
 <div class="sidebarblock">
 <div class="content">
+<div class="title">DNS Over HTTPS and Sinkhole Limitations</div>
 <div class="paragraph">
-<p>DNS over HTTPS (DoH) offers several security benefits, but it also complicates traditional DNS-based containment strategies.
+<p>
+DNS over HTTPS (DoH) offers several security benefits, but it also complicates traditional DNS-based containment strategies.
 Used by default in major browsers like Google Chrome and Mozilla Firefox, DoH encrypts DNS queries within HTTPS traffic, preventing an organization from controlling name resolution behavior over the standard DNS protocol (DNS over port 53, often referred to as <em>Do53</em>).
 Instead of resolving DNS queries through internal DNS servers where sinkholes can be implemented, DoH queries are sent directly to external DoH resolvers including Google, Cloudflare, Quad9, and others, over an HTTPS request, as shown in the following example.</p>
 </div>
@@ -2242,12 +2238,9 @@ A summary of common cloud security demarcation responsibilities is shown in <a h
 </div>
 <div class="title">Figure 9. Cloud Security Demarcation Responsibility Summary</div>
 </div>
-<div class="paragraph">
-<p>
-.Cloud Service and Responsibility Definitions</p>
-</div>
 <div class="sidebarblock">
 <div class="content">
+<div class="title">Cloud Service and Responsibility Definitions</div>
 <div class="paragraph">
 <p>All cloud providers operate under a shared responsibility model for security, in which the cloud provider is responsible for certain aspects, and the cloud customer is responsible for others.
 The line of responsibility between the provider and the customer can be complex, changing from provider to provider and within different products from the same provider.</p>
@@ -2264,7 +2257,8 @@ Cloud security demarcation helps us differentiate our responsibility for inciden
 However, the broad service categories are not always sufficient to show where the customer&#8217;s responsibility ends for the service.</p>
 </div>
 <div class="paragraph">
-<p>Consider the AWS services for Elastic Compute Cloud (EC2) and Lightsail.
+<p>
+Consider the AWS services for Elastic Compute Cloud (EC2) and Lightsail.
 EC2 allows users to provision servers running a given Amazon Machine Image (AMI), then add the services and applications to power the desired functionality.
 In this case, Amazon&#8217;s security responsibility ends with the hardware, storage, and network equipment.
 The cloud user&#8217;s responsibility starts with the Linux or Windows operating system.
@@ -2552,11 +2546,11 @@ This quarantines the instance while maintaining incident response access for inv
 <div id="azure_cli_command_example_for_network_isolation_containment" class="listingblock">
 <div class="title">Listing 7. Azure CLI Command Example for Network Isolation Containment</div>
 <div class="content">
-<pre>$ <strong>az vm show --name web-prod-01 -g rg-production-eastus2 --query "networkProfile.networkInterfaces[0].id" -o tsv</strong> <i class="conum" data-value="1"></i><b>(1)</b>
+<pre>$ <strong>az vm show --name web-prod-01 -g rg-production-eastus2 --query "networkProfile.networkInterfaces[0].id" -o tsv&#42; <i class="conum" data-value="1"></i><b>(1)</b>
 /subscriptions/e7b3c1d9-a842-4f56-b6d1-8a3e5f902c4d/resourceGroups/rg-production-eastus2/providers/Microsoft.Network/networkInterfaces/web-prod-01-nic
-$ <strong>az network nsg create --name IR-Quarantine-2025-042 -g rg-production-eastus2 -o none</strong> <i class="conum" data-value="2"></i><b>(2)</b>
+$ *az network nsg create --name IR-Quarantine-2025-042 -g rg-production-eastus2 -o none</strong> <i class="conum" data-value="2"></i><b>(2)</b>
 $ <strong>az network nsg rule create --nsg-name IR-Quarantine-2025-042 -g rg-production-eastus2 --name AllowSSH-IR --priority 100 --direction Inbound --access Allow --protocol Tcp --destination-port-ranges 22 --source-address-prefixes 198.51.100.10/32 -o none</strong> <i class="conum" data-value="3"></i><b>(3)</b>
-$ <strong>az network nsg rule create --nsg-name IR-Quarantine-2025-042 -g rg-production-eastus2 --name DenyAllOutbound --priority 100 --direction Outbound --access Deny --protocol '</strong>' --destination-port-ranges '<strong>' --source-address-prefixes '</strong>' --destination-address-prefixes '<strong>' -o none</strong> <i class="conum" data-value="4"></i><b>(4)</b>
+$ <strong>az network nsg rule create --nsg-name IR-Quarantine-2025-042 -g rg-production-eastus2 --name DenyAllOutbound --priority 100 --direction Outbound --access Deny --protocol '&#42;' --destination-port-ranges '&#42;' --source-address-prefixes '&#42;' --destination-address-prefixes '&#42;' -o none</strong> <i class="conum" data-value="4"></i><b>(4)</b>
 $ <strong>az network nic update --name web-prod-01-nic -g rg-production-eastus2 --network-security-group IR-Quarantine-2025-042 -o none</strong> <i class="conum" data-value="5"></i><b>(5)</b></pre>
 </div>
 </div>
@@ -3305,6 +3299,9 @@ A standalone version of this step-by-step guide is available for download on the
 <li>
 <p>Adaptive containment: Combine approaches with progressively restrictive measures based on attacker behavior.</p>
 </li>
+<li>
+<p>Deceptive containment: Deploy honeypots or decoy systems that appear identical to production to divert the attacker while gathering intelligence and protecting real assets.</p>
+</li>
 </ul>
 </div>
 </li>
@@ -3547,7 +3544,7 @@ A standalone version of this step-by-step guide is available for download on the
 <p>Configure email flow rules to quarantine messages from compromised accounts.</p>
 </li>
 <li>
-<p>Disable compromised services or applications when other methods prove insufficient.</p>
+<p>Apply service disruption where other containment methods prove insufficient: stop web services being used for exfiltration, disable remote access protocols such as RDP or SSH that provide attacker entry points, or shut down specific compromised business applications. Coordinate service disruption with business stakeholders.</p>
 </li>
 </ul>
 </div>
@@ -3759,13 +3756,13 @@ A standalone version of this step-by-step guide is available for download on the
 <div class="ulist">
 <ul>
 <li>
-<p>Isolate first, then collect (default DAIR approach, preventing attacker interference).</p>
+<p>Weigh the loss of possible evidence due to containment actions against the risk of allowing attackers to maintain access while evidence is collected.</p>
 </li>
 <li>
-<p>Collect volatile network data before isolation if alternate data sources are unavailable.</p>
+<p>Organizations with robust logging and external data sources (Network Flow logs, Sysmon, NDR) can isolate first, then collect, reducing attacker interference.</p>
 </li>
 <li>
-<p>Balance the risk of evidence loss against the need to quickly prevent further attacker activity.</p>
+<p>Organizations without alternate data sources for volatile network connections should collect before isolation so evidence of active connections is not lost.</p>
 </li>
 </ul>
 </div>
@@ -3846,6 +3843,9 @@ A standalone version of this step-by-step guide is available for download on the
 </li>
 <li>
 <p>Watch for new communication patterns indicating alternative command-and-control channels.</p>
+</li>
+<li>
+<p>Validate containment using external data sources (Network Flow logs, Sysmon, NDR tools) when network isolation severs direct connections to contained systems.</p>
 </li>
 <li>
 <p>Combine network monitoring from appliances with live investigation of contained systems.</p>
@@ -4039,7 +4039,7 @@ A standalone version of this step-by-step guide is available for download on the
 <div id="footer">
 <div id="footer-text">
 Version 1.0<br>
-Last updated 2026-04-04 17:17:07 UTC
+Last updated 2026-04-05 02:45:36 UTC
 </div>
 </div>
 <script type="text/x-mathjax-config">
