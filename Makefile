@@ -1,7 +1,7 @@
 IRSBS_DIR = ../irsbs
 S3_BUCKET = s3://dynamicir
 
-.PHONY: all build serve chapters deploy-html deploy-pdf deploy-checklists deploy-all
+.PHONY: all build serve chapters deploy-html deploy-pdf deploy-checklists deploy-all publish
 
 all: build
 
@@ -29,3 +29,5 @@ chapters:
 	cd $(IRSBS_DIR) && make webchapters
 
 deploy-all: deploy-html deploy-pdf deploy-checklists
+
+publish: chapters deploy-all
