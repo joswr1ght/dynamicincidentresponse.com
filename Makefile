@@ -13,7 +13,7 @@ serve:
 	python3 -m http.server 8080
 
 deploy-html:
-	cd $(IRSBS_DIR) && make html
+	cd $(IRSBS_DIR) && make dynamicir.html
 	aws s3 cp $(IRSBS_DIR)/dynamicir.html $(S3_BUCKET)/book/dynamicir.html \
 		--content-type "text/html"
 
