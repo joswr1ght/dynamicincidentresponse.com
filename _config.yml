@@ -1,0 +1,11 @@
+exclude:
+  - chapters.html
+  - resources.html
+  - errata.html
+  - 404.html
+  - chapters
+  - sitemap.xml
+  - llms.txt
+  - robots.txt
+  - Makefile
+  - README.md
