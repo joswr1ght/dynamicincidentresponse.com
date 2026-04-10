@@ -645,7 +645,7 @@ blockquote,
     line-height: 0.8 !important;
     color: #09456D !important;
     margin-left: 0 !important;
-    margin-bottom: 0 !important;
+    margin-bottom: -0.3em !important;
     text-shadow: none !important;
 }
 
@@ -1709,7 +1709,7 @@ This can vary across sites and sectors depending on the control system&#8217;s p
 <div class="paragraph">
 <p>On February 5, 2021, an operator at the Oldsmar, Florida water treatment plant watched the mouse cursor on the facility&#8217;s HMI move without input, navigating to the controls for sodium hydroxide (lye) concentration in the water supply. <sup class="footnote">[<a id="_footnoteref_4" class="footnote" href="#_footnotedef_4" title="View footnote.">4</a>]</sup>
 The remote session, conducted through TeamViewer, raised the sodium hydroxide setpoint from 100 parts per million to 11,100 parts per million, 111 times the normal level.
-Had this change gone undetected and reached the distribution system serving 15,000 residents, consumers would have faced chemical burns to the mouth, throat, and digestive tract, severe nausea and vomiting, tissue damage, and, in sufficient concentrations, potentially fatal outcomes. <sup class="footnote">[<a id="_footnoteref_5" class="footnote" href="#_footnotedef_5" title="View footnote.">5</a>]</sup></p>
+Had this change gone undetected and reached the distribution system serving 15,000 residents, consumers would have faced chemical burns to the mouth, throat, and digestive tract, severe nausea and vomiting, tissue damage, and, in sufficient concentrations, potentially fatal outcomes.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1728,7 +1728,7 @@ All operator workstations shared a single password for remote access.
 No firewall protected the internet-connected control systems.
 No automated alerting or endpoint security tools were in place.
 Detection relied entirely on human observation of the HMI.
-The session used a legitimate remote access pathway with valid credentials, making it indistinguishable from authorized activity at the network level, and no malware was involved. <sup class="footnote">[<a id="_footnoteref_6" class="footnote" href="#_footnotedef_6" title="View footnote.">6</a>]</sup> <sup class="footnote">[<a id="_footnoteref_7" class="footnote" href="#_footnotedef_7" title="View footnote.">7</a>]</sup></p>
+The session used a legitimate remote access pathway with valid credentials, making it indistinguishable from authorized activity at the network level, and no malware was involved. <sup class="footnote">[<a id="_footnoteref_5" class="footnote" href="#_footnotedef_5" title="View footnote.">5</a>]</sup></p>
 </div>
 <div class="paragraph">
 <p>At Oldsmar, detection came from process awareness, not security tooling.
@@ -1743,7 +1743,7 @@ In OT environments, that phase may be the only opportunity to prevent physical h
 </div>
 <div class="paragraph">
 <p>
-Modern OT attacks increasingly involve Living-off-the-Land (LoL) techniques that leverage trusted tools and existing access paths rather than introducing obvious malicious binaries. <sup class="footnote">[<a id="_footnoteref_8" class="footnote" href="#_footnotedef_8" title="View footnote.">8</a>]</sup>
+Modern OT attacks increasingly involve Living-off-the-Land (LoL) techniques that leverage trusted tools and existing access paths rather than introducing obvious malicious binaries. <sup class="footnote">[<a id="_footnoteref_6" class="footnote" href="#_footnotedef_6" title="View footnote.">6</a>]</sup>
 As a result, there may be no clear intrusion moment, no malware alerts, and no obvious indicators of compromise.
 Instead, adversaries may use valid credentials, approved engineering software, and standard industrial communication protocols to interact with systems in unauthorized ways.
 For incident responders, this creates a critical challenge: determining when legitimate engineering tools or hardware are being used against the control system with malicious intent.</p>
@@ -1752,7 +1752,7 @@ For incident responders, this creates a critical challenge: determining when leg
 <h4 id="_traditional_vs_new_forensic_areas">Traditional vs. New Forensic Areas</h4>
 <div class="paragraph">
 <p>
-Locard&#8217;s Exchange Principle, a foundational concept in forensic science, holds that every interaction with a system leaves traces. <sup class="footnote">[<a id="_footnoteref_9" class="footnote" href="#_footnotedef_9" title="View footnote.">9</a>]</sup>
+Locard&#8217;s Exchange Principle, a foundational concept in forensic science, holds that every interaction with a system leaves traces. <sup class="footnote">[<a id="_footnoteref_7" class="footnote" href="#_footnotedef_7" title="View footnote.">7</a>]</sup>
 This principle applies in industrial environments as well: attackers leave evidence in both IT and OT.
 In OT, those traces may not be confined to traditional operating systems, common file systems, and enterprise logs.
 OT forensic data is distributed across a wider set of assets than most enterprise responders are accustomed to, including controller memory, project files, relay configurations, engineering workstations, historians, and OT network traffic.
@@ -1940,7 +1940,7 @@ The goal is to limit the threat&#8217;s ability to spread or interact with contr
 <h4 id="_island_mode">Island Mode</h4>
 <div class="paragraph">
 <p>
-A legitimate defensive option during OT incident response is transitioning the environment to an OT cyber-safe state, often referred to as manual operations or <em>island mode</em>. <sup class="footnote">[<a id="_footnoteref_10" class="footnote" href="#_footnotedef_10" title="View footnote.">10</a>]</sup>
+A legitimate defensive option during OT incident response is transitioning the environment to an OT cyber-safe state, often referred to as manual operations or <em>island mode</em>. <sup class="footnote">[<a id="_footnoteref_8" class="footnote" href="#_footnotedef_8" title="View footnote.">8</a>]</sup>
 In this state, the OT network is deliberately isolated from external connectivity, including corporate IT networks, the internet, and vendor remote access pathways.</p>
 </div>
 <div class="paragraph">
@@ -2138,7 +2138,7 @@ When these teams work together, responders gain the operational awareness needed
 </div>
 <div class="paragraph">
 <p>Overall, succeeding in OT incident response is about being prepared to respond safely, deliberately, and with engineering knowledge when an industrial incident inevitably occurs.
-The Five ICS Cybersecurity Critical Controls, including the ICS dedicated response plan and related exercises, provide a practical foundation for achieving this safety-focused and engineering-informed outcome. <sup class="footnote">[<a id="_footnoteref_11" class="footnote" href="#_footnotedef_11" title="View footnote.">11</a>]</sup>
+The Five ICS Cybersecurity Critical Controls, including the ICS dedicated response plan and related exercises, provide a practical foundation for achieving this safety-focused and engineering-informed outcome. <sup class="footnote">[<a id="_footnoteref_9" class="footnote" href="#_footnotedef_9" title="View footnote.">9</a>]</sup>
 Together, they form an adaptable set of controls that aligns with an organization&#8217;s risk model.
 They also directly support an effective DAIR-based approach to OT threat detection, incident response, and recovery.
 <a href="#fig-five-controls">Figure 9</a> illustrates the five controls and their relationships.</p>
@@ -2222,31 +2222,25 @@ When implemented cohesively, they transform incident response from an improvised
 <a href="#_footnoteref_4">4</a>. CISA, "Compromise of U.S. Water Treatment Facility," Alert AA21-042A, February 2021, <a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa21-042a" class="bare">www.cisa.gov/news-events/cybersecurity-advisories/aa21-042a</a>
 </div>
 <div class="footnote" id="_footnotedef_5">
-<a href="#_footnoteref_5">5</a>. Bushwick, Sophie, "How Hackers Tried to Add Dangerous Lye into a City&#8217;s Water Supply," Scientific American, February 2021, <a href="https://www.scientificamerican.com/article/how-hackers-tried-to-add-dangerous-lye-into-a-citys-water-supply/" class="bare">www.scientificamerican.com/article/how-hackers-tried-to-add-dangerous-lye-into-a-citys-water-supply/</a>
+<a href="#_footnoteref_5">5</a>. Miller, Ben, "Recommendations Following the Oldsmar Water Treatment Facility Cyber Attack," Dragos, Inc., February 2021, <a href="https://www.dragos.com/blog/industry-news/recommendations-following-the-oldsmar-water-treatment-facility-cyber-attack/" class="bare">www.dragos.com/blog/industry-news/recommendations-following-the-oldsmar-water-treatment-facility-cyber-attack/</a>
 </div>
 <div class="footnote" id="_footnotedef_6">
-<a href="#_footnoteref_6">6</a>. Miller, Ben, "Recommendations Following the Oldsmar Water Treatment Facility Cyber Attack," Dragos, Inc., February 2021, <a href="https://www.dragos.com/blog/industry-news/recommendations-following-the-oldsmar-water-treatment-facility-cyber-attack/" class="bare">www.dragos.com/blog/industry-news/recommendations-following-the-oldsmar-water-treatment-facility-cyber-attack/</a>
+<a href="#_footnoteref_6">6</a>. CISA, NSA, FBI, and international partners, "People&#8217;s Republic of China State-Sponsored Cyber Actor Living off the Land to Evade Detection," Joint Cybersecurity Advisory, February 2024, <a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa24-038a" class="bare">www.cisa.gov/news-events/cybersecurity-advisories/aa24-038a</a>
 </div>
 <div class="footnote" id="_footnotedef_7">
-<a href="#_footnoteref_7">7</a>. Starks, Tim, "Investigators suggest hackers exploited weak password security to breach Florida water facility," CyberScoop, February 2021, <a href="https://cyberscoop.com/florida-water-facility-hack-password/" class="bare">cyberscoop.com/florida-water-facility-hack-password/</a>
+<a href="#_footnoteref_7">7</a>. Locard&#8217;s Exchange Principle, attributed to French forensic scientist Edmond Locard (1877-1966), holds that every contact between two items results in an exchange of material. In digital forensics, the principle is applied broadly: any interaction with a system leaves traces, whether in logs, memory, network traffic, or configuration state.
 </div>
 <div class="footnote" id="_footnotedef_8">
-<a href="#_footnoteref_8">8</a>. CISA, NSA, FBI, and international partners, "People&#8217;s Republic of China State-Sponsored Cyber Actor Living off the Land to Evade Detection," Joint Cybersecurity Advisory, February 2024, <a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa24-038a" class="bare">www.cisa.gov/news-events/cybersecurity-advisories/aa24-038a</a>
+<a href="#_footnoteref_8">8</a>. The concept of transitioning to manual operations or "island mode" during OT incidents is discussed in SANS, "The Five ICS Cybersecurity Critical Controls," and in Dragos, "ICS/OT Cybersecurity Year in Review," <a href="https://www.dragos.com/year-in-review/" class="bare">www.dragos.com/year-in-review/</a>
 </div>
 <div class="footnote" id="_footnotedef_9">
-<a href="#_footnoteref_9">9</a>. Locard&#8217;s Exchange Principle, attributed to French forensic scientist Edmond Locard (1877-1966), holds that every contact between two items results in an exchange of material. In digital forensics, the principle is applied broadly: any interaction with a system leaves traces, whether in logs, memory, network traffic, or configuration state.
-</div>
-<div class="footnote" id="_footnotedef_10">
-<a href="#_footnoteref_10">10</a>. The concept of transitioning to manual operations or "island mode" during OT incidents is discussed in SANS, "The Five ICS Cybersecurity Critical Controls," and in Dragos, "ICS/OT Cybersecurity Year in Review," <a href="https://www.dragos.com/year-in-review/" class="bare">www.dragos.com/year-in-review/</a>
-</div>
-<div class="footnote" id="_footnotedef_11">
-<a href="#_footnoteref_11">11</a>. SANS Institute, "The Five ICS Cybersecurity Critical Controls," <a href="https://www.sans.org/white-papers/five-ics-cybersecurity-critical-controls/" class="bare">www.sans.org/white-papers/five-ics-cybersecurity-critical-controls/</a>
+<a href="#_footnoteref_9">9</a>. SANS Institute, "The Five ICS Cybersecurity Critical Controls," <a href="https://www.sans.org/white-papers/five-ics-cybersecurity-critical-controls/" class="bare">www.sans.org/white-papers/five-ics-cybersecurity-critical-controls/</a>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
 Version 1.0<br>
-Last updated 2026-04-05 02:45:38 UTC
+Last updated 2026-04-09 12:11:49 UTC
 </div>
 </div>
 <script type="text/x-mathjax-config">

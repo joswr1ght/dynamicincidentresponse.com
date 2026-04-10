@@ -645,7 +645,7 @@ blockquote,
     line-height: 0.8 !important;
     color: #09456D !important;
     margin-left: 0 !important;
-    margin-bottom: 0 !important;
+    margin-bottom: -0.3em !important;
     text-shadow: none !important;
 }
 
@@ -1249,10 +1249,18 @@ Later iterations implement systemic security improvements based on root-cause an
 <h3 id="_iteration_triggers">Iteration Triggers</h3>
 <div class="paragraph">
 <p>In practice, multiple iterations through the response actions loop are common, driven by new discoveries and evolving understanding.
-We continue the response actions loop until no new information emerges and the incident is resolved to the organization&#8217;s satisfaction.</p>
+Continue the response actions loop until no new information emerges and the incident is resolved to the organization&#8217;s satisfaction.</p>
 </div>
 <div class="paragraph">
-<p>Various discoveries warrant new iterations through the response actions loop, including:</p>
+<p>
+Iteration triggers signal that another pass through the response actions loop is needed before the incident can move toward completion.
+Recognizing these signals early is valuable because the cost of a missed trigger compounds when attacker footholds persist, evidence ages, and stakeholder confidence erodes as the same systems surface repeatedly in new findings.
+Analysts should treat every new piece of information gathered during response, whether from tooling, analysis, or business conversations, as a potential trigger.
+For each one, ask whether it changes the current understanding of scope, containment, eradication, or recovery.</p>
+</div>
+<div class="paragraph">
+<p>These triggers tend to fall into four broad categories: new indicators of compromise surfaced through analysis, evidence of incomplete eradication, revelations from deeper forensic work, and shifts in business priorities that reshape the response.
+The sections that follow describe each category and how it should shape the next cycle of scoping, containment, eradication, and recovery.</p>
 </div>
 <div class="sect3">
 <h4 id="_new_indicators_of_compromise">New Indicators of Compromise</h4>
@@ -1635,7 +1643,7 @@ A standalone version of this step-by-step guide is available for download on the
 <div id="footer">
 <div id="footer-text">
 Version 1.0<br>
-Last updated 2026-04-05 02:45:36 UTC
+Last updated 2026-04-09 12:11:46 UTC
 </div>
 </div>
 <script type="text/x-mathjax-config">

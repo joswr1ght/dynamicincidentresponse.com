@@ -645,7 +645,7 @@ blockquote,
     line-height: 0.8 !important;
     color: #09456D !important;
     margin-left: 0 !important;
-    margin-bottom: 0 !important;
+    margin-bottom: -0.3em !important;
     text-shadow: none !important;
 }
 
@@ -1081,14 +1081,14 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
-<meta name="description" content="The motivation behind the Dynamic Approach to Incident Response (DAIR), the contributors who shaped the book, and what readers can expect.">
+<meta name="description" content="Joshua Wright on the motivation behind the Dynamic Approach to Incident Response (DAIR), the contributors who shaped the book, and what readers can expect.">
 <meta name="author" content="Joshua Wright">
 <meta name="theme-color" content="#1B365D">
 <link rel="canonical" href="https://dynamicincidentresponse.com/chapters/preface.html">
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta property="og:title" content="Preface — Dynamic Incident Response">
-<meta property="og:description" content="The motivation behind the Dynamic Approach to Incident Response (DAIR), the contributors who shaped the book, and what readers can expect.">
+<meta property="og:description" content="Joshua Wright on the motivation behind the Dynamic Approach to Incident Response (DAIR), the contributors who shaped the book, and what readers can expect.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://dynamicincidentresponse.com/chapters/preface.html">
 <meta property="og:image" content="https://dynamicincidentresponse.com/img/og-cover.jpg">
@@ -1096,7 +1096,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Preface — Dynamic Incident Response">
-<meta name="twitter:description" content="The motivation behind the Dynamic Approach to Incident Response (DAIR), the contributors who shaped the book, and what readers can expect.">
+<meta name="twitter:description" content="Joshua Wright on the motivation behind the Dynamic Approach to Incident Response (DAIR), the contributors who shaped the book, and what readers can expect.">
 </head>
 <body class="book floating-toc toc-left">
 <header class="site-header" style="background:#1B365D;padding:1rem 0;position:sticky;top:0;z-index:100">
@@ -1185,7 +1185,7 @@ The book is structured to guide readers through the entire incident response lif
 <p><a href="gettingstarted.html#_getting_started">Getting Started</a> establishes foundational terminology and concepts for incident response that we will use throughout the book.</p>
 </li>
 <li>
-<p><a href="existingmodels.html#_incident_response_models_and_their_limitations">Incident Response Models and Their Limitations</a> reviews the PICERL model, NIST SP 800-61, and their variations, then identifies limitations in these models including their emphasis on linear progression, insufficient scoping guidance, and lack of incident verification requirements.</p>
+<p><a href="existingmodels.html#_incident_response_models_and_their_limitations">Incident Response Models and Their Limitations</a> reviews the PICERL model, NIST SP 800-61, and variations of each, then identifies limitations that make them inadequate for modern incident response.</p>
 </li>
 </ul>
 </div>
@@ -1476,6 +1476,7 @@ Special thanks to:</p>
 </li>
 </ul>
 </div>
+<div style="page-break-after: always;"></div>
 <h3 id="_about_the_authors" class="discrete">About the Authors</h3>
 <div class="paragraph">
 <p><strong>Joshua Wright</strong> is a SANS Faculty Fellow and author of SEC504: Hacker Tools, Techniques, and Incident Handling, one of the most widely taken courses in the SANS curriculum.
@@ -1511,6 +1512,7 @@ His teaching translates real-world experience protecting energy, water, and elec
 <div class="paragraph">
 <p><em>Dean contributed <a href="considerations-ot.html#_incident_response_for_operational_technology">Incident Response for Operational Technology</a> to this book.</em></p>
 </div>
+<div style="page-break-after: always;"></div>
 <h3 id="_about_the_technical_reviewer" class="discrete">About the Technical Reviewer</h3>
 <div class="paragraph">
 <p><strong>Steve Armstrong-Godwin</strong>'s career began more than twenty-five years ago when he joined the UK Royal Air Force (RAF), bringing with him a love of IT and a desire to protect others.
@@ -1531,6 +1533,7 @@ He currently serves as the Lead of Security Incident Response and Threat Managem
 <p>Steve is a SANS Principal Instructor and the author of the LDR553: Cyber Incident Management course.
 His students regularly praise his engaging teaching style, contagious energy, and ability to make complex incident management concepts relatable through real-world scenarios.</p>
 </div>
+<div style="page-break-after: always;"></div>
 <h3 id="_statement_on_ai_use" class="discrete">Statement on AI Use</h3>
 <div class="paragraph">
 <p>I believe we have a right to know when the content we are consuming is generated by AI.
@@ -1606,7 +1609,7 @@ For the more illustrative images, I made an initial sketch and then used Gemini 
 <div class="paragraph">
 <p>I have been writing technical content for nearly thirty years, but creative writing has never been my strength.
 I know that creative writing narratives are powerful for explaining complex topics and for exposing readers to different perspectives for learning.
-I knew I wanted to include narratives (the opening narrative, <a href="supplychaincalamity.html#_case_study_supply_chain_calamity">Chapter 1: Supply Chain Calamity</a>, and supporting narratives after each chapter in <a href="#_part_3_special_considerations_in_incident_response">Part 3: Special Considerations in Incident Response</a>), but I struggled to write them in a way that felt authentic and engaging.</p>
+I knew I wanted to include narratives (the opening narrative, <a href="supplychaincalamity.html#_case_study_supply_chain_calamity">Chapter 1: Supply Chain Calamity</a>, and supporting narratives after each chapter in <a href="#_part_2_a_dynamic_approach_to_incident_response_2">Part 2: A Dynamic Approach to Incident Response</a>), but I struggled to write them in a way that felt authentic and engaging.</p>
 </div>
 <div class="paragraph">
 <p>I used Claude Code as a tool to help in the development of these narratives:</p>
@@ -1642,8 +1645,7 @@ I wrote the vast majority of the words in this book, though sometimes it&#8217;s
 <div class="quoteblock">
 <blockquote>
 <div class="paragraph">
-<p>Help me with the last paragraph in @existingmodels.adoc ; I feel like it has a weak ending and doesn&#8217;t do
-enough to emphasize the problems illustrated with the response effort in the chapter. Show me several options.</p>
+<p>Help me with the last paragraph in @existingmodels.adoc ; I feel like it has a weak ending and doesn&#8217;t do enough to emphasize the problems illustrated with the response effort in the chapter. Show me several options.</p>
 </div>
 </blockquote>
 </div>
@@ -1663,7 +1665,7 @@ enough to emphasize the problems illustrated with the response effort in the cha
 <div class="quoteblock">
 <blockquote>
 <div class="paragraph">
-<p>I&#8217;d like you to analyze the contents of the supply chain calamity chapter to determine if it is awkward or inappropriate in relationship to the rest of the book.</p>
+<p>Analyze the contents of the supply chain calamity chapter to determine if it is awkward or inappropriate in relationship to the rest of the book.</p>
 </div>
 </blockquote>
 </div>
@@ -1683,7 +1685,7 @@ I hope, dear reader, that you find the end result to be a book that is worth you
 <div id="footer">
 <div id="footer-text">
 Version 1.0<br>
-Last updated 2026-04-05 02:45:33 UTC
+Last updated 2026-04-09 12:11:43 UTC
 </div>
 </div>
 <script type="text/x-mathjax-config">

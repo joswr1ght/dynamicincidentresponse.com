@@ -645,7 +645,7 @@ blockquote,
     line-height: 0.8 !important;
     color: #09456D !important;
     margin-left: 0 !important;
-    margin-bottom: 0 !important;
+    margin-bottom: -0.3em !important;
     text-shadow: none !important;
 }
 
@@ -1929,7 +1929,7 @@ System logs showing widespread service disruptions, failed backup operations, or
 <p>Analysts should aim for early identification of the ransomware family during verification.
 Ransom notes often contain identifying information, including group names, contact addresses, and payment portal URLs.
 
-Services such as ID Ransomware allow analysts to upload ransom notes or encrypted file samples to identify the ransomware variant. <sup class="footnote">[<a id="_footnoteref_6" class="footnote" href="#_footnotedef_6" title="View footnote.">6</a>]</sup>
+Services such as ID Ransomware allow analysts to upload ransom notes or encrypted file samples to identify the ransomware variant.
 Early family identification allows responders to research known decryption options, understand typical attacker behavior patterns, and anticipate what evidence sources may be available.</p>
 </div>
 <div class="sidebarblock">
@@ -1937,7 +1937,7 @@ Early family identification allows responders to research known decryption optio
 <div class="title">Protect Victim Identifiers in Ransom Notes</div>
 <div class="paragraph">
 <p>Ransom notes may include a unique victim identifier that grants access to a chat portal where the ransomware group communicates with the victim, as shown in the example in <a href="#_ransom_note_with_victim_identifier">Figure 6</a>.
-Anyone who possesses this identifier can log in to the negotiation portal, and ransomware groups generally cannot distinguish the victim organization from a third party using the same credentials. <sup class="footnote">[<a id="_footnoteref_7" class="footnote" href="#_footnotedef_7" title="View footnote.">7</a>]</sup></p>
+Anyone who possesses this identifier can log in to the negotiation portal, and ransomware groups generally cannot distinguish the victim organization from a third party using the same credentials. <sup class="footnote">[<a id="_footnoteref_6" class="footnote" href="#_footnotedef_6" title="View footnote.">6</a>]</sup></p>
 </div>
 <div class="paragraph">
 <p>When employees photograph ransom notes on their screens and share them on social media, or when responders include unsanitized ransom notes in incident reports distributed beyond the response team, that victim identifier becomes accessible to journalists, security researchers, law enforcement, and other threat actors.
@@ -1951,7 +1951,7 @@ Third parties who access the negotiation portal can disrupt active negotiations 
 </div>
 <div class="paragraph">
 <p>The Conti ransomware group made this risk explicit in 2021 when they announced that any victim whose negotiation details leaked to journalists would have their stolen data published immediately, regardless of whether negotiations were in progress.
-After screenshots from the JVCKenwood negotiation appeared in media reports, Conti terminated the negotiation and disclosed the stolen data to the public. <sup class="footnote">[<a id="_footnoteref_8" class="footnote" href="#_footnotedef_8" title="View footnote.">8</a>]</sup>
+After screenshots from the JVCKenwood negotiation appeared in media reports, Conti terminated the negotiation and disclosed the stolen data to the public. <sup class="footnote">[<a id="_footnoteref_7" class="footnote" href="#_footnotedef_7" title="View footnote.">7</a>]</sup>
 Other groups have adopted similar policies, treating leaked negotiation details as grounds for ending discussions and accelerating data publication.</p>
 </div>
 <div class="paragraph">
@@ -1979,9 +1979,9 @@ Victim identifiers in ransom notes grant access to negotiation portals, and leak
 <h4 id="_distinguishing_attack_types">Distinguishing Attack Types</h4>
 <div class="paragraph">
 <p>Not every ransomware incident involves data exfiltration.
-The 2025 Verizon Data Breach Investigations Report found ransomware in 44% of all breaches reviewed, up from 32% the prior year, with that combined figure encompassing both traditional encryption-based ransomware and pure extortion attacks in which adversaries steal data without encrypting systems. <sup class="footnote">[<a id="_footnoteref_9" class="footnote" href="#_footnotedef_9" title="View footnote.">9</a>]</sup>
-The 2024 report separated these categories, finding that pure extortion accounted for 9% of all breaches compared to 23% for encryption-based ransomware. <sup class="footnote">[<a id="_footnoteref_10" class="footnote" href="#_footnotedef_10" title="View footnote.">10</a>]</sup>
-Data theft as an additional extortion lever traces back to around 2019, when the Maze ransomware group pioneered the technique to retain leverage even when victims could restore from backups. <sup class="footnote">[<a id="_footnoteref_11" class="footnote" href="#_footnotedef_11" title="View footnote.">11</a>]</sup></p>
+The 2025 Verizon Data Breach Investigations Report found ransomware in 44% of all breaches reviewed, up from 32% the prior year, with that combined figure encompassing both traditional encryption-based ransomware and pure extortion attacks in which adversaries steal data without encrypting systems. <sup class="footnote">[<a id="_footnoteref_8" class="footnote" href="#_footnotedef_8" title="View footnote.">8</a>]</sup>
+The 2024 report separated these categories, finding that pure extortion accounted for 9% of all breaches compared to 23% for encryption-based ransomware. <sup class="footnote">[<a id="_footnoteref_9" class="footnote" href="#_footnotedef_9" title="View footnote.">9</a>]</sup>
+Data theft as an additional extortion lever traces back to around 2019, when the Maze ransomware group pioneered the technique to retain leverage even when victims could restore from backups. <sup class="footnote">[<a id="_footnoteref_10" class="footnote" href="#_footnotedef_10" title="View footnote.">10</a>]</sup></p>
 </div>
 <div class="paragraph">
 <p>During verification, look for indicators that help distinguish between attack types, as summarized in <a href="#_attack_type_indicators">Table 2</a>.
@@ -2410,7 +2410,7 @@ Responders should check this resource early in the response process.</p>
 <p>Security researcher publications and tool releases.</p>
 </li>
 <li>
-<p>Commercial decryption services, including Unidecrypt from Coveware. <sup class="footnote">[<a id="_footnoteref_12" class="footnote" href="#_footnotedef_12" title="View footnote.">12</a>]</sup></p>
+<p>Commercial decryption services, including Unidecrypt from Coveware.</p>
 </li>
 </ul>
 </div>
@@ -2450,7 +2450,7 @@ Decryption without obtaining the attacker&#8217;s keys is typically not feasible
 <div class="paragraph">
 <p>Organizations should also set realistic expectations with stakeholders about recovery timelines.
 Even after organizations pay the ransom and receive a functioning decryptor, recovery takes months, not days.
-The 2021 Conti ransomware attack against Ireland&#8217;s Health Service Executive (HSE) illustrates this reality: despite obtaining a decryptor, the organization took approximately four months to restore critical healthcare services nationwide. <sup class="footnote">[<a id="_footnoteref_13" class="footnote" href="#_footnotedef_13" title="View footnote.">13</a>]</sup></p>
+The 2021 Conti ransomware attack against Ireland&#8217;s Health Service Executive (HSE) illustrates this reality: despite obtaining a decryptor, the organization took approximately four months to restore critical healthcare services nationwide. <sup class="footnote">[<a id="_footnoteref_11" class="footnote" href="#_footnotedef_11" title="View footnote.">11</a>]</sup></p>
 </div>
 <div class="paragraph">
 <p>Decryption alone does not restore operations.
@@ -2882,7 +2882,7 @@ Organizations should select the metrics that best align with their organizationa
 <div class="content">
 <div class="title">When Recovery Lessons Stay Behind Closed Doors</div>
 <div class="paragraph">
-<p>In October 2019, the Russian cybercrime group known as WIZARD SPIDER deployed the Ryuk ransomware against DCH Health System, disrupting services for three hospitals in Tuscaloosa County, Alabama. <sup class="footnote">[<a id="_footnoteref_14" class="footnote" href="#_footnotedef_14" title="View footnote.">14</a>]</sup> <sup class="footnote">[<a id="_footnoteref_15" class="footnote" href="#_footnotedef_15" title="View footnote.">15</a>]</sup>
+<p>In October 2019, the Russian cybercrime group known as WIZARD SPIDER deployed the Ryuk ransomware against DCH Health System, disrupting services for three hospitals in Tuscaloosa County, Alabama. <sup class="footnote">[<a id="_footnoteref_12" class="footnote" href="#_footnotedef_12" title="View footnote.">12</a>]</sup>
 The attack forced the hospitals to implement diversion protocols, turning away all but the most critical patients for over a week while staff reverted to paper-based workflows for patient care.</p>
 </div>
 <div class="paragraph">
@@ -3003,10 +3003,10 @@ With AI coding agents, minimally competent threat actors can access instant oper
 <div class="paragraph">
 <p>Threat actors are integrating AI throughout ransomware and extortion operations, not just for social engineering assets, but across the full attack chain.
 AI coding agents are actively executing attack phases rather than simply advising a human operator.
-Documented cases show AI conducting network scanning, credential harvesting, lateral movement, and data exfiltration with minimal human oversight (see also <a href="considerations-ai.html#_autonomous_adversaries">Autonomous Adversaries</a>). <sup class="footnote">[<a id="_footnoteref_16" class="footnote" href="#_footnotedef_16" title="View footnote.">16</a>]</sup></p>
+Documented cases show AI conducting network scanning, credential harvesting, lateral movement, and data exfiltration with minimal human oversight (see also <a href="considerations-ai.html#_autonomous_adversaries">Autonomous Adversaries</a>). <sup class="footnote">[<a id="_footnoteref_13" class="footnote" href="#_footnotedef_13" title="View footnote.">13</a>]</sup></p>
 </div>
 <div class="paragraph">
-<p>The Anthropic November 2025 threat intelligence report documented a campaign in which AI performed an estimated 80 to 90 percent of the operations, with human decision-making required only four to six times per engagement. <sup class="footnote">[<a id="_footnoteref_17" class="footnote" href="#_footnotedef_17" title="View footnote.">17</a>]</sup>
+<p>The Anthropic November 2025 threat intelligence report documented a campaign in which AI performed an estimated 80 to 90 percent of the operations, with human decision-making required only four to six times per engagement. <sup class="footnote">[<a id="_footnoteref_14" class="footnote" href="#_footnotedef_14" title="View footnote.">14</a>]</sup>
 A single operator with AI assistance can match the output of a team, conducting simultaneous operations against multiple organizations.
 Organizations should assume that even unsophisticated actors can execute technically complex campaigns.</p>
 </div>
@@ -3028,7 +3028,7 @@ This turns raw, stolen data into actionable leverage for extortion.</p>
 </div>
 <div class="paragraph">
 <p>Once sensitive data is identified, AI manages the extortion lifecycle from demand pricing through payment collection.
-The Anthropic August 2025 threat intelligence report documents cases in which AI analyzed victims' financials and generated "profit plans" with multiple monetization paths for each target: direct organizational extortion, data sales to third parties, individual targeting of people whose data was compromised, and regulatory threat leverage. <sup class="footnote">[<a id="_footnoteref_18" class="footnote" href="#_footnotedef_18" title="View footnote.">18</a>]</sup>
+The Anthropic August 2025 threat intelligence report documents cases in which AI analyzed victims' financials and generated "profit plans" with multiple monetization paths for each target: direct organizational extortion, data sales to third parties, individual targeting of people whose data was compromised, and regulatory threat leverage. <sup class="footnote">[<a id="_footnoteref_15" class="footnote" href="#_footnotedef_15" title="View footnote.">15</a>]</sup>
 Ransom demands in the documented case ranged from $75,000 to $500,000, calibrated to each victim&#8217;s organizational size, industry, and regulatory exposure.</p>
 </div>
 <div class="paragraph">
@@ -3040,8 +3040,8 @@ A single actor can manage customized extortion campaigns against many organizati
 <h5 id="_ai_generated_ransomware_development">AI-Generated Ransomware Development</h5>
 <div class="paragraph">
 <p>AI is democratizing the RaaS market by enabling actors without traditional development skills to create functional ransomware with advanced capabilities.
-Documented cases describe actors who cannot independently implement encryption algorithms or understand Windows system call (syscall) mechanics, yet produce and sell functional ransomware packages priced between $400 and $1,200. <sup class="footnote">[<a id="_footnoteref_19" class="footnote" href="#_footnotedef_19" title="View footnote.">19</a>]</sup>
-These packages include ChaCha20 encryption, EDR evasion techniques such as FreshyCalls and RecycledGate, and anti-analysis capabilities. <sup class="footnote">[<a id="_footnoteref_20" class="footnote" href="#_footnotedef_20" title="View footnote.">20</a>]</sup> <sup class="footnote">[<a id="_footnoteref_21" class="footnote" href="#_footnotedef_21" title="View footnote.">21</a>]</sup></p>
+Documented cases describe actors who cannot independently implement encryption algorithms or understand Windows system call (syscall) mechanics, yet produce and sell functional ransomware packages priced between $400 and $1,200. <sup class="footnote">[<a id="_footnoteref_16" class="footnote" href="#_footnotedef_16" title="View footnote.">16</a>]</sup>
+These packages include ChaCha20 encryption, EDR evasion techniques such as FreshyCalls and RecycledGate, and anti-analysis capabilities.</p>
 </div>
 <div class="paragraph">
 <p>AI allows attackers to iteratively refine their tooling through continued interaction with models, introducing new features and capabilities over time.
@@ -3101,7 +3101,7 @@ Organizations should expect ongoing engagement with legal counsel well after tec
 </div>
 <div class="paragraph">
 <p>Blackbaud provides fundraising and administrative software to nonprofits, hospitals, and educational institutions.
-On February 7, 2020, an attacker gained access to Blackbaud&#8217;s network and began accessing and extracting customer data, remaining undetected for over three months. <sup class="footnote">[<a id="_footnoteref_22" class="footnote" href="#_footnotedef_22" title="View footnote.">22</a>]</sup>
+On February 7, 2020, an attacker gained access to Blackbaud&#8217;s network and began accessing and extracting customer data, remaining undetected for over three months. <sup class="footnote">[<a id="_footnoteref_17" class="footnote" href="#_footnotedef_17" title="View footnote.">17</a>]</sup>
 By the time the company discovered the intrusion in May 2020, the attacker had exfiltrated data belonging to approximately 13,000 customer organizations, compromising the personal information of millions of consumers, including Social Security numbers, bank account information, healthcare records, and donation histories.</p>
 </div>
 <div class="paragraph">
@@ -3205,7 +3205,7 @@ Legal counsel familiar with the incident should be available to advise if stolen
 <div class="content">
 <div class="title">Kadokawa: Payment Did Not Prevent Disclosure</div>
 <div class="paragraph">
-<p>The 2024 ransomware attack on Japanese media conglomerate Kadokawa Corporation demonstrates that ransom payments do not guarantee against data exposure. <sup class="footnote">[<a id="_footnoteref_23" class="footnote" href="#_footnotedef_23" title="View footnote.">23</a>]</sup></p>
+<p>The 2024 ransomware attack on Japanese media conglomerate Kadokawa Corporation demonstrates that ransom payments do not guarantee against data exposure. <sup class="footnote">[<a id="_footnoteref_18" class="footnote" href="#_footnotedef_18" title="View footnote.">18</a>]</sup></p>
 </div>
 <div class="paragraph">
 <p>On June 8, 2024, the BlackSuit ransomware group attacked Kadokawa&#8217;s network, disrupting operations across its subsidiaries, including the popular video platform Niconico.
@@ -3224,7 +3224,7 @@ The company announced expected extraordinary losses of ¥2.3 billion (approximat
 Full services did not resume until August 5, 2024, nearly two months after the initial attack.</p>
 </div>
 <div class="paragraph">
-<p>Reports indicate BlackSuit experienced internal fragmentation during this period, with former members dispersing to new operations. <sup class="footnote">[<a id="_footnoteref_24" class="footnote" href="#_footnotedef_24" title="View footnote.">24</a>]</sup>
+<p>Reports indicate BlackSuit experienced internal fragmentation during this period, with former members dispersing to new operations. <sup class="footnote">[<a id="_footnoteref_19" class="footnote" href="#_footnotedef_19" title="View footnote.">19</a>]</sup>
 These dynamics may explain why the group leaked data despite receiving payment.
 Ransomware operations often experience affiliate disputes, leadership changes, and splintering into new groups.
 Even when an organization negotiates in good faith with one faction, other members may not honor the agreement.</p>
@@ -3267,67 +3267,52 @@ The response capabilities described in this chapter are valuable, but they repre
 <a href="#_footnoteref_5">5</a>. Veeam, "3-2-1-1-0 Backup Rule," <a href="https://www.veeam.com/blog/321-backup-rule.html" class="bare">www.veeam.com/blog/321-backup-rule.html</a>
 </div>
 <div class="footnote" id="_footnotedef_6">
-<a href="#_footnoteref_6">6</a>. ID Ransomware, MalwareHunterTeam, <a href="https://id-ransomware.malwarehunterteam.com/" class="bare">id-ransomware.malwarehunterteam.com/</a>
+<a href="#_footnoteref_6">6</a>. Trend Micro Research, "What To Expect In A Ransomware Negotiation," October 2021, <a href="https://www.trendmicro.com/en_us/research/21/j/what-to-expect-in-a-ransomware-negotiation-.html" class="bare">www.trendmicro.com/en_us/research/21/j/what-to-expect-in-a-ransomware-negotiation-.html</a>
 </div>
 <div class="footnote" id="_footnotedef_7">
-<a href="#_footnoteref_7">7</a>. Trend Micro Research, "What To Expect In A Ransomware Negotiation," October 2021, <a href="https://www.trendmicro.com/en_us/research/21/j/what-to-expect-in-a-ransomware-negotiation-.html" class="bare">www.trendmicro.com/en_us/research/21/j/what-to-expect-in-a-ransomware-negotiation-.html</a>
+<a href="#_footnoteref_7">7</a>. Cimpanu, Catalin, "Conti gang threatens to dump victim data if ransom negotiations leak to reporters," The Record, October 2021, <a href="https://therecord.media/conti-gang-threatens-to-dump-victim-data-if-ransom-negotiations-leak-to-reporters" class="bare">therecord.media/conti-gang-threatens-to-dump-victim-data-if-ransom-negotiations-leak-to-reporters</a>
 </div>
 <div class="footnote" id="_footnotedef_8">
-<a href="#_footnoteref_8">8</a>. Cimpanu, Catalin, "Conti gang threatens to dump victim data if ransom negotiations leak to reporters," The Record, October 2021, <a href="https://therecord.media/conti-gang-threatens-to-dump-victim-data-if-ransom-negotiations-leak-to-reporters" class="bare">therecord.media/conti-gang-threatens-to-dump-victim-data-if-ransom-negotiations-leak-to-reporters</a>
+<a href="#_footnoteref_8">8</a>. Verizon, "2025 Data Breach Investigations Report," <a href="https://www.verizon.com/business/resources/reports/dbir/" class="bare">www.verizon.com/business/resources/reports/dbir/</a>
 </div>
 <div class="footnote" id="_footnotedef_9">
-<a href="#_footnoteref_9">9</a>. Verizon, "2025 Data Breach Investigations Report," <a href="https://www.verizon.com/business/resources/reports/dbir/" class="bare">www.verizon.com/business/resources/reports/dbir/</a>
+<a href="#_footnoteref_9">9</a>. Verizon, "2024 Data Breach Investigations Report," <a href="https://www.verizon.com/business/resources/reports/dbir/" class="bare">www.verizon.com/business/resources/reports/dbir/</a>
 </div>
 <div class="footnote" id="_footnotedef_10">
-<a href="#_footnoteref_10">10</a>. Verizon, "2024 Data Breach Investigations Report," <a href="https://www.verizon.com/business/resources/reports/dbir/" class="bare">www.verizon.com/business/resources/reports/dbir/</a>
+<a href="#_footnoteref_10">10</a>. Check Point Research, "Ransomware Evolved: Double Extortion," 2020, <a href="https://research.checkpoint.com/2020/ransomware-evolved-double-extortion/" class="bare">research.checkpoint.com/2020/ransomware-evolved-double-extortion/</a>
 </div>
 <div class="footnote" id="_footnotedef_11">
-<a href="#_footnoteref_11">11</a>. Check Point Research, "Ransomware Evolved: Double Extortion," 2020, <a href="https://research.checkpoint.com/2020/ransomware-evolved-double-extortion/" class="bare">research.checkpoint.com/2020/ransomware-evolved-double-extortion/</a>
+<a href="#_footnoteref_11">11</a>. PricewaterhouseCoopers, "Conti Cyber Attack on the HSE - Independent Post Incident Review," December 2021, <a href="https://www.hse.ie/eng/services/publications/conti-cyber-attack-on-the-hse-full-report.pdf" class="bare">www.hse.ie/eng/services/publications/conti-cyber-attack-on-the-hse-full-report.pdf</a>
 </div>
 <div class="footnote" id="_footnotedef_12">
-<a href="#_footnoteref_12">12</a>. Coveware, "Unidecrypt - Ransomware Decryption Assistance," <a href="https://www.coveware.com/unidecrypt" class="bare">www.coveware.com/unidecrypt</a>
+<a href="#_footnoteref_12">12</a>. Petcu, Alina Georgiana, "The DCH Ransomware Attack: A Teachable Moment in Cyber-History," Heimdal Security, January 2021, <a href="https://heimdalsecurity.com/blog/dch-ransomware-attack/" class="bare">heimdalsecurity.com/blog/dch-ransomware-attack/</a>
 </div>
 <div class="footnote" id="_footnotedef_13">
-<a href="#_footnoteref_13">13</a>. PricewaterhouseCoopers, "Conti Cyber Attack on the HSE - Independent Post Incident Review," December 2021, <a href="https://www.hse.ie/eng/services/publications/conti-cyber-attack-on-the-hse-full-report.pdf" class="bare">www.hse.ie/eng/services/publications/conti-cyber-attack-on-the-hse-full-report.pdf</a>
+<a href="#_footnoteref_13">13</a>. Anthropic, "Detecting and countering misuse of AI: August 2025," August 2025, <a href="https://www.anthropic.com/news/detecting-countering-misuse-aug-2025" class="bare">www.anthropic.com/news/detecting-countering-misuse-aug-2025</a>
 </div>
 <div class="footnote" id="_footnotedef_14">
-<a href="#_footnoteref_14">14</a>. Petcu, Alina Georgiana, "The DCH Ransomware Attack: A Teachable Moment in Cyber-History," Heimdal Security, January 2021, <a href="https://heimdalsecurity.com/blog/dch-ransomware-attack/" class="bare">heimdalsecurity.com/blog/dch-ransomware-attack/</a>
+<a href="#_footnoteref_14">14</a>. Anthropic, "Disrupting the first reported AI-orchestrated cyber espionage campaign," November 2025, <a href="https://www.anthropic.com/news/disrupting-AI-espionage" class="bare">www.anthropic.com/news/disrupting-AI-espionage</a>
 </div>
 <div class="footnote" id="_footnotedef_15">
-<a href="#_footnoteref_15">15</a>. Abrams, Lawrence, "DCH Hospital Pays Ryuk Ransomware for Decryption Key," BleepingComputer, October 2019, <a href="https://www.bleepingcomputer.com/news/security/dch-hospital-pays-ryuk-ransomware-for-decryption-key/" class="bare">www.bleepingcomputer.com/news/security/dch-hospital-pays-ryuk-ransomware-for-decryption-key/</a>
+<a href="#_footnoteref_15">15</a>. Anthropic, "Detecting and countering misuse of AI: August 2025," August 2025, <a href="https://www.anthropic.com/news/detecting-countering-misuse-aug-2025" class="bare">www.anthropic.com/news/detecting-countering-misuse-aug-2025</a>
 </div>
 <div class="footnote" id="_footnotedef_16">
 <a href="#_footnoteref_16">16</a>. Anthropic, "Detecting and countering misuse of AI: August 2025," August 2025, <a href="https://www.anthropic.com/news/detecting-countering-misuse-aug-2025" class="bare">www.anthropic.com/news/detecting-countering-misuse-aug-2025</a>
 </div>
 <div class="footnote" id="_footnotedef_17">
-<a href="#_footnoteref_17">17</a>. Anthropic, "Disrupting the first reported AI-orchestrated cyber espionage campaign," November 2025, <a href="https://www.anthropic.com/news/disrupting-AI-espionage" class="bare">www.anthropic.com/news/disrupting-AI-espionage</a>
+<a href="#_footnoteref_17">17</a>. Federal Trade Commission, "FTC Order Will Require Blackbaud to Delete Unnecessary Data, Boost Safeguards to Settle Charges its Lax Security Practices Led to Data Breach," February 2024, <a href="https://www.ftc.gov/news-events/news/press-releases/2024/02/ftc-order-will-require-blackbaud-delete-unnecessary-data-boost-safeguards-settle-charges-its-lax" class="bare">www.ftc.gov/news-events/news/press-releases/2024/02/ftc-order-will-require-blackbaud-delete-unnecessary-data-boost-safeguards-settle-charges-its-lax</a>
 </div>
 <div class="footnote" id="_footnotedef_18">
-<a href="#_footnoteref_18">18</a>. Anthropic, "Detecting and countering misuse of AI: August 2025," August 2025, <a href="https://www.anthropic.com/news/detecting-countering-misuse-aug-2025" class="bare">www.anthropic.com/news/detecting-countering-misuse-aug-2025</a>
+<a href="#_footnoteref_18">18</a>. Antoniuk, Daryna, "Japanese game and anime publisher reportedly pays $3 million ransom to Russia-linked hackers," The Record, August 2024, <a href="https://therecord.media/kadokawa-japan-reported-ransomware-payment" class="bare">therecord.media/kadokawa-japan-reported-ransomware-payment</a>
 </div>
 <div class="footnote" id="_footnotedef_19">
-<a href="#_footnoteref_19">19</a>. Anthropic, "Detecting and countering misuse of AI: August 2025," August 2025, <a href="https://www.anthropic.com/news/detecting-countering-misuse-aug-2025" class="bare">www.anthropic.com/news/detecting-countering-misuse-aug-2025</a>
-</div>
-<div class="footnote" id="_footnotedef_20">
-<a href="#_footnoteref_20">20</a>. FreshyCalls - Syscall Evasion Technique, <a href="https://github.com/crummie5/FreshyCalls" class="bare">github.com/crummie5/FreshyCalls</a>
-</div>
-<div class="footnote" id="_footnotedef_21">
-<a href="#_footnoteref_21">21</a>. RecycledGate - Syscall Evasion Technique, <a href="https://github.com/thefLink/RecycledGate" class="bare">github.com/thefLink/RecycledGate</a>
-</div>
-<div class="footnote" id="_footnotedef_22">
-<a href="#_footnoteref_22">22</a>. Federal Trade Commission, "FTC Order Will Require Blackbaud to Delete Unnecessary Data, Boost Safeguards to Settle Charges its Lax Security Practices Led to Data Breach," February 2024, <a href="https://www.ftc.gov/news-events/news/press-releases/2024/02/ftc-order-will-require-blackbaud-delete-unnecessary-data-boost-safeguards-settle-charges-its-lax" class="bare">www.ftc.gov/news-events/news/press-releases/2024/02/ftc-order-will-require-blackbaud-delete-unnecessary-data-boost-safeguards-settle-charges-its-lax</a>
-</div>
-<div class="footnote" id="_footnotedef_23">
-<a href="#_footnoteref_23">23</a>. Antoniuk, Daryna, "Japanese game and anime publisher reportedly pays $3 million ransom to Russia-linked hackers," The Record, August 2024, <a href="https://therecord.media/kadokawa-japan-reported-ransomware-payment" class="bare">therecord.media/kadokawa-japan-reported-ransomware-payment</a>
-</div>
-<div class="footnote" id="_footnotedef_24">
-<a href="#_footnoteref_24">24</a>. Lyngaas, Sean, "Details emerge on BlackSuit ransomware takedown," CyberScoop, August 2025, <a href="https://cyberscoop.com/blacksuit-ransomware-takedown/" class="bare">cyberscoop.com/blacksuit-ransomware-takedown/</a>; citing Cisco Talos research indicating former BlackSuit members dispersed to new operations including the Chaos ransomware group.
+<a href="#_footnoteref_19">19</a>. Lyngaas, Sean, "Details emerge on BlackSuit ransomware takedown," CyberScoop, August 2025, <a href="https://cyberscoop.com/blacksuit-ransomware-takedown/" class="bare">cyberscoop.com/blacksuit-ransomware-takedown/</a>; citing Cisco Talos research indicating former BlackSuit members dispersed to new operations including the Chaos ransomware group.
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
 Version 1.0<br>
-Last updated 2026-04-05 02:45:38 UTC
+Last updated 2026-04-09 12:11:48 UTC
 </div>
 </div>
 <script type="text/x-mathjax-config">
