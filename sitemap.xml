@@ -2,141 +2,141 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://dynamicincidentresponse.com/</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://dynamicincidentresponse.com/chapters.html</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://dynamicincidentresponse.com/resources.html</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://dynamicincidentresponse.com/errata.html</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <priority>0.3</priority>
   </url>
   <!-- Front Matter -->
   <url>
     <loc>https://dynamicincidentresponse.com/chapters/foreword.html</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dynamicincidentresponse.com/chapters/preface.html</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <priority>0.7</priority>
   </url>
   <!-- Part 1: Elements of Incident Response -->
   <url>
     <loc>https://dynamicincidentresponse.com/chapters/supplychaincalamity.html</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dynamicincidentresponse.com/chapters/introduction.html</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dynamicincidentresponse.com/chapters/historyofir.html</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dynamicincidentresponse.com/chapters/gettingstarted.html</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dynamicincidentresponse.com/chapters/existingmodels.html</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <priority>0.7</priority>
   </url>
   <!-- Part 2: A Dynamic Approach to Incident Response -->
   <url>
     <loc>https://dynamicincidentresponse.com/chapters/dynamicapproach.html</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://dynamicincidentresponse.com/chapters/prepare.html</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://dynamicincidentresponse.com/chapters/detect.html</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://dynamicincidentresponse.com/chapters/verifytriage.html</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://dynamicincidentresponse.com/chapters/responseactionsloop.html</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://dynamicincidentresponse.com/chapters/scope.html</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://dynamicincidentresponse.com/chapters/contain.html</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://dynamicincidentresponse.com/chapters/eradicate.html</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://dynamicincidentresponse.com/chapters/recover.html</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://dynamicincidentresponse.com/chapters/debrief.html</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <priority>0.8</priority>
   </url>
   <!-- Part 3: Special Considerations -->
   <url>
     <loc>https://dynamicincidentresponse.com/chapters/considerations-ai.html</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://dynamicincidentresponse.com/chapters/considerations-ransomware.html</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://dynamicincidentresponse.com/chapters/considerations-cloud.html</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://dynamicincidentresponse.com/chapters/considerations-ot.html</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://dynamicincidentresponse.com/chapters/integration.html</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://dynamicincidentresponse.com/chapters/afterward.html</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <priority>0.5</priority>
   </url>
 </urlset>
