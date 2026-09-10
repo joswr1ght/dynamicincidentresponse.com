@@ -207,6 +207,8 @@ a:hover { color: var(--text); }
 .author-chip .label { font-size: 0.75rem; color: var(--dim); display: block; }
 .author-chip .name { font-weight: 600; color: var(--text); display: block; line-height: 1.2; }
 .author-chip .sub { font-size: 0.85rem; color: var(--muted); display: block; }
+.author-chip .sub a { color: var(--muted); text-decoration: underline; text-decoration-color: var(--border-strong); text-underline-offset: 3px; }
+.author-chip .sub a:hover { color: var(--text); text-decoration-color: var(--text); }
 
 .hero-meta { list-style: none; display: flex; flex-wrap: wrap; gap: 0.5rem 1.6rem; margin-bottom: 2rem; }
 .hero-meta li { color: var(--muted); font-size: 0.95rem; padding-left: 1rem; position: relative; }
