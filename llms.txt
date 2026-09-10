@@ -54,6 +54,7 @@ Joshua Wright is a senior instructor and author at the SANS Institute, teaching 
 ### Part 1: Elements of Incident Response
 - Case Study: Supply Chain Calamity: https://dynamicincidentresponse.com/chapters/supplychaincalamity.html
 - Introduction: https://dynamicincidentresponse.com/chapters/introduction.html
+- A Short History of Incident Response: https://dynamicincidentresponse.com/chapters/historyofir.html
 - Getting Started: https://dynamicincidentresponse.com/chapters/gettingstarted.html
 - Incident Response Models and Their Shortcomings: https://dynamicincidentresponse.com/chapters/existingmodels.html
 

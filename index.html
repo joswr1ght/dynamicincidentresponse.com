@@ -3,143 +3,338 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dynamic Incident Response &middot; Coming Soon</title>
-  <meta name="description" content="Dynamic Incident Response: A Framework for Security Teams, by Joshua Wright. Coming soon.">
-  <meta name="robots" content="noindex">
+  <title>Dynamic Incident Response: A Framework for Security Teams | Free Book by Joshua Wright</title>
+  <meta name="description" content="Free online book covering the full incident response lifecycle: preparation, detection, containment, eradication, recovery, and debrief. Includes ransomware response, cloud IR, OT/ICS security, digital forensics, threat intelligence, and incident response playbooks. By SANS instructor Joshua Wright.">
+  <meta name="keywords" content="dynamic incident response, DAIR, incident response framework, incident response playbooks, ransomware response, cloud incident response, digital forensics, DFIR, threat hunting, MITRE ATT&CK, incident response book, SANS, Joshua Wright, OT ICS security, incident response checklist, breach response, cyber threat intelligence">
+  <meta name="author" content="Joshua Wright">
   <meta name="theme-color" content="#1B365D">
+  <link rel="canonical" href="https://dynamicincidentresponse.com/">
   <link rel="icon" href="/favicon.ico" sizes="32x32">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
-  <meta property="og:title" content="Dynamic Incident Response &middot; Coming Soon">
-  <meta property="og:description" content="A Framework for Security Teams, by Joshua Wright. Coming soon.">
-  <meta property="og:type" content="website">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Dynamic Incident Response: A Framework for Security Teams">
+  <meta property="og:description" content="Free online book on incident response covering preparation, detection, containment, eradication, recovery, ransomware response, cloud IR, and digital forensics. By SANS instructor Joshua Wright.">
+  <meta property="og:type" content="book">
   <meta property="og:url" content="https://dynamicincidentresponse.com/">
+  <meta property="og:image" content="https://dynamicincidentresponse.com/img/og-cover.jpg">
+  <meta property="og:site_name" content="Dynamic Incident Response">
+  <meta property="og:locale" content="en_US">
+  <meta property="book:author" content="Joshua Wright">
+  <meta property="book:release_date" content="2026">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Dynamic Incident Response: A Framework for Security Teams">
+  <meta name="twitter:description" content="Free online book covering the full incident response lifecycle. Ransomware, cloud IR, digital forensics, threat intelligence, and playbooks. By Joshua Wright.">
+  <meta name="twitter:image" content="https://dynamicincidentresponse.com/img/og-cover.jpg">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Book",
+    "name": "Dynamic Incident Response: A Framework for Security Teams",
+    "author": {
+      "@type": "Person",
+      "name": "Joshua Wright",
+      "jobTitle": "Senior Instructor",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "SANS Institute"
+      }
+    },
+    "description": "A practical guide to building and running incident response programs. Covers preparation, detection, containment, eradication, recovery, ransomware response, cloud incident response, OT/ICS security, digital forensics, and threat intelligence.",
+    "url": "https://dynamicincidentresponse.com/",
+    "image": "https://dynamicincidentresponse.com/img/og-cover.jpg",
+    "inLanguage": "en",
+    "genre": "Cybersecurity",
+    "about": [
+      "Incident Response",
+      "Digital Forensics",
+      "Ransomware Response",
+      "Cloud Security",
+      "Threat Intelligence"
+    ],
+    "publisher": {
+      "@type": "Person",
+      "name": "Joshua Wright"
+    },
+    "isAccessibleForFree": true,
+    "datePublished": "2026-01-01"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Joshua Wright",
+    "jobTitle": "Senior Instructor",
+    "affiliation": {
+      "@type": "Organization",
+      "name": "SANS Institute"
+    },
+    "url": "https://dynamicincidentresponse.com/",
+    "image": "https://dynamicincidentresponse.com/img/josh-wright-headshot.jpg"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the Dynamic Approach to Incident Response (DAIR)?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "DAIR is an adaptive incident response framework introduced in Dynamic Incident Response by Joshua Wright. It organizes the response lifecycle into iterative activities — prepare, detect, verify and triage, scope, contain, eradicate, recover, and debrief — using feedback loops and parallel workstreams rather than a rigid sequential process. DAIR is built on Boyd's OODA loop and aligns with NIST CSF 2.0."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Dynamic Incident Response free to read?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The complete book is available to read online in HTML format and to download as a PDF at no cost from dynamicincidentresponse.com. A print edition is also available through Amazon."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What topics does the book cover?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The book covers the full incident response lifecycle including preparation, detection and threat hunting, containment, eradication, and recovery. It also includes dedicated chapters on ransomware response, cloud incident response for AWS and Azure, OT/ICS security, digital forensics and memory analysis, cyber threat intelligence, incident response playbook development, AI in security operations, and NIST CSF 2.0 compliance mapping."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are the incident response step-by-step checklists?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Each chapter of Dynamic Incident Response includes a step-by-step checklist that condenses the chapter's guidance into an actionable reference. These checklists cover preparation, detection, verification and triage, scoping, the response actions loop, containment, eradication, recovery, and debrief. They are available as free downloads in PDF and Markdown formats from the resources page."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does DAIR differ from traditional incident response models?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Traditional IR models like NIST SP 800-61 present incident response as a linear sequence of phases. DAIR introduces a response actions loop where scoping, containment, eradication, and recovery iterate as new evidence emerges. It emphasizes continuous reassessment, parallel workstreams, and feedback loops, treating IR as a dynamic process that adapts to the situation rather than a checklist to follow in order."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Who is the author of Dynamic Incident Response?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Joshua Wright is a senior instructor and author at the SANS Institute, where he teaches courses on incident response, threat hunting, and penetration testing. He is a senior technical director at Counter Hack and the author of multiple SANS courses and industry publications. The book includes a foreword by John Strand."
+        }
+      }
+    ]
+  }
+  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      --navy: #1B365D;
-      --blue: #09456D;
-      --cyan: #0076BE;
-      --white: #FFFFFF;
-      --text-light: rgba(255, 255, 255, 0.85);
-    }
-
-    * { box-sizing: border-box; }
-
-    html, body {
-      margin: 0;
-      padding: 0;
-      min-height: 100%;
-    }
-
-    body {
-      font-family: 'Lora', Georgia, serif;
-      color: var(--white);
-      background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 60%, #052238 100%);
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem 1.5rem;
-      line-height: 1.6;
-    }
-
-    .wrap {
-      max-width: 640px;
-      width: 100%;
-      text-align: center;
-    }
-
-    .cover {
-      display: block;
-      margin: 0 auto 2.25rem;
-      width: 200px;
-      height: auto;
-      border-radius: 4px;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.08);
-    }
-
-    .eyebrow {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--cyan);
-      margin: 0 0 1rem;
-    }
-
-    h1 {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      font-weight: 700;
-      font-size: clamp(1.9rem, 5vw, 2.75rem);
-      line-height: 1.15;
-      margin: 0 0 0.6rem;
-      color: var(--white);
-    }
-
-    .subtitle {
-      font-family: 'Lora', Georgia, serif;
-      font-style: italic;
-      font-size: clamp(1.05rem, 2.4vw, 1.25rem);
-      color: var(--text-light);
-      margin: 0 0 2rem;
-    }
-
-    .rule {
-      width: 60px;
-      height: 2px;
-      background: var(--cyan);
-      border: none;
-      margin: 0 auto 2rem;
-    }
-
-    .message {
-      font-size: 1.05rem;
-      color: var(--text-light);
-      margin: 0 auto 2.5rem;
-      max-width: 520px;
-    }
-
-    .byline {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.85rem;
-      letter-spacing: 0.05em;
-      color: rgba(255, 255, 255, 0.6);
-      margin: 0;
-    }
-
-    .byline strong {
-      color: rgba(255, 255, 255, 0.85);
-      font-weight: 600;
-    }
-
-    @media (max-width: 480px) {
-      .cover { width: 160px; margin-bottom: 1.75rem; }
-    }
-  </style>
+  <link rel="stylesheet" href="css/site.css">
 </head>
 <body>
-  <main class="wrap">
-    <picture>
-      <source srcset="img/cover.webp" type="image/webp">
-      <img src="img/cover-560.png" alt="Dynamic Incident Response book cover" class="cover" width="200" height="250">
-    </picture>
-    <p class="eyebrow">Coming Soon</p>
-    <h1>Dynamic Incident Response</h1>
-    <p class="subtitle">A Framework for Security Teams</p>
-    <hr class="rule">
-    <p class="message">
-      A practical guide to building and running incident response programs
-      that adapt to modern threats. The book and companion resources will
-      be available here shortly.
-    </p>
-    <p class="byline">by <strong>Joshua Wright</strong></p>
-  </main>
-  <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1f35751f781b47eb8d8ee5ee7dec4206"}'></script><!-- End Cloudflare Web Analytics -->
+
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="site-title">Dynamic Incident Response</a>
+    <nav class="site-nav">
+      <a href="chapters.html">Chapters</a>
+      <a href="resources.html">Resources</a>
+      <a href="errata.html">Errata</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <picture>
+        <source srcset="img/cover.webp" type="image/webp">
+        <img src="img/cover-560.png" alt="Dynamic Incident Response: A Framework for Security Teams — book cover showing the title over a mountain landscape" class="hero-cover" width="280" height="362">
+      </picture>
+      <div class="hero-text">
+        <h1>Dynamic Incident Response</h1>
+        <p class="hero-subtitle">A Framework for Security Teams</p>
+        <p class="hero-description">
+          A practical guide to building and running incident response programs that adapt to modern threats.
+          From preparation through recovery, this book gives security teams, SOC analysts, and DFIR practitioners the framework they need to detect, contain, and eradicate threats effectively.
+          Read the complete book online for free.
+        </p>
+        <div class="btn-group">
+          <a href="https://dynamicir.s3.amazonaws.com/book/dynamicir.html" rel="noopener" class="btn btn-primary">Read Online</a>
+          <a href="https://dynamicir.s3.amazonaws.com/dynamicir.pdf" rel="noopener" class="btn btn-outline">Download PDF</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="about">
+  <div class="container">
+    <h2>About the Book</h2>
+    <div class="about-content">
+      <p>
+      <strong>Incident response is not a checklist</strong>. It is a dynamic process that demands
+        adaptability, sound judgment, and a deep understanding of both the technical
+        and organizational dimensions of security events.
+      </p>
+      <p>
+        <strong>Dynamic Incident Response introduces the Dynamic Approach to Incident Response (DAIR)</strong>,
+        a framework that covers the full incident response lifecycle:
+        preparation, detection and identification, verification and triage, scoping,
+        containment, eradication, recovery, and post-incident debrief.
+        Each chapter pairs foundational concepts with
+        practical techniques drawn from real-world incidents, giving analysts and
+        response teams the tools to act decisively under pressure.
+      </p>
+      <p>
+        Topics include <strong>ransomware response and recovery</strong>, <strong>cloud incident response</strong> for AWS and Azure,
+        <strong>OT/ICS incident handling</strong>, cyber threat intelligence integration, digital forensics and memory analysis,
+        incident response playbook development, and the emerging role of <strong>AI in security operations</strong>.
+        Foreword by John Strand.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="topics">
+  <div class="container">
+    <h2>What's Inside</h2>
+    <div class="resource-grid">
+      <div class="resource-card">
+        <h3>Incident Response Framework</h3>
+        <p>Adapt to evolving threats with the Dynamic Approach to Incident Response (DAIR), a structured yet flexible model that moves beyond rigid, linear processes. Built on the OODA loop and aligned with NIST CSF 2.0.</p>
+      </div>
+      <div class="resource-card">
+        <h3>Detection and Threat Hunting</h3>
+        <p>Identify threats early with signature-based, behavioral, and AI-driven detection methods. Master Sigma rules, SIEM correlation, endpoint detection and response (EDR), and network traffic analysis.</p>
+      </div>
+      <div class="resource-card">
+        <h3>Incident Response Playbooks</h3>
+        <p>Execute confidently with step-by-step checklists for every phase of the incident response lifecycle, from initial detection through recovery. Designed as practical references for active incidents.</p>
+      </div>
+      <div class="resource-card">
+        <h3>Ransomware Response</h3>
+        <p>Contain and recover from ransomware incidents with containment strategies, negotiation considerations, recovery planning, decryption options, and lessons from real-world attacks including NotPetya, LockBit, and Scattered Spider.</p>
+      </div>
+      <div class="resource-card">
+        <h3>Cloud Incident Response</h3>
+        <p>Investigate cloud environments across AWS, Azure, and GCP. Preserve evidence with EBS snapshots, analyze CloudTrail and Azure Monitor logs, trace IAM activity, and respond to Kubernetes security events.</p>
+      </div>
+      <div class="resource-card">
+        <h3>Digital Forensics and Investigation</h3>
+        <p>Uncover attacker activity through memory forensics with Volatility and MemProcFS, Windows event log analysis with Hayabusa, disk forensics, malware analysis, lateral movement detection, and root cause analysis.</p>
+      </div>
+      <div class="resource-card">
+        <h3>OT/ICS Security</h3>
+        <p>Protect critical infrastructure with incident response techniques for operational technology and industrial control systems. Learn Purdue model segmentation, safety instrumented systems, and how to bridge the IT-OT gap during incidents.</p>
+      </div>
+      <div class="resource-card">
+        <h3>AI in Incident Response</h3>
+        <p>Accelerate your investigations with AI-driven log analysis, threat detection, playbook generation, report writing, and agentic investigation workflows using large language models.</p>
+      </div>
+      <div class="resource-card">
+        <h3>NIST CSF 2.0 Integration</h3>
+        <p>Satisfy compliance requirements by mapping DAIR activities to all six CSF 2.0 functions — Govern, Identify, Protect, Detect, Respond, and Recover. Build compliance artifacts naturally from your incident response operations and demonstrate control effectiveness to auditors.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="resources">
+  <div class="container">
+    <h2>Resources</h2>
+    <div class="resource-grid">
+      <div class="resource-card">
+        <h3>Read by Chapter</h3>
+        <p>Browse and read individual chapters online. Jump directly to the topic you need.</p>
+        <a href="chapters.html" class="btn btn-primary">Browse Chapters</a>
+      </div>
+      <div class="resource-card">
+        <h3>Read Complete Book</h3>
+        <p>Read the entire book as a single page in your browser, with full-resolution figures and diagrams.</p>
+        <a href="https://dynamicir.s3.amazonaws.com/book/dynamicir.html" rel="noopener" class="btn btn-primary">Open Book</a>
+      </div>
+      <div class="resource-card">
+        <h3>Download PDF</h3>
+        <p>Download the book as a PDF for offline reading or printing.</p>
+        <a href="https://dynamicir.s3.amazonaws.com/dynamicir.pdf" rel="noopener" id="download" class="btn btn-primary">Download</a>
+      </div>
+      <div class="resource-card">
+        <h3>Step-by-Step Checklists</h3>
+        <p>Standalone incident response checklists for each phase of the lifecycle, available in PDF and Markdown.</p>
+        <a href="resources.html" class="btn btn-primary">View Checklists</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="author">
+  <div class="container">
+    <h2>About the Author</h2>
+    <div class="about-content">
+      <img src="img/josh-wright-headshot.jpg" alt="Joshua Wright" class="author-headshot">
+      <p>
+        Joshua Wright is a senior instructor and author at the SANS Institute,
+        where he teaches courses on incident response, threat hunting, and
+        penetration testing. He is a senior technical director at Counter Hack,
+        and the author of multiple SANS courses and industry publications.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="faq">
+  <div class="container">
+    <h2>Frequently Asked Questions</h2>
+    <dl class="faq-list">
+      <dt>What is the Dynamic Approach to Incident Response (DAIR)?</dt>
+      <dd>DAIR is an adaptive incident response framework introduced in this book. It organizes the response lifecycle into iterative activities — prepare, detect, verify and triage, scope, contain, eradicate, recover, and debrief — using feedback loops and parallel workstreams rather than a rigid sequential process. DAIR is built on Boyd's OODA loop and aligns with NIST CSF 2.0.</dd>
+
+      <dt>Is this book free to read?</dt>
+      <dd>Yes. The complete book is available to <a href="https://dynamicir.s3.amazonaws.com/book/dynamicir.html" rel="noopener">read online</a> and to <a href="https://dynamicir.s3.amazonaws.com/dynamicir.pdf" rel="noopener">download as a PDF</a> at no cost. A print edition is also available through Amazon.</dd>
+
+      <dt>What topics does the book cover?</dt>
+      <dd>The book covers the full incident response lifecycle including preparation, detection and threat hunting, containment, eradication, and recovery. It also includes dedicated chapters on ransomware response, cloud incident response for AWS and Azure, OT/ICS security, digital forensics and memory analysis, cyber threat intelligence, incident response playbook development, AI in security operations, and NIST CSF 2.0 compliance mapping.</dd>
+
+      <dt>What are the step-by-step checklists?</dt>
+      <dd>Each chapter includes a step-by-step checklist that condenses the chapter's guidance into an actionable reference. They cover preparation, detection, verification and triage, scoping, the response actions loop, containment, eradication, recovery, and debrief. All nine checklists are available as free downloads in PDF and Markdown formats from the <a href="resources.html">resources page</a>.</dd>
+
+      <dt>How does DAIR differ from traditional incident response models?</dt>
+      <dd>Traditional IR models like NIST SP 800-61 present incident response as a linear sequence of phases. DAIR introduces a response actions loop where scoping, containment, eradication, and recovery iterate as new evidence emerges. It emphasizes continuous reassessment, parallel workstreams, and feedback loops, treating IR as a dynamic process that adapts to the situation rather than a checklist to follow in order.</dd>
+
+      <dt>Who wrote this book?</dt>
+      <dd>Joshua Wright is a senior instructor and author at the SANS Institute, where he teaches courses on incident response, threat hunting, and penetration testing. The book includes a foreword by John Strand.</dd>
+    </dl>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="chapters.html">Chapters</a>
+      <a href="resources.html">Resources</a>
+      <a href="errata.html">Errata</a>
+    </div>
+    <p>&copy; 2026 Joshua Wright. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1f35751f781b47eb8d8ee5ee7dec4206"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
