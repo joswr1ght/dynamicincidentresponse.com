@@ -156,7 +156,7 @@ a:hover { color: var(--text); }
 /* Hero */
 .hero {
   position: relative;
-  padding: 5rem 0 4.5rem;
+  padding: 2rem 0 3rem;
   overflow: hidden;
   background:
     radial-gradient(900px 520px at 78% 20%, rgba(96, 72, 200, 0.28), transparent 65%),
