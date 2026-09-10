@@ -1,4 +1,14 @@
 .DS_Store
 *.swp
-.claude/*
 fixgit.sh
+
+# AI agent files: never publish to the live site
+.claude/
+CLAUDE.md
+CLAUDE.local.md
+AGENTS.md
+.cursor/
+.cursorrules
+.github/copilot-instructions.md
+.windsurfrules
+.aider*
