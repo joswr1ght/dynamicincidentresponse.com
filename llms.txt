@@ -82,7 +82,7 @@ Joshua Wright is a senior instructor and author at the SANS Institute, teaching 
 
 - Website: https://dynamicincidentresponse.com
 - Chapter listing: https://dynamicincidentresponse.com/chapters.html
-- Read complete book: https://dynamicir.s3.amazonaws.com/book/dynamicir.html
-- Download PDF: https://dynamicir.s3.amazonaws.com/dynamicir.pdf
+- Read complete book: https://dl.dynamicincidentresponse.com/book/dynamicir.html
+- Download PDF: https://dl.dynamicincidentresponse.com/dynamicir.pdf
 - Step-by-step checklists: https://dynamicincidentresponse.com/resources.html
 - Errata: https://dynamicincidentresponse.com/errata.html
