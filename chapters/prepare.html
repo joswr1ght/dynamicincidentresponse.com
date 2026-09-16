@@ -1437,7 +1437,8 @@ Regardless of the approach taken, policies should be reviewed regularly to ensur
 </ul>
 </div>
 <div class="paragraph">
-<p>The incident response plan should also address operational elements that translate these policies into practice, including recovery time objectives (RTO) and recovery point objectives (RPO) for critical systems, evidence retention requirements and chain of custody procedures, and role assignments for coordination across teams.</p>
+<p>
+The incident response plan should also address operational elements that translate these policies into practice, including recovery time objectives (RTO) and recovery point objectives (RPO) for critical systems, evidence retention requirements and chain of custody procedures, and role assignments for coordination across teams.</p>
 </div>
 <div class="paragraph">
 <p>This is not an exhaustive list.
@@ -1906,7 +1907,7 @@ An example template is provided in <a href="#contact-information-template">Table
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Last Updated</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2026-09-14</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2026-09-16</p></td>
 </tr>
 </tbody>
 </table>
@@ -3025,7 +3026,7 @@ Some publicly available playbooks include:</p>
 <p><a href="https://www.cisa.gov/sites/default/files/2024-08/Federal_Government_Cybersecurity_Incident_and_Vulnerability_Response_Playbooks_508C.pdf">CISA&#8217;s Cybersecurity Incident and Vulnerability Response Playbooks</a>: A set of US Federal Government playbooks for several incident types.</p>
 </li>
 <li>
-<p>Mike Lamb&#8217;s Playbooks: A collection of playbooks for <a href="https://mikecybersec.notion.site/AWS-EKS-IR-Guide-2a981b1bcfab803690eaf9e77b2c1a22">Amazon Elastic Kubernetes Servics</a>, <a href="https://mikecybersec.notion.site/AWS-ECS-IR-Guide-2a981b1bcfab803ab9ddfe3b692ba86d">Amazon Elastic Container Service</a>, <a href="https://mikecybersec.notion.site/Citrix-IR-Guide-01861bd0e9184a199d4634d876d8e41d">Citrix</a>, and <a href="https://mikecybersec.notion.site/ESXi-IR-Guide-0ffbcec7272244d6b10dba4f4d16a7c8">VMware ESXi</a>.</p>
+<p>Mike Lamb&#8217;s Playbooks: A collection of playbooks for <a href="https://mikecybersec.notion.site/AWS-EKS-IR-Guide-2a981b1bcfab803690eaf9e77b2c1a22">Amazon Elastic Kubernetes Service</a>, <a href="https://mikecybersec.notion.site/AWS-ECS-IR-Guide-2a981b1bcfab803ab9ddfe3b692ba86d">Amazon Elastic Container Service</a>, <a href="https://mikecybersec.notion.site/Citrix-IR-Guide-01861bd0e9184a199d4634d876d8e41d">Citrix</a>, and <a href="https://mikecybersec.notion.site/ESXi-IR-Guide-0ffbcec7272244d6b10dba4f4d16a7c8">VMware ESXi</a>.</p>
 </li>
 <li>
 <p><a href="https://www.jaiminton.com/cheatsheet/DFIR/">Jai Minton&#8217;s DFIR Cheat Sheet</a>: A collection of scripts and manual investigation steps for investigating the compromise of Microsoft Windows systems.</p>
@@ -3112,7 +3113,8 @@ Ensure tools are tested and readily accessible when needed.</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>Beyond dedicated forensic tools, organizations should also identify existing security and operational tools that provide investigative value.
+<p>
+Beyond dedicated forensic tools, organizations should also identify existing security and operational tools that provide investigative value.
 Data Loss Prevention (DLP) platforms, for example, often contain detailed records of file movements and data transfers that can be valuable during scoping and evidence analysis.</p>
 </div>
 <div class="paragraph">
@@ -3185,7 +3187,7 @@ Implement controls, including monitoring, multi-person authorization for sensiti
 </div>
 <div class="paragraph">
 <p>Next, document access procedures that responders can follow during incidents.
-Identify who can authorize investigative access to production systems and how to request access afterhours or during emergencies.
+Identify who can authorize investigative access to production systems and how to request access after hours or during emergencies.
 Clarify procedures for accessing systems owned by different business units, as well as cloud environments and third-party services.
 Make these procedures accessible to the team before incidents occur.</p>
 </div>
@@ -3221,7 +3223,7 @@ Schedule sufficient time for meaningful discussion, typically two to four hours,
 </td>
 <td class="content">
 When choosing a scenario for a tabletop exercise, consider selecting from publicly reported incidents that affected similar organizations for added realism.
-Alternatively, use an AI platforms to review recent news articles in the organization&#8217;s industry and generate exercise scenarios based on real-world incidents.
+Alternatively, use an AI platform to review recent news articles in the organization&#8217;s industry and generate exercise scenarios based on real-world incidents.
 </td>
 </tr>
 </table>
@@ -3327,7 +3329,7 @@ Understanding the threats targeting the organization and industry allows the inc
 </div>
 <div class="paragraph">
 <p>CTI capabilities support incident response in several ways: through proactive defenses, detection enhancement, support for investigations with additional context, and prioritization of response efforts.
-Table <a href="#_cti_capabilities_for_incident_response">Table 7</a> summarizes several CTI capabilities for incident response.</p>
+<a href="#_cti_capabilities_for_incident_response">Table 7</a> summarizes several CTI capabilities for incident response.</p>
 </div>
 <table id="_cti_capabilities_for_incident_response" class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 7. CTI Capabilities for Incident Response</caption>
@@ -4161,7 +4163,7 @@ IT and how we do business has expanded to include a wider variety of technologie
 An organization&#8217;s internal asset inventory may account for traditional IT components while missing the cloud resources, SaaS integrations, and vendor connections that attackers increasingly target.</p>
 </div>
 <div class="paragraph">
-<p>ASM tools help organizations discover and monitor this broader broader attack surface, providing a more complete picture of where attacks are likely to originate.
+<p>ASM tools help organizations discover and monitor this broader attack surface, providing a more complete picture of where attacks are likely to originate.
 For incident response teams, this visibility is particularly valuable.
 Assets that are unknown during preparation are assets that will be missed during scoping.</p>
 </div>
@@ -4827,7 +4829,7 @@ The Ponemon Institute&#8217;s 2025 Cybersecurity Threat and Risk Management Repo
 <div class="title">Figure 18. SANS 2025 SOC Survey Key Findings</div>
 </div>
 <div class="paragraph">
-<p>In addition to industry survey analysis, use public incident case studies to contextualize the value if preparation.
+<p>In addition to industry survey analysis, use public incident case studies to contextualize the value of preparation.
 When breaches at peer organizations make headlines, use them to illustrate the value of investment in preparation.
 Document what controls the affected organization lacked and demonstrate how existing preparation activities address similar gaps.</p>
 </div>
@@ -5815,7 +5817,7 @@ This step-by-step guide is available for download in <a href="https://dl.dynamic
 <div id="footer">
 <div id="footer-text">
 Version 1.0<br>
-Last updated 2026-09-14 21:52:55 UTC
+Last updated 2026-09-16 17:37:16 UTC
 </div>
 </div>
 <script type="text/x-mathjax-config">

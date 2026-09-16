@@ -1185,7 +1185,7 @@ Pre-restoration verification allows the organization to confirm that the inciden
 </table>
 </div>
 <div class="paragraph">
-<p>The <a href="#_pre_restoration_verification_checklist">Table 1</a> provides a reference for pre-restoration verification activities.</p>
+<p><a href="#_pre_restoration_verification_checklist">Table 1</a> provides a reference for pre-restoration verification activities.</p>
 </div>
 <table id="_pre_restoration_verification_checklist" class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 1. Pre-Restoration Verification Checklist</caption>
@@ -2193,7 +2193,7 @@ She queried the backup catalog to review the recoverable domain controller backu
 <div id="_lakewood_backup_catalog" class="listingblock">
 <div class="title">Listing 4. Reviewing Available Domain Controller Backups</div>
 <div class="content">
-<pre>PS C:\&gt; <strong>Get-WBBackupTarget | Get-WBBackupSet | Where-Object {$_.VersionId -like "*DC01</strong>"} |*
+<pre>PS C:\&gt; <strong>Get-WBBackupTarget | Get-WBBackupSet | Where-Object {$_.VersionId -like "&#42;DC01&#42;"} |</strong>
 &gt;&gt;     <strong>Select-Object VersionId, BackupTime | Sort-Object BackupTime -Descending</strong>
 
 VersionId                            BackupTime
@@ -2979,7 +2979,7 @@ Step 6 consolidates that work by inventorying all measures implemented during co
 <div id="footer">
 <div id="footer-text">
 Version 1.0<br>
-Last updated 2026-09-14 21:52:59 UTC
+Last updated 2026-09-16 17:37:19 UTC
 </div>
 </div>
 <script type="text/x-mathjax-config">
