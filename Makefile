@@ -3,5 +3,6 @@
 
 .PHONY: serve
 
+# Port 0 lets the OS pick a free port; http.server prints the URL it lands on.
 serve:
-	python3 -m http.server 8080
+	python3 -u -m http.server --bind 127.0.0.1 0
